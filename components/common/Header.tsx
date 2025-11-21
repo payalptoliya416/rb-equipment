@@ -13,14 +13,31 @@ function Header() {
   const navItems = [
     { name: "Index", path: "/" },
     { name: "Inventory", path: "/inventory" },
-    { name: "About us", path: "/about" },
+    { name: "About us", path: "/about-us" },
     { name: "Services", path: "/services" },
     { name: "Tracking", path: "/tracking" },
     { name: "FAQ", path: "/faq" },
   ];
 
+  const bgImagePages = [
+  "/inventory/inventory-detail",
+  "/inventory/inventory-detail/verify-account",
+  "/signin",
+  "/signin/forgot-password",
+  "/signup",
+];
+
   return (
-    <header className="w-full bg-transparent z-50 relative">
+    <header
+  className={`
+    w-full z-50 relative 
+    ${bgImagePages.includes(pathname)
+      ? "bg-[url(/assets/header-bg.png)] bg-no-repeat bg-top"
+      : "bg-transparent"
+    }
+  `}
+  style={bgImagePages.includes(pathname) ? { backgroundSize: "100% 100%" } : {}}
+>
       <div className="container-custom mx-auto flex justify-between items-center py-4 px-4 md:px-0">
         <Link href='/'>
           <Image src="/assets/logo.png" alt="Logo" height={90} width={178}/>
@@ -37,7 +54,7 @@ function Header() {
                   after:content-[''] after:absolute after:-bottom-1
                   after:left-1/2 after:-translate-x-1/2
                   after:h-1 after:w-0
-                  after:bg-orange
+                   after:bg-[linear-gradient(180deg,#ff6f6100_0%,#ff6f6119_50%,#ff6f61_100%)]
                   after:transition-all after:duration-300
                   hover:after:w-8 hover:text-orange transition-all duration-300
                   ${pathname === item.path
@@ -53,9 +70,9 @@ function Header() {
         </ul>
 
         {/* Contact Button for Desktop & Tablet */}
-        <button className="hidden lg:block text-white bg-orange py-2 px-4 md:py-3 md:px-6 rounded-lg font-bold hover:bg-orange transition-colors">
+        <Link href='/contact-us' className="hidden lg:block text-white bg-orange py-2 px-4 md:py-3 md:px-6 rounded-lg font-semibold hover:bg-orange transition-colors">
           Contact Us
-        </button>
+        </Link>
 
         {/* Hamburger Icon for Mobile */}
         <button
@@ -97,9 +114,9 @@ function Header() {
 
         {/* Contact Button for Mobile */}
         <div className="flex justify-center">
-        <button className=" text-white bg-orange py-3 px-6 rounded-lg font-bold mt-4 hover:bg-orange transition-colors">
+        <Link href='/contact-us' className=" text-white bg-orange py-3 px-6 rounded-lg font-semibold mt-4 hover:bg-orange transition-colors">
           Contact Us
-        </button>
+        </Link>
         </div>
       </div>
     </header>

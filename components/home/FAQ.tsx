@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { BiPlus } from 'react-icons/bi';
-import { FaMinus } from 'react-icons/fa';
+import { useState } from "react";
+import { BiPlus } from "react-icons/bi";
+import { FaMinus } from "react-icons/fa";
 
 interface Item {
   question: string;
@@ -10,7 +10,7 @@ interface Item {
 }
 
 function FAQ() {
-     const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const data: Item[] = [
     {
@@ -28,13 +28,14 @@ function FAQ() {
     { question: "What happens if I win an auction?", answer: "" },
   ];
   return (
-<div className="container-custom mx-auto ">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-[38px] md:leading-[38px] mb-[15px] font-extrabold text-gray">
-            Frequently Asked <span className="text-orange">Questions</span>{" "}
-          </h2>
-        </div>
-        <div className="space-y-4">
+    <div className="container-custom mx-auto ">
+      <div className="text-center mb-10">
+        <h2 className="text-3xl md:text-[38px] md:leading-[38px] mb-[15px] font-extrabold text-gray">
+          Frequently Asked <span className="text-orange">Questions</span>{" "}
+        </h2>
+      </div>
+      <div className="grid grid-cols-12 w-full justify-center items-center">
+        <div className="space-y-4 col-span-10 col-start-2">
           {data.map((item, i) => {
             const isOpen = openIndex === i;
 
@@ -73,7 +74,8 @@ function FAQ() {
           })}
         </div>
       </div>
-  )
+    </div>
+  );
 }
 
-export default FAQ
+export default FAQ;

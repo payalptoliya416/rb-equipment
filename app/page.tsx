@@ -1,6 +1,5 @@
 import AboutUs from "@/components/home/AboutUs";
 import ChooseUs from "@/components/home/ChooseUs";
-import CTA from "@/components/common/CTA";
 import Equipment from "@/components/home/Equipment";
 import FAQ from "@/components/home/FAQ";
 import Hero from "@/components/home/Hero";
@@ -21,7 +20,6 @@ export default function Home() {
        <Testimonial/>
        <Partner/>
        <FAQ/>
-       <CTA/>
       </main>
     </>
   );

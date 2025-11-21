@@ -1,11 +1,410 @@
-import React from 'react'
+import Image from "next/image";
+import Link from "next/link";
+import { BsFuelPumpFill } from "react-icons/bs";
+import { CgNotes } from "react-icons/cg";
+import { FaCalendarAlt } from "react-icons/fa";
+import { FaHandHoldingDollar, FaLocationCrosshairs } from "react-icons/fa6";
+import { GiWeightScale } from "react-icons/gi";
+import { IoLocationSharp } from "react-icons/io5";
+import { MdAccessTimeFilled } from "react-icons/md";
 
 function InventoryDetail() {
   return (
-    <div>
-      
+    <div className="container-custom mt-10 lg:mt-20 mb-20 lg:mb-[110px]">
+      <div className="grid grid-cols-12 gap-5">
+        <div className="col-span-12 xl:col-span-7">
+          <div className="border border-light-gray  py-[43px] px-[38px] rounded-[15px] mb-[25px]">
+            <Image
+              src="/assets/detail-img.png"
+              alt="detail-image"
+              width={700}
+              height={500}
+            />
+          </div>
+           <div className="flex border rounded-xl overflow-hidden w-full border-light-gray mb-[25px]">
+          <button className="w-1/2 py-2 sm:py-3 bg-green text-white font-medium">
+            Photos
+          </button>
+          <button className="w-1/2 py-2 sm:py-3 bg-white text-gray font-medium">
+            Videos
+          </button>
+           </div>
+           <div className="flex justify-between gap-2 sm:gap-4 mb-[30px] flex-wrap">
+                  <div className="border border-light-gray flex justify-center items-center w-[98px] h-[98px] rounded-xl">
+                     <Image src='/assets/detail1.png' alt="detail" width={87} height={57}/>
+                  </div>
+                  <div className="border border-light-gray flex justify-center items-center w-[98px] h-[98px] rounded-xl">
+                     <Image src='/assets/detail6.png' alt="detail" width={87} height={57}/>
+                  </div>
+                  <div className="border border-light-gray flex justify-center items-center w-[98px] h-[98px] rounded-xl">
+                     <Image src='/assets/detail2.png' alt="detail" width={87} height={57}/>
+                  </div>
+                  <div className="border border-light-gray flex justify-center items-center w-[98px] h-[98px] rounded-xl">
+                     <Image src='/assets/detail3.png' alt="detail" width={87} height={57}/>
+                  </div>
+                  <div className="border border-light-gray flex justify-center items-center w-[98px] h-[98px] rounded-xl">
+                     <Image src='/assets/detail4.png' alt="detail" width={87} height={57}/>
+                  </div>
+                  <div className="border border-light-gray flex justify-center items-center w-[98px] h-[98px] rounded-xl">
+                     <Image src='/assets/detail5.png' alt="detail" width={87} height={57}/>
+                  </div>
+           </div>
+          <div className="w-full space-y-6">
+
+        <h2 className="text-[22px] font-semibold text-[#333333] mb-[22px]">Overview</h2>
+
+        {/* Row 1 */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-1">
+
+            {/* Year */}
+            <div className="flex items-center gap-[10px]">
+                <div>
+            <div className="w-[50px] h-[50px] bg-green rounded-md flex items-center justify-center">
+                <span className="text-white text-2xl"><FaCalendarAlt/></span>
+            </div>
+                </div>
+            <div>
+                <p className="text-text-gray mb-[6px] text-base leading-[16px]">Year</p>
+                <p className="text-gray font-semibold text-lg leading-[20px]">2017</p>
+            </div>
+            </div>
+
+            {/* Weight */}
+            <div className="flex items-center gap-[10px]">
+                <div>
+            <div className="w-[50px] h-[50px] bg-green rounded-md flex items-center justify-center">
+                <span className="text-white text-2xl"><GiWeightScale/></span>
+            </div>
+                </div>
+            <div>
+                <p className="text-text-gray mb-[6px] text-base leading-[16px]">Weight</p>
+                <p className="text-gray font-semibold text-lg leading-[20px]">6,000 LBS</p>
+            </div>
+            </div>
+
+            {/* Working Hours */}
+            <div className="flex items-center gap-[10px] md:justify-end">
+                <div>
+            <div className="w-[50px] h-[50px] bg-green rounded-md flex items-center justify-center">
+                <span className="text-white text-2xl"><MdAccessTimeFilled/></span>
+            </div>
+                </div>
+            <div>
+                <p className="text-text-gray mb-[6px] text-base leading-[16px]">Working Hours</p>
+                <p className="text-gray font-semibold text-lg leading-[20px]">1,200 hrs</p>
+            </div>
+            </div>
+
+        </div>
+
+        {/* Divider */}
+        <div className="border-t border-light-gray"></div>
+
+        {/* Row 2 */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-1">
+
+            {/* Fuel Type */}
+            <div className="flex items-center gap-[10px]">
+                <div>
+            <div className="w-[50px] h-[50px] bg-green rounded-md flex items-center justify-center">
+                <span className="text-white text-2xl"><BsFuelPumpFill/></span>
+            </div>
+                </div>
+            <div>
+                <p className="text-text-gray mb-[6px] text-base leading-[16px]">Fuel Type</p>
+                <p className="text-gray font-semibold text-lg leading-[20px]">Diesel</p>
+            </div>
+            </div>
+
+            {/* Condition */}
+            <div className="flex items-center gap-[10px]">
+           <div> 
+            <div className="w-[50px] h-[50px] bg-green rounded-md flex items-center justify-center">
+                <span className="text-white text-2xl"><CgNotes/></span>
+            </div>
+            </div>
+            <div className="flex items-center gap-3">
+                <div className="flex items-center gap-[15px]">
+                <p className="text-text-gray mb-[6px] text-base leading-[16px]">Condition </p>
+                <span className="bg-[#1DAF50] text-white text-sm px-2 py-[6px] rounded-md whitespace-nowrap">
+                Very Good
+                </span>
+                </div>
+
+                {/* Condition badge */}
+                
+            </div>
+            </div>
+
+            {/* Serial Number */}
+            <div className="flex items-center gap-4 md:justify-end">
+            <div className="w-[50px] h-[50px]"></div>
+            <div>
+                <p className="bg-[#E9E9E9] text-gray text-sm px-[8px] py-[6px] rounded-md">
+                #S/N HG-2745
+                </p>
+            </div>
+            </div>
+
+        </div>
+        <div className="border-t border-light-gray"></div>
+          </div>
+           <div className="mt-[30px]">
+              <h3 className="mb-[15px] text-[#333333] text-[22px] leading-[22px]">Description</h3>
+              <p className="text-text-gray mb-[15px] text-base font-normal">This John Deere 6140R is a powerful and reliable tractor ideal for medium to large-scale farming and industrial operations.</p>
+                <p className="text-text-gray mb-[15px] text-base font-normal">It features advanced hydraulics, a fuel-efficient engine, and operator-friendly controls to maximize performance and comfort. It features advanced hydraulics, a fuel efficient engine, and operator-friendly controls to maximize performance and comfort.</p>
+           </div>
+           <div className="w-full space-y-4 pt-[15px]">
+
+  {/* Header */}
+  <div className="flex justify-between items-center">
+    <h2 className="text-lg leading-[20px] font-semibold text-gray">Specification</h2>
+    <p className="text-lg leading-[20px] font-semibold text-gray">Details</p>
+  </div>
+
+  <div className="border-t border-light-gray"></div>
+
+  {/* Table */}
+  <div className="w-full">
+
+    {/* Row */}
+    <div className="flex justify-between items-center p-[15px] bg-[#F9F9F9]">
+      <span className="text-text-gray">Make</span>
+      <span className="text-text-gray">CAT</span>
     </div>
-  )
+
+    <div className="flex justify-between items-center p-[15px]">
+      <span className="text-text-gray">Model</span>
+      <span className="text-text-gray">69G</span>
+    </div>
+
+    <div className="flex justify-between items-center p-[15px] bg-[#F9F9F9]">
+      <span className="text-text-gray">Engine Power</span>
+      <span className="text-text-gray">690 HP</span>
+    </div>
+
+    <div className="flex justify-between items-center p-[15px]">
+      <span className="text-text-gray">Transport Dimensions</span>
+      <span className="text-text-gray">
+        287\" L x 106\" W x 130\" H
+      </span>
+    </div>
+
+    <div className="flex justify-between items-center p-[15px] bg-[#F9F9F9]">
+      <span className="text-text-gray">Tracks</span>
+      <span className="text-text-gray">Rubber</span>
+    </div>
+
+    <div className="flex justify-between items-center p-[15px]">
+      <span className="text-text-gray">Condition</span>
+      <span className="text-text-gray">Very Good</span>
+    </div>
+
+    <div className="flex justify-between items-center py-4 px-4 bg-[#F9F9F9]">
+      <span className="text-text-gray">Transmission</span>
+      <span className="text-text-gray">PowerQuad Plus</span>
+    </div>
+
+  </div>
+</div>
+
+        </div>
+        <div className="col-span-12 xl:col-span-5">    
+            <div className="border border-light-gray p-5 rounded-[15px]">
+             <h4 className="text-orange text-lg xl:text-lg xl:mb-[15px]  relative after:absolute after:top-3 after:left-0 after:bg-orange after:w-[15px] after:h-[2px] pl-5 after:rounded-full">
+                   Tractor Loader Backhoe
+                  </h4>
+                  <h2 className="text-[#373737] text-[26px] sm:text-[28px] sm:leading-[38px] mb-[30px] font-semibold">2017 Wheel Loaders John Deere 6125M</h2>
+                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-[17px] mb-[30px]">
+          {["Days", "Hours", "Minutes", "Seconds"].map((label, i) => (
+            <div
+              key={i}
+              className="border border-light-gray rounded-[10px] p-3 2xl:p-4 flex flex-col items-center bg-[#E9E9E940]"
+            >
+              <span className="text-xl 2xl:text-4xl 2xl:mb-[10px] 2xl:leading-[36px] font-semibold">{[0, 8, 32, 10][i]}</span>
+              <span className="text-text-gray text-sm mt-1">{label}</span>
+            </div>
+          ))}
+                  </div>
+                   <div className="flex gap-[10px] items-center mb-[15px]">
+                    <p className="text-[#373737] text-lg leading-[18px]">Current bid:</p>
+                    <p className="text-green text-[26px] leading-[26px] font-semibold">$22,640.00</p>
+                    </div>
+                    <div className="flex items-center bg-[#F2F8F7] text-green border border-[#CCE4E1] px-4 py-3 rounded-xl gap-[10px] text-base leading-[16px] mb-[30px]">
+                    <span><Image src='/assets/fire.png' alt="icon" width={30} height={30} /></span> 1 Offer was received
+                    </div>
+                     <Link href='/inventory/inventory-detail/verify-account' className="w-full py-[15px] bg-green text-white rounded-lg text-base leading-[16px] font-medium mb-[15px] flex justify-center items-center gap-[10px]">
+                    <Image src='/assets/hammer.png' alt="icon" width={15} height={15} /> BID from $24,000.00
+                    </Link>
+                    <div className="text-center text-[#4D4D4D] text-lg leading-[18px] mb-[15px]">- OR -</div>
+                      <Link href='/inventory/inventory-detail/verify-account' className="w-full py-[15px] bg-white text-green rounded-lg text-base leading-[16px] font-medium flex justify-center items-center gap-[10px] border border-green">
+                    <Image src='/assets/bag.png' alt="icon" width={15} height={15} />Buy Now for $25,000.00
+                    </Link>
+
+                    <div className="border-t border-light-gray my-[30px]"></div>
+
+                    <div className="w-full space-y-6">
+
+                    <h2 className="text-lg font-semibold text-gray mb-[10px]">
+                        Delivery cost calculator
+                    </h2>
+
+                    <p className="text-text-gray text-nase leading-[26px] mb-[20px]">
+                        We will deliver this equipment to your location. You can estimate 
+                        the cost below.
+                    </p>
+
+                    <div className="space-y-6">
+                        <div className="flex items-start gap-3 mb-[5px]">
+                        <div className="flex flex-col items-center">
+                          <FaLocationCrosshairs size={20}/>
+                            <div className="border-l border-dashed border-gray h-10 mt-1"></div>
+                        </div>
+                        <p className="font-semibold text-gray text-lg leading-[18px]">
+                            From our location
+                        </p>
+                        </div>
+                        <div className="flex items-start gap-3">
+                        <div className="flex flex-col items-center">
+                          <IoLocationSharp size={20}/>
+                        </div>
+                         <p className="font-semibold text-gray text-lg leading-[18px]">
+                          To your delivery location
+                        </p>
+                        </div>
+
+                    </div>
+
+                    {/* Form Inputs */}
+                    <div className="space-y-5">
+
+                        {/* Zip Code */}
+                        <div className="mb-[25px]">
+                            <label className="text-[#333333 text-lg mb-3 block">Zip code</label>
+                        <input
+                            type="text"
+                            placeholder="Enter your zip code"
+                            className="w-full mt-2 rounded-xl border border-light-gray px-4 py-3 text-base outline-none focus:ring-2 focus:ring-green text-[#999999]"
+                        />
+                        </div>
+
+                        {/* Country Dropdown */}
+                        <div>
+                            <label className="text-[#333333 text-lg mb-3 block">Choose  countries</label>
+                        <div className="relative mt-2">
+                            <select
+                            className="w-full rounded-xl border border-light-gray px-[18px] py-3 text-sm appearance-none outline-none focus:ring-2 focus:ring-green"
+                            >
+                            <option>Choose countries</option>
+                            <option>USA</option>
+                            <option>Canada</option>
+                            </select>
+
+                            {/* Dropdown Icon */}
+                            <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">
+                            ▼
+                            </div>
+                        </div>
+                        </div>
+
+                        {/* Calculate Button */}
+                        <button className="w-full py-3 border border-green text-green rounded-xl text-base font-medium hover:bg-green-50 transition">
+                        Calculate shipping costs
+                        </button>
+
+                    </div>
+
+                    {/* Result */}
+                    <div className="pt-2">
+                        <p className="text-gray font-medium text-lg mb-[25px] leading-[18px]">
+                        Delivery cost estimation
+                        </p>
+
+                        <p className="text-green font-bold text-[26px] mb-[10px]">$2.000</p>
+
+                        <p className="text-text-gray flex items-center gap-1 text-sm mt-1">
+                        Power By Google  
+                        <Image src="/assets/google.png" alt="google" width={48} height={17}/>
+                        </p>
+                    </div>
+                      <div className="border-t border-light-gray my-[30px]"></div>
+                      <div className="w-full space-y-8">
+
+  {/* Pay at delivery */}
+  <div className="space-y-2">
+    <div className="flex items-center gap-2">
+      <span className="text-xl"><FaHandHoldingDollar/></span>
+      <h3 className="text-lg font-semibold text-gray mb-[10px] leading-[18px]">
+        Pay at delivery
+      </h3>
+    </div>
+    <p className="text-text-gray text-base leading-[16px]">100% safe payment.</p>
+
+    <div className="border-t border-gray-200 mt-[30px]"></div>
+  </div>
+
+  {/* Money back guaranteed */}
+  <div className="space-y-2">
+    <div className="flex items-center gap-2">
+      <span className="text-xl"><FaHandHoldingDollar/></span>
+      <h3 className="text-lg font-semibold text-gray leading-[18px]">
+        Money back guaranteed
+      </h3>
+    </div>
+    <p className="text-text-gray text-base">
+      Test the machine for 30 days with a 100% Money-Back Guarantee!
+    </p>
+
+    <div className="border-t border-gray-200 mt-[30px]"></div>
+  </div>
+
+  {/* Feature list */}
+  <div className="space-y-4">
+
+    {/* Item */}
+                <div className="flex items-center gap-3 p-4 rounded-xl 
+                bg-[linear-gradient(90deg,#f6f6f6_0%,#ffffff_100%)]
+                ">
+                <Image src="/assets/van.svg" alt="vehicle" width={22} height={22}/>
+                <p className="text-[#373737]">
+                    Delivery anywhere within the USA & Canada
+                </p>
+                </div>
+
+                <div className="flex items-center gap-3 p-4 rounded-xl 
+                bg-[linear-gradient(90deg,#f6f6f6_0%,#ffffff_100%)]
+                ">
+                <Image src="/assets/van1.svg" alt="return" width={22} height={22}/>
+                <p className="text-[#373737]">
+                   hassle
+                </p>
+                </div>
+                <div className="flex items-center gap-3 p-4 rounded-xl 
+                bg-[linear-gradient(90deg,#f6f6f6_0%,#ffffff_100%)]
+                ">
+                <Image src="/assets/van3.svg" alt="return" width={22} height={22}/>
+                <p className="text-[#373737]">
+                    30-day hassle-free returns
+                </p>
+                </div>
+                <div className="flex items-center gap-3 p-4 rounded-xl 
+                bg-[linear-gradient(90deg,#f6f6f6_0%,#ffffff_100%)]
+                ">
+                <Image src="/assets/van4.svg" alt="return" width={22} height={22}/>
+                <p className="text-[#373737]">
+                    30-day hassle-free returns
+                </p>
+                </div>
+  </div>
+</div>
+
+                    </div>
+
+            </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default InventoryDetail
+export default InventoryDetail;

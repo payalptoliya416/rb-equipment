@@ -8,7 +8,7 @@ function InventoryHero() {
       <div className="container-custom mx-auto">
         <div className="grid grid-cols-12 pt-[140px] items-center">
           <div className="col-span-12 lg:col-span-6 mb-5 lg:mb-0">
-            <h2 className="text-4xl md:text-[42px] leading-[48px] md:leading-[60px] font-extrabold mb-5">
+            <h2 className="text-3xl md:text-[42px] leading-[48px] md:leading-[60px] font-extrabold mb-5">
               Discover <span className="text-orange">Quality Machinery </span>{" "}
               for Every Need
             </h2>

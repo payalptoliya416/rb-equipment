@@ -1,15 +1,39 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import localFont from "next/font/local";
+import Header from "@/components/common/Header";
+import Footer from "@/components/common/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+// ---------------- MONT FONT ----------------
+
+const mont = localFont({
+  src: [
+    { path: "../public/fonts/Mont/fonnts.com-Mont_Thin.ttf", weight: "100", style: "normal" },
+    { path: "../public/fonts/Mont/fonnts.com-Mont_Blanc_ExtraLight.ttf", weight: "200", style: "normal" },
+    { path: "../public/fonts/Mont/fonnts.com-Mont_Blanc_ExtraLight.ttf", weight: "300", style: "normal" },
+    { path: "../public/fonts/Mont/fonnts.com-Mont_Regular.ttf", weight: "400", style: "normal" },
+    { path: "../public/fonts/Mont/fonnts.com-Mont_Bold.ttf", weight: "700", style: "normal" },
+    { path: "../public/fonts/Mont/fonnts.com-Mont_Heavy_DEMO.ttf", weight: "900", style: "normal" },
+  ],
+  variable: "--font-mont",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+// ---------------- SF PRO FONT ----------------
+
+const sfPro = localFont({
+  src: [
+    { path: "../public/fonts/SF-Pro-Text/SF-Pro-Text-Ultralight.otf", weight: "200", style: "normal" },
+    { path: "../public/fonts/SF-Pro-Text/SF-Pro-Text-Thin.otf", weight: "300", style: "normal" },
+    { path: "../public/fonts/SF-Pro-Text/SF-Pro-Text-Light.otf", weight: "300", style: "normal" },
+    { path: "../public/fonts/SF-Pro-Text/SF-Pro-Text-Regular.otf", weight: "400", style: "normal" },
+    { path: "../public/fonts/SF-Pro-Text/SF-Pro-Text-Medium.otf", weight: "500", style: "normal" },
+    { path: "../public/fonts/SF-Pro-Text/SF-Pro-Text-Semibold.otf", weight: "600", style: "normal" },
+    { path: "../public/fonts/SF-Pro-Text/SF-Pro-Text-Bold.otf", weight: "700", style: "normal" },
+    { path: "../public/fonts/SF-Pro-Text/SF-Pro-Text-Heavy.otf", weight: "800", style: "normal" },
+  ],
+  variable: "--font-sfpro",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -25,9 +49,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${mont.variable} ${sfPro.variable} antialiased`}
       >
+        <Header/>
         {children}
+        <Footer/>
       </body>
     </html>
   );

@@ -1,26 +1,77 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    font-family: var(--font-mont);
+     font-family: var(--font-sfpro);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@theme {
+  --color-orange: #ff6f61;
+  --color-gray: #212121;
+  --color-green: #00796b;
+  --color-para: #4d4d4d;
+  --color-text-gray: #646464;
+  --color-light-gray: #d3d3d3;
+}
+
+.mont-text {
+   font-family: var(--font-mont);
+}
+
+.py-30 {
+  padding: 30px 0;
+}
+.mb-30 {
+  margin-bottom: 30px;
+}
+.gradient {
+  background: linear-gradient(
+    180deg,
+    #ff6f6100 0%,
+    #ff6f6119 50%,
+    #ff6f61 100%
+  );
+}
+.container-custom {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* global.css */
+.container-custom {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container-custom { max-width: 640px; }
+}
+
+@media (min-width: 768px) {
+  .container-custom { max-width: 768px; }
+}
+
+@media (min-width: 1024px) {
+  .container-custom { max-width: 1024px; }
+}
+
+@media (min-width: 1280px) {
+  .container-custom { max-width: 1170px; } /* figma size */
+}
+
+@media (min-width: 1441px) {
+  .container-custom { max-width: 1320px; } /* balanced */
+}
+
+@media (min-width: 1600px) {
+  .container-custom { max-width: 1400px; } /* less empty space */
+}
+
+@media (min-width: 1920px) {
+  .container-custom { max-width: 1600px; } /* modern wide layout */
 }

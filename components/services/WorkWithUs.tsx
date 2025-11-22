@@ -78,7 +78,7 @@ const listItem = {
         >
           {/* Heading */}
           <motion.h2
-            className="text-[38px] font-extrabold text-gray mb-[20px]"
+            className="text-[38px] font-extrabold text-gray mb-[20px] mont-text"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
@@ -110,7 +110,7 @@ const listItem = {
                 </div>
 
                 <div>
-                  <h3 className="text-lg leading-[20px] font-semibold text-gray mb-[14px]">
+                  <h3 className="text-lg leading-[20px] font-semibold text-gray mb-[14px] mont-text">
                     {item.title}
                   </h3>
 

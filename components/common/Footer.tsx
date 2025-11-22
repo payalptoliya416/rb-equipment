@@ -20,14 +20,14 @@ function Footer() {
       >
         <div className="grid grid-cols-12 container-custom mx-auto">
           <div className="col-span-12 sm:col-span-10 md:col-span-7 xl:col-span-5 2xl:col-span-4">
-            <h3 className="text-white text-3xl md:text-[38px] md:leading-[55px] font-extrabold mb-[15px]">
+            <h3 className="text-white text-3xl md:text-[38px] md:leading-[55px] font-bold mb-[15px] mont-text">
               Ready to Buy or Sell Equipment Today?
             </h3>
             <p className=" text-white text-base leading-[26px] mb-[30px] pr-10">
               Join thousands of satisfied customers who trust RB Equipment Sales
               for industrial and agricultural machinery.
             </p>
-            <button className="text-green bg-white  py-[14px] px-[22px]  rounded-xl text-base leading-[16px] font-semibold">
+            <button className="text-green bg-white  py-[14px] px-[22px]  rounded-xl text-base leading-[16px] font-semibold mont-text">
               Start Now
             </button>
           </div>
@@ -53,47 +53,47 @@ function Footer() {
               </p>
               <div className="flex items-center gap-[15px]">
 
-  {/* Facebook */}
-  <a
-    href="https://facebook.com/"
-    target="_blank"
-    className="border border-light-gray w-7 h-7 rounded-full flex justify-center items-center"
-  >
-    <FaFacebookF className="text-light-gray" />
-  </a>
+              {/* Facebook */}
+              <a
+                href="https://facebook.com/"
+                target="_blank"
+                className="border border-light-gray w-7 h-7 rounded-full flex justify-center items-center"
+              >
+                <FaFacebookF className="text-light-gray" />
+              </a>
 
-  {/* Twitter / X */}
-  <a
-    href="https://twitter.com/"
-    target="_blank"
-    className="border border-light-gray w-7 h-7 rounded-full flex justify-center items-center"
-  >
-    <FaXTwitter className="text-light-gray" />
-  </a>
+              {/* Twitter / X */}
+              <a
+                href="https://twitter.com/"
+                target="_blank"
+                className="border border-light-gray w-7 h-7 rounded-full flex justify-center items-center"
+              >
+                <FaXTwitter className="text-light-gray" />
+              </a>
 
-  {/* Instagram */}
-  <a
-    href="https://instagram.com/"
-    target="_blank"
-    className="border border-light-gray w-7 h-7 rounded-full flex justify-center items-center"
-  >
-    <FaInstagram className="text-light-gray" />
-  </a>
+              {/* Instagram */}
+              <a
+                href="https://instagram.com/"
+                target="_blank"
+                className="border border-light-gray w-7 h-7 rounded-full flex justify-center items-center"
+              >
+                <FaInstagram className="text-light-gray" />
+              </a>
 
-  {/* LinkedIn */}
-  <a
-    href="https://linkedin.com/"
-    target="_blank"
-    className="border border-light-gray w-7 h-7 rounded-full flex justify-center items-center"
-  >
-    <FaLinkedinIn className="text-light-gray" />
-  </a>
+              {/* LinkedIn */}
+              <a
+                href="https://linkedin.com/"
+                target="_blank"
+                className="border border-light-gray w-7 h-7 rounded-full flex justify-center items-center"
+              >
+                <FaLinkedinIn className="text-light-gray" />
+              </a>
 
              </div>
             </div>
             <div className="col-span-12 sm:col-span-6 lg:col-span-4 flex lg:justify-center mb-10 sm:mb-0">
               <div>
-                <h3 className="text-orange mb-5 text-lg leading-[18px]">Quick Links</h3>
+                <h3 className="text-orange mb-5 text-lg leading-[18px]  mont-text">Quick Links</h3>
               <ul className="space-y-[15px]">
                 <li>
                   <Link href='/' className="text-light-gray text-base leading-[16px] font-normal">Index</Link>
@@ -114,7 +114,7 @@ function Footer() {
               </div>
             </div>
             <div className="col-span-12 sm:col-span-6 lg:col-span-4">
-                 <h3 className="text-orange mb-5 text-lg leading-[18px]">Quick Links</h3>
+                 <h3 className="text-orange mb-5 text-lg leading-[18px]  mont-text">Contact Info</h3>
                   <a href="tel:+345209001307" className="block mb-5">
                   <div className="flex gap-3 items-center">
                    <div>

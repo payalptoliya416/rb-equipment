@@ -14,7 +14,7 @@ function OurCommentment() {
                       />
                     </div>
                     <div className="col-span-12 lg:col-span-6 order-1 lg:order-2 mb-5 lg:mb-0">
-                      <h2 className="text-[38px] leading-[38px] mb-[15px] font-bold text-gray">
+                      <h2 className="text-[38px] leading-[38px] mb-[15px] font-bold text-gray mont-text">
                        Our <span className="text-orange">Commitment</span>
                       </h2>
                       <p className="mb-[15px] text-[16px] leading-[26px] font-normal text-text-gray">

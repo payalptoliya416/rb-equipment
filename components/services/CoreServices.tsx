@@ -38,7 +38,7 @@ function CoreServices() {
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
       >
-        <h2 className="text-3xl md:text-[38px] md:leading-[38px] mb-10 lg:mb-20 font-extrabold text-gray">
+        <h2 className="text-3xl md:text-[38px] md:leading-[38px] mb-10 lg:mb-20 font-extrabold text-gray mont-text">
           Core <span className="text-orange">Services</span>
         </h2>
       </motion.div>
@@ -98,7 +98,7 @@ function CoreServices() {
               <Image src={service.icon} alt="icon" width={40} height={40} />
             </motion.div>
 
-            <h3 className="text-gray mb-[10px] text-lg leading-[20px] font-semibold">
+            <h3 className="text-gray mb-[10px] text-lg leading-[20px] font-semibold mont-text">
               {service.title}
             </h3>
 

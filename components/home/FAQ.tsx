@@ -19,14 +19,19 @@ function FAQ() {
       answer:
         "You can easily register by creating an account on our website using your email or phone number. After quick verification, you’ll unlock full access to our live auctions, bidding features, and exclusive equipment listings.",
     },
-    { question: "What payment methods do you accept?", answer: "" },
-    { question: "How is shipping handled after purchase?", answer: "" },
+    { question: "What payment methods do you accept?",  answer:
+        "You can easily register by creating an account on our website using your email or phone number. After quick verification, you’ll unlock full access to our live auctions, bidding features, and exclusive equipment listings." },
+    { question: "How is shipping handled after purchase?",  answer:
+        "You can easily register by creating an account on our website using your email or phone number. After quick verification, you’ll unlock full access to our live auctions, bidding features, and exclusive equipment listings." },
     {
       question: "Can I inspect the equipment before buying or bidding?",
-      answer: "",
+       answer:
+        "You can easily register by creating an account on our website using your email or phone number. After quick verification, you’ll unlock full access to our live auctions, bidding features, and exclusive equipment listings.",
     },
-    { question: "How can I sell my equipment on your platform?", answer: "" },
-    { question: "What happens if I win an auction?", answer: "" },
+    { question: "How can I sell my equipment on your platform?",  answer:
+        "You can easily register by creating an account on our website using your email or phone number. After quick verification, you’ll unlock full access to our live auctions, bidding features, and exclusive equipment listings." },
+    { question: "What happens if I win an auction?",  answer:
+        "You can easily register by creating an account on our website using your email or phone number. After quick verification, you’ll unlock full access to our live auctions, bidding features, and exclusive equipment listings." },
   ];
 
   return (
@@ -37,7 +42,7 @@ function FAQ() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-3xl md:text-[38px] md:leading-[38px] mb-[15px] font-extrabold text-gray"
+          className="text-3xl md:text-[38px] md:leading-[38px] mb-[15px] font-extrabold text-gray mont-text"
         >
           Frequently Asked <span className="text-orange">Questions</span>
         </motion.h2>
@@ -60,7 +65,7 @@ function FAQ() {
                 {/* Header */}
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : i)}
-                  className={`w-full flex items-center justify-between rounded-xl border border-light-gray px-[22px] py-5 text-left font-medium text-[16px] gap-2 md:gap-0 transition-all
+                  className={`w-full flex items-center justify-between rounded-xl border border-light-gray px-[22px] py-5 text-left font-semibold text-[16px] gap-2 md:gap-0 transition-all mont-text
                     ${isOpen ? "bg-green text-white" : "bg-white text-gray"}
                   `}
                 >

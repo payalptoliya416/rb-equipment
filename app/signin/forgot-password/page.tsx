@@ -51,7 +51,7 @@ export default function ForgotPassword(): JSX.Element {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-[38px] font-extrabold text-center text-gray mb-[15px] leading-[38px]"
+          className="text-[38px] font-extrabold text-center text-gray mb-[15px] leading-[38px]  mont-text"
         >
           Forgot Your <span className="text-orange">Password?</span>
         </motion.h2>
@@ -85,7 +85,7 @@ export default function ForgotPassword(): JSX.Element {
 
                 {/* Email */}
                 <motion.div variants={itemVariant}>
-                  <label className="text-[#333333] font-medium mb-3">
+                  <label className="text-[#333333] font-medium mb-3  mont-text">
                     Email Address
                   </label>
                   <Field
@@ -108,7 +108,7 @@ export default function ForgotPassword(): JSX.Element {
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   type="submit"
-                  className="w-full bg-green text-white py-[14px] rounded-lg text-lg hover:opacity-90 transition"
+                  className="w-full bg-green text-white py-[14px] rounded-lg text-lg hover:opacity-90 transition  mont-text"
                 >
                   Reset it
                 </motion.button>
@@ -123,7 +123,7 @@ export default function ForgotPassword(): JSX.Element {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7, duration: 0.5 }}
-          className="text-center text-[#333333] mt-[25px] text-lg"
+          className="text-center text-[#333333] mt-[25px] text-lg  mont-text font-semibold"
         >
           Don't have an account?{" "}
           <Link href="/signup" className="text-green">

@@ -25,7 +25,7 @@ function AboutUsHero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <h2 className="text-3xl md:text-[42px] leading-[48px] md:leading-[60px] font-extrabold mb-5">
+            <h2 className="text-3xl md:text-[42px] leading-[48px] md:leading-[60px] font-extrabold mb-5 mont-text">
               Your<span className="text-orange"> Trusted Partner </span>{" "}
               in Equipment Sales
             </h2>
@@ -45,7 +45,7 @@ function AboutUsHero() {
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
           >
             <div className="flex justify-end">
-              <motion.div whileHover={{ scale: 1.03 }}>
+              <motion.div>
                 <Image
                   src="/assets/about-hero.png"
                   alt="Hero"

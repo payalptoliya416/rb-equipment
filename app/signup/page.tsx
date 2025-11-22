@@ -65,7 +65,7 @@ export default function CreateAccount(): JSX.Element {
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-3xl md:text-[38px] font-extrabold text-center text-gray mb-[15px] leading-[38px]"
+          className="text-3xl md:text-[38px] font-extrabold text-center text-gray mb-[15px] leading-[38px]  mont-text"
         >
           Create Your <span className="text-orange">Account</span>
         </motion.h2>
@@ -118,7 +118,7 @@ export default function CreateAccount(): JSX.Element {
                 >
                   {/* First Name */}
                   <div>
-                    <label className="text-[#333333] font-medium text-lg mb-3">
+                    <label className="text-[#333333] font-medium text-lg mb-3  mont-text">
                       First Name
                     </label>
                     <Field
@@ -135,7 +135,7 @@ export default function CreateAccount(): JSX.Element {
 
                   {/* Last Name */}
                   <div>
-                    <label className="text-[#333333] font-medium text-lg mb-3">
+                    <label className="text-[#333333] font-medium text-lg mb-3  mont-text">
                       Last Name
                     </label>
                     <Field
@@ -158,7 +158,7 @@ export default function CreateAccount(): JSX.Element {
                 >
                   {/* Email */}
                   <div>
-                    <label className="text-[#333333] font-medium text-lg mb-3">
+                    <label className="text-[#333333] font-medium text-lg mb-3  mont-text">
                       Email Address
                     </label>
                     <Field
@@ -176,7 +176,7 @@ export default function CreateAccount(): JSX.Element {
 
                   {/* Phone */}
                   <div>
-                    <label className="text-[#333333] font-medium text-lg mb-3">
+                    <label className="text-[#333333] font-medium text-lg mb-3  mont-text">
                       Phone Number
                     </label>
                     <Field
@@ -194,7 +194,7 @@ export default function CreateAccount(): JSX.Element {
 
                 {/* Address */}
                 <motion.div variants={itemVariant}>
-                  <label className="text-[#333333] font-medium text-lg mb-3">
+                  <label className="text-[#333333] font-medium text-lg mb-3  mont-text">
                     Address
                   </label>
                   <Field
@@ -215,7 +215,7 @@ export default function CreateAccount(): JSX.Element {
                   className="grid grid-cols-1 md:grid-cols-2 gap-6"
                 >
                   <div>
-                    <label className="text-[#333333] font-medium text-lg mb-3">
+                    <label className="text-[#333333] font-medium text-lg mb-3  mont-text">
                       Company Name
                     </label>
                     <Field
@@ -231,7 +231,7 @@ export default function CreateAccount(): JSX.Element {
                   </div>
 
                   <div>
-                    <label className="text-[#333333] font-medium text-lg mb-3">
+                    <label className="text-[#333333] font-medium text-lg mb-3  mont-text">
                       City
                     </label>
                     <Field
@@ -254,7 +254,7 @@ export default function CreateAccount(): JSX.Element {
                 >
                   {/* State */}
                   <div>
-                    <label className="text-[#333333] font-medium text-lg mb-3">
+                    <label className="text-[#333333] font-medium text-lg mb-3  mont-text">
                       State
                     </label>
                     <Field
@@ -276,7 +276,7 @@ export default function CreateAccount(): JSX.Element {
 
                   {/* Zip */}
                   <div>
-                    <label className="text-[#333333] font-medium text-lg mb-3">
+                    <label className="text-[#333333] font-medium text-lg mb-3  mont-text">
                       Zip Code
                     </label>
                     <Field
@@ -299,7 +299,7 @@ export default function CreateAccount(): JSX.Element {
                 >
                   {/* Password */}
                   <div>
-                    <label className="text-[#333333] font-medium text-lg mb-3">
+                    <label className="text-[#333333] font-medium text-lg mb-3  mont-text">
                       Password
                     </label>
                     <Field
@@ -317,7 +317,7 @@ export default function CreateAccount(): JSX.Element {
 
                   {/* Confirm Password */}
                   <div>
-                    <label className="text-[#333333] font-medium text-lg mb-3">
+                    <label className="text-[#333333] font-medium text-lg mb-3  mont-text">
                       Confirm Password
                     </label>
                     <Field
@@ -370,7 +370,7 @@ export default function CreateAccount(): JSX.Element {
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   type="submit"
-                  className="w-full bg-green text-white py-[18px] rounded-lg font-semibold text-lg leading-[18px] hover:opacity-90 transition"
+                  className="w-full bg-green text-white py-[18px] rounded-lg font-semibold text-lg leading-[18px] hover:opacity-90 transition  mont-text"
                 >
                   Create Account
                 </motion.button>
@@ -384,10 +384,10 @@ export default function CreateAccount(): JSX.Element {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7, duration: 0.6 }}
-          className="text-center text-gray-700 mt-[30px]"
+          className="text-center text-[#333333] mt-[30px]  mont-text font-semibold"
         >
           Already have an account?{" "}
-          <Link href="/signin" className="text-green font-semibold hover:underline">
+          <Link href="/signin" className="text-green">
             Sign in
           </Link>
         </motion.p>

@@ -3,7 +3,7 @@ function Partner() {
   return (
     <section className="my-20 lg:my-[110px] px-5 ">
       <div className="container-custom mx-auto bg-green rounded-[20px] py-10 px-16">
-        <h3 className="text-white text-center text-[38px] leading-[38px] mb-[35px] font-extrabold">
+        <h3 className="text-white text-center text-[38px] leading-[38px] mb-[35px] font-extrabold mont-text">
           Partners & Brands
         </h3>
         <div

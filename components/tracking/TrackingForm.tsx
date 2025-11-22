@@ -40,7 +40,7 @@ export default function TrackingForm(): JSX.Element {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="text-3xl md:text-[38px] font-extrabold text-center text-gray-900 mb-3"
+          className="text-3xl md:text-[38px] font-extrabold text-center text-gray-900 mb-3 mont-text"
         >
           Enter Your <span className="text-orange">Tracking Number</span>
         </motion.h2>
@@ -66,7 +66,7 @@ export default function TrackingForm(): JSX.Element {
         >
           {/* Tracking Number */}
           <motion.div variants={inputItem}>
-            <label className="text-gray-800 font-medium">Tracking Number</label>
+            <label className="text-gray-800 font-medium mont-text">Tracking Number</label>
             <input
               type="text"
               placeholder="Tracking Number"
@@ -80,7 +80,7 @@ export default function TrackingForm(): JSX.Element {
           {/* Email + Phone Fields */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <motion.div variants={inputItem}>
-              <label className="text-gray-800 font-medium">Email Address</label>
+              <label className="text-gray-800 font-medium mont-text">Email Address</label>
               <input
                 type="email"
                 placeholder="Enter your email address"
@@ -92,7 +92,7 @@ export default function TrackingForm(): JSX.Element {
             </motion.div>
 
             <motion.div variants={inputItem}>
-              <label className="text-gray-800 font-medium">Phone Number</label>
+              <label className="text-gray-800 font-medium mont-text">Phone Number</label>
               <input
                 type="text"
                 placeholder="Enter your phone number"
@@ -116,7 +116,7 @@ export default function TrackingForm(): JSX.Element {
               type="submit"
               className="
                 bg-green text-white px-10 py-3 rounded-lg 
-                font-semibold text-lg hover:opacity-90 transition
+                font-semibold text-lg hover:opacity-90 transition mont-text
               "
             >
               Track Now

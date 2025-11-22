@@ -17,7 +17,7 @@ function Testimonial() {
           transition={{ duration: 0.7 }}
           className="text-center mb-10"
         >
-          <h2 className="text-3xl md:text-[38px] md:leading-[38px] mb-[15px] font-extrabold text-gray">
+          <h2 className="text-3xl md:text-[38px] md:leading-[38px] mb-[15px] font-extrabold text-gray  mont-text">
             What <span className="text-orange">Our Clients</span> Say
           </h2>
         </motion.div>
@@ -88,7 +88,7 @@ function Testimonial() {
                     className="rounded-full"
                   />
                   <div>
-                    <h3 className="text-gray text-lg leading-[20px] mb-[10px] font-semibold">
+                    <h3 className="text-gray text-lg leading-[20px] mb-[10px] font-semibold  mont-text">
                       {item.name}
                     </h3>
                     <p className="text-text-gray text-base leading-[16px] font-normal">

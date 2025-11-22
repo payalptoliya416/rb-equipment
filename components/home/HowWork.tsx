@@ -4,7 +4,7 @@ function HowWork() {
   return (
     <section className="container-custom mx-auto my-20 lg:my-[110px]">
       <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-[38px] md:leading-[38px] mb-[15px] font-extrabold text-gray">
+        <h2 className="text-3xl md:text-[38px] md:leading-[38px] mb-[15px] font-extrabold text-gray mont-text">
           How It <span className="text-orange">Works</span>
         </h2>
         <p className="text-base leading-[16px] text-text-gray">
@@ -35,7 +35,7 @@ function HowWork() {
           <div className="text-white w-20 h-20 rounded-[10px] mx-auto flex justify-center items-center bg-green mb-[30px]">
             <Image src="/assets/icon5.svg" width={40} height={40} alt="icon" />
           </div>
-          <h3 className="mb-[10px] text-gray text-lg leading-[20px] font-semibold">
+          <h3 className="mb-[10px] text-gray text-lg leading-[20px] font-semibold mont-text">
             Browse Inventory
           </h3>
           <p className=" text-base leading-[26px] text-text-gray">
@@ -47,7 +47,7 @@ function HowWork() {
           <div className="text-white w-20 h-20 rounded-[10px] mx-auto flex justify-center items-center bg-green mb-[30px]">
             <Image src="/assets/icon6.svg" width={40} height={40} alt="icon" />
           </div>
-          <h3 className="mb-[10px] text-gray text-lg leading-[20px] font-semibold">
+          <h3 className="mb-[10px] text-gray text-lg leading-[20px] font-semibold mont-text">
             Bid & Buy
           </h3>
           <p className=" text-base leading-[26px] text-text-gray">
@@ -59,7 +59,7 @@ function HowWork() {
           <div className="text-white w-20 h-20 rounded-[10px] mx-auto flex justify-center items-center bg-green mb-[30px]">
             <Image src="/assets/icon7.svg" width={40} height={40} alt="icon" />
           </div>
-          <h3 className="mb-[10px] text-gray text-lg leading-[20px] font-semibold">
+          <h3 className="mb-[10px] text-gray text-lg leading-[20px] font-semibold mont-text">
             Track Order
           </h3>
           <p className=" text-base leading-[26px] text-text-gray">

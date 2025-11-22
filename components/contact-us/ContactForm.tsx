@@ -63,7 +63,7 @@ export default function ContactForm(): JSX.Element {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="text-3xl md:text-[38px] font-extrabold text-center text-gray mb-[15px]"
+            className="text-3xl md:text-[38px] font-extrabold text-center text-gray mb-[15px] mont-text"
           >
             Send Us a <span className="text-orange">Message</span>
           </motion.h2>
@@ -89,7 +89,7 @@ export default function ContactForm(): JSX.Element {
             {/* Row 1 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <motion.div variants={inputVariant}>
-                <label className="text-[#333333] font-medium text-lg mb-3">First Name</label>
+                <label className="text-[#333333] font-medium text-lg mb-3 mont-text">First Name</label>
                 <input
                   type="text"
                   placeholder="Enter your first name"
@@ -98,7 +98,7 @@ export default function ContactForm(): JSX.Element {
               </motion.div>
 
               <motion.div variants={inputVariant}>
-                <label className="text-[#333333] font-medium text-lg mb-3">Last Name</label>
+                <label className="text-[#333333] font-medium text-lg mb-3 mont-text">Last Name</label>
                 <input
                   type="text"
                   placeholder="Enter your last name"
@@ -110,7 +110,7 @@ export default function ContactForm(): JSX.Element {
             {/* Row 2 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <motion.div variants={inputVariant}>
-                <label className="text-[#333333] font-medium text-lg mb-3">Email Address</label>
+                <label className="text-[#333333] font-medium text-lg mb-3 mont-text">Email Address</label>
                 <input
                   type="email"
                   placeholder="Enter your email address"
@@ -119,7 +119,7 @@ export default function ContactForm(): JSX.Element {
               </motion.div>
 
               <motion.div variants={inputVariant}>
-                <label className="text-[#333333] font-medium text-lg mb-3">Phone Number</label>
+                <label className="text-[#333333] font-medium text-lg mb-3 mont-text">Phone Number</label>
                 <input
                   type="text"
                   placeholder="Enter your phone number"
@@ -130,7 +130,7 @@ export default function ContactForm(): JSX.Element {
 
             {/* Message */}
             <motion.div variants={inputVariant}>
-              <label className="text-[#333333] font-medium text-lg mb-3">Message</label>
+              <label className="text-[#333333] font-medium text-lg mb-3 mont-text">Message</label>
               <textarea
                 placeholder="Write a message"
                 rows={5}
@@ -148,7 +148,7 @@ export default function ContactForm(): JSX.Element {
                 whileTap={{ scale: 0.97 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
                 type="submit"
-                className="bg-green text-white px-[22px] py-[14px] rounded-lg font-semibold text-base leading-[16px] hover:opacity-90 transition"
+                className="bg-green text-white px-[22px] py-[14px] rounded-lg font-semibold text-base leading-[16px] hover:opacity-90 transition  mont-text"
               >
                 Send Message
               </motion.button>

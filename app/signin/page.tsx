@@ -54,7 +54,7 @@ export default function SignInForm(): JSX.Element {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-3xl md:text-[38px] font-extrabold text-center text-gray mb-[15px]"
+          className="text-3xl md:text-[38px] font-extrabold text-center text-gray mb-[15px] mont-text"
         >
           Sign In your <span className="text-orange">account</span>
         </motion.h2>
@@ -91,7 +91,7 @@ export default function SignInForm(): JSX.Element {
               <Form className="space-y-6">
                 {/* Email */}
                 <motion.div variants={itemVariant}>
-                  <label className="text-[#333333] font-medium mb-3 block text-lg leading-[18px]">
+                  <label className="text-[#333333] font-medium mb-3 block text-lg leading-[18px]  mont-text">
                     Email Address
                   </label>
                   <Field
@@ -109,7 +109,7 @@ export default function SignInForm(): JSX.Element {
 
                 {/* Password */}
                 <motion.div variants={itemVariant}>
-                  <label className="text-[#333333] font-medium mb-3 block text-lg leading-[18px]">
+                  <label className="text-[#333333] font-medium mb-3 block text-lg leading-[18px]  mont-text">
                     Password
                   </label>
                   <Field
@@ -146,7 +146,7 @@ export default function SignInForm(): JSX.Element {
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   type="submit"
-                  className="w-full bg-green text-white py-[14px] rounded-lg font-semibold text-lg hover:opacity-90 transition"
+                  className="w-full bg-green text-white py-[14px] rounded-lg font-semibold text-lg hover:opacity-90 transition mont-text"
                 >
                   Sign In →
                 </motion.button>
@@ -162,7 +162,7 @@ export default function SignInForm(): JSX.Element {
                 <motion.button
                   variants={itemVariant}
                   whileHover={{ scale: 1.02 }}
-                  className="w-full flex items-center justify-center gap-3 border border-light-gray rounded-[10px] py-[18px] hover:bg-gray-50 transition text-[#333333] text-lg cursor-pointer"
+                  className="w-full flex items-center justify-center gap-3 border border-light-gray rounded-[10px] py-[18px] hover:bg-gray-50 transition text-[#333333] text-lg cursor-pointer  mont-text"
                   type="button"
                 >
                   <Image
@@ -183,7 +183,7 @@ export default function SignInForm(): JSX.Element {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7, duration: 0.5 }}
-          className="text-center text-[#333333] mt-[25px] text-lg"
+          className="text-center text-[#333333] mt-[25px] text-lg  mont-text font-semibold"
         >
           Don't have an account?{" "}
           <Link href="/signup" className="text-green">

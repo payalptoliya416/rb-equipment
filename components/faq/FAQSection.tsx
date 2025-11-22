@@ -105,7 +105,7 @@ const itemVariant = {
                 onClick={() => toggle(i)}
                 className={`
                   w-full flex justify-between items-center px-5 py-4 rounded-xl border cursor-pointer
-                  transition-all text-left font-semibold text-lg
+                  transition-all text-left font-semibold text-lg mont-text
                   ${
                     isOpen
                       ? "bg-green text-white border-green"

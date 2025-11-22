@@ -41,7 +41,7 @@ function VerifyAccount(): JSX.Element {
          initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-        className="text-3xl sm:text-[38px] sm:leading-[38px] mb-[15px] text-center font-semibold text-gray-text">
+        className="text-3xl sm:text-[38px] sm:leading-[38px] mb-[15px] text-center font-semibold text-gray-text mont-text">
           Verify your <span className="text-orange">account</span>
         </motion.h3>
 
@@ -56,7 +56,7 @@ function VerifyAccount(): JSX.Element {
 
         <form onSubmit={handleSubmit} className="space-y-6">
 
-          <p className="text-[#333333] text-lg leading-[18px] font-medium mb-[12px]">Driving License</p>
+          <p className="text-[#333333] text-lg leading-[18px] font-medium mb-[12px] mont-text">Driving License</p>
 
           <motion.label
            whileHover={{ scale: 1.02 }}
@@ -74,7 +74,7 @@ function VerifyAccount(): JSX.Element {
               className="mb-[15px]"
             />
 
-                <p className="text-[#333333] font-medium mb-[25px] text-lg leading-[18px]">
+                <p className="text-[#333333] font-medium mb-[25px] text-lg leading-[18px] mont-text">
               Upload a File
             </p>
            <AnimatePresence mode="wait">
@@ -83,7 +83,7 @@ function VerifyAccount(): JSX.Element {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-            className="text-base text-[#7A7A7A] py-[10px] leading-[16px] px-[20px] rounded-md border border-[#7A7A7A]">
+            className="text-base text-[#7A7A7A] py-[10px] leading-[16px] px-[20px] rounded-md border border-[#7A7A7A] mont-text">
               {selectedFile ? selectedFile.name : "Choose File"}
             </motion.div>
            </AnimatePresence>
@@ -106,7 +106,7 @@ function VerifyAccount(): JSX.Element {
               whileTap={{ scale: 0.92 }}
               className="
                 bg-green text-white px-[22px] py-[14px] rounded-lg 
-                hover:opacity-90 transition leading-[16px] text-base cursor-pointer" >
+                hover:opacity-90 transition leading-[16px] text-base cursor-pointer mont-text" >
               Submit
             </motion.button>
           </div>

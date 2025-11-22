@@ -47,30 +47,43 @@ function Header() {
         <ul className="hidden lg:flex justify-center items-center gap-8 md:gap-12">
           {navItems.map((item) => (
             <li key={item.path}>
-              <Link
-                href={item.path}
-                className={`
-                  text-base relative
-                  after:content-[''] after:absolute after:-bottom-1
-                  after:left-1/2 after:-translate-x-1/2
-                  after:h-1 after:w-0
-                   after:bg-[linear-gradient(180deg,#ff6f6100_0%,#ff6f6119_50%,#ff6f61_100%)]
-                  after:transition-all after:duration-300
-                  hover:after:w-8 hover:text-orange transition-all duration-300
-                  ${pathname === item.path
-                    ? "text-orange font-extrabold after:w-8"
-                    : "text-gray-700 font-medium"
-                  }
-                `}
-              >
-                {item.name}
-              </Link>
+           <Link
+              href={item.path}
+              className={`
+                text-base relative
+                after:content-[''] after:absolute after:-bottom-1
+                after:left-1/2 after:-translate-x-1/2
+                after:h-1 after:w-0
+                after:bg-[linear-gradient(180deg,#ff6f6100_0%,#ff6f6119_50%,#ff6f61_100%)]
+                after:transition-all after:duration-300
+                hover:after:w-8 hover:text-orange transition-all duration-300
+                ${
+                  item.path === "/"
+                    ? pathname === "/"
+                      ? "text-orange font-extrabold after:w-8"
+                      : "text-gray-700 font-medium"
+                    : pathname.startsWith(item.path)
+                      ? "text-orange font-extrabold after:w-8"
+                      : "text-gray-700 font-medium"
+                }
+              `}
+            >
+              {item.name}
+            </Link>
             </li>
           ))}
         </ul>
 
-        {/* Contact Button for Desktop & Tablet */}
-        <Link href='/contact-us' className="hidden lg:block text-green bg-white py-2 px-4 md:py-3 md:px-6 rounded-lg font-semibold hover:bg-orange transition-colors">
+            <Link
+          href="/contact-us"
+          className="
+            hidden lg:block text-green bg-white py-2 px-4 md:py-3 md:px-6 rounded-lg font-semibold
+            transition-all duration-300
+            hover:bg-green hover:text-white 
+            hover:-translate-y-[2px]
+            hover:shadow-[0_4px_15px_rgba(0,0,0,0.15)]
+          "
+        >
           Contact Us
         </Link>
 
@@ -90,34 +103,48 @@ function Header() {
         <ul className="flex flex-col items-center gap-4">
           {navItems.map((item) => (
             <li key={item.path}>
-              <Link
-                href={item.path}
-                className={`
-                  text-base relative
-                  after:content-[''] after:absolute after:-bottom-1
-                  after:left-1/2 after:-translate-x-1/2
-                  after:h-1 after:w-0
-                  after:bg-orange
-                  after:transition-all after:duration-300
-                  hover:after:w-8 hover:text-orange transition-all duration-300
-                  ${pathname === item.path
-                    ? "text-orange font-extrabold after:w-8"
-                    : "text-gray-700 font-medium"
-                  }
-                `}
-              >
-                {item.name}
-              </Link>
+             <Link
+              href={item.path}
+              className={`
+                text-base relative
+                after:content-[''] after:absolute after:-bottom-1
+                after:left-1/2 after:-translate-x-1/2
+                after:h-1 after:w-0
+                after:bg-orange
+                after:transition-all after:duration-300
+                hover:after:w-8 hover:text-orange transition-all duration-300
+                ${
+                  item.path === "/"
+                    ? pathname === "/"
+                      ? "text-orange font-extrabold after:w-8"
+                      : "text-gray-700 font-medium"
+                    : pathname.startsWith(item.path)
+                      ? "text-orange font-extrabold after:w-8"
+                      : "text-gray-700 font-medium"
+                }
+              `}
+            >
+              {item.name}
+            </Link>
             </li>
           ))}
         </ul>
 
         {/* Contact Button for Mobile */}
-        <div className="flex justify-center">
-        <Link href='/contact-us' className=" text-green bg-white py-3 px-6 rounded-lg font-semibold mt-4 hover:bg-orange transition-colors">
-          Contact Us
-        </Link>
-        </div>
+      <div className="flex justify-center">
+  <Link
+    href="/contact-us"
+    className="
+      text-green bg-white py-3 px-6 rounded-lg font-semibold mt-4 
+      transition-all duration-300 
+      hover:bg-green hover:text-white hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)]
+      hover:-translate-y-1
+    "
+  >
+    Contact Us
+  </Link>
+</div>
+
       </div>
     </header>
   );

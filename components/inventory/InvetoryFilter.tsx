@@ -2,19 +2,61 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+import { Disclosure } from "@headlessui/react";
+import { Listbox, Transition } from "@headlessui/react";
+import { FaChevronDown } from "react-icons/fa";
 
 export default function InventoryFilter() {
   const min = 1990;
   const max = 2024;
   const [value, setValue] = useState(2010);
-
   const progress = ((value - min) / (max - min)) * 100;
-
-  // Sidebar open/close (mobile)
   const [openSidebar, setOpenSidebar] = useState(false);
+
+  const makes = ["Any Make", "John Deere", "CAT", "Komatsu", "Volvo"];
+  const [selectedMake, setSelectedMake] = useState(makes[0]);
+
+  const models = ["Select Make first", "Model A", "Model B", "Model C"];
+  const [selectedModel, setSelectedModel] = useState(models[0]);
+
+  // pagination
+ const allProducts = Array.from({ length: 20 }, (_, i) => ({
+  id: i + 1,
+  name: `Product ${i + 1}`,
+  hours: 3825,
+  price: 22640,
+}));
+
+const [currentPage, setCurrentPage] = useState(1);
+const itemsPerPage = 9; // 3x3 grid
+const totalPages = Math.ceil(allProducts.length / itemsPerPage);
+
+// slice products for current page
+const start = (currentPage - 1) * itemsPerPage;
+const end = start + itemsPerPage;
+const currentProducts = allProducts.slice(start, end);
+
+const goNext = () => {
+  if (currentPage < totalPages) setCurrentPage((p) => p + 1);
+};
+
+const goBack = () => {
+  if (currentPage > 1) setCurrentPage((p) => p - 1);
+};
+
+// --short by
+const sortOptions = [
+  "Ending Time: Sooner to Late",
+  "Ending Time: Late to Sooner",
+  "Price: Low to High",
+  "Price: High to Low",
+  "Newest Added",
+];
+
+const [selectedSort, setSelectedSort] = useState(sortOptions[0]);
 
   return (
     <div className="w-full container-custom mx-auto my-[80px] lg:my-[110px] px-4">
@@ -27,7 +69,7 @@ export default function InventoryFilter() {
       className="lg:hidden mb-5">
         <button
           onClick={() => setOpenSidebar(true)}
-          className="px-4 py-2 border border-light-gray rounded-lg text-text-gray"
+          className="px-4 py-2 border border-light-gray rounded-lg text-text-gray mont-text"
         >
           ☰ Filters
         </button>
@@ -65,124 +107,250 @@ export default function InventoryFilter() {
           <motion.div   initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4 }}>
-            <h2 className="font-semibold text-lg mb-[25px] text-gray">Filter by Category</h2>
+              <Disclosure defaultOpen>
+             {({ open }) => (
+              <>
+              <Disclosure.Button className="w-full flex items-center justify-between mt-10 lg:mt-0">
+              <h2 className="font-semibold text-lg text-gray mont-text">Filter by Category</h2>
 
-            <div className="space-y-[21px]">
-              {[
-                ["Wheel Loaders", "(05)"],
-                ["Wheel Excavators", "(01)"],
-                ["Track Excavators", "(03)"],
-                ["Telehandlers", "(08)"],
-                ["Skid Steer Loaders", "(06)"],
-                ["Rollers", "(10)"],
-                ["Mini Excavators", "(15)"],
-                ["Graders", "(02)"],
-                ["Farm Tractors", "(18)"],
-                ["Dumpers", "(20)"],
-                ["Dozers", "(05)"],
-                ["Backhoe Loaders", "(04)"]
-              ].map(([label, count], idx) => (
-                <label key={idx} className="flex items-center justify-between text-base">
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      className="w-4 h-4 rounded-full border-[#BCBCBC]"
-                    />
-                    <span className="text-text-gray">{label}</span>
+                  <FaChevronDown
+                    className={`text-gray transition-transform duration-300 ${
+                      open ? "rotate-180" : "rotate-0"
+                    }`}
+                  />
+                </Disclosure.Button>
+
+                <Disclosure.Panel>
+                  <div className="mt-[25px] space-y-5">
+
+                    {[
+                      ["Wheel Loaders", "(05)"],
+                      ["Wheel Excavators", "(01)"],
+                      ["Track Excavators", "(03)"],
+                      ["Telehandlers", "(08)"],
+                      ["Skid Steer Loaders", "(06)"],
+                      ["Rollers", "(10)"],
+                      ["Mini Excavators", "(15)"],
+                      ["Graders", "(02)"],
+                      ["Farm Tractors", "(18)"],
+                      ["Dumpers", "(20)"],
+                      ["Dozers", "(05)"],
+                      ["Backhoe Loaders", "(04)"],
+                    ].map(([label, count], idx) => (
+                      <label
+                        key={idx}
+                        className="flex items-center justify-between text-base"
+                      >
+                        <div className="flex items-center gap-3">
+                          <input
+                            type="checkbox"
+                            className="w-5 h-5 rounded border-[2px] border-light-gray"
+                          />
+                          <span className="text-text-gray">{label}</span>
+                        </div>
+
+                        <span className="text-text-gray">{count}</span>
+                      </label>
+                    ))}
+
                   </div>
-                  <span className="text-text-gray">{count}</span>
-                </label>
-              ))}
-            </div>
+                </Disclosure.Panel>
+              </>
+             )}
+              </Disclosure>
           </motion.div>
 
           <div className="border-t border-light-gray my-[30px]" />
 
           {/* MAKE & MODEL */}
+          <Disclosure defaultOpen>
+            {({ open }) => (
           <div>
-            <h2 className="font-semibold text-lg mb-[25px] text-gray">Filter by Make and Model</h2>
+          <Disclosure.Button className="w-full flex items-center justify-between mb-4">
+              <h2 className="font-semibold text-lg text-gray mont-text">
+                Filter by Make and Model
+              </h2>
+              <FaChevronDown
+                className={`text-gray transition-transform duration-300 ${
+                  open ? "rotate-180" : ""
+                }`}
+              />
+            </Disclosure.Button>
+             <Disclosure.Panel className="space-y-5">
 
-            <select className="w-full border border-light-gray rounded-lg py-[13px] px-[15px] text-sm text-text-gray">
-              <option>Any Make</option>
-               <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">
-                            ▼
-                            </div>
-            </select>
+        {/* ============ MAKE DROPDOWN ============ */}
+        <Listbox value={selectedMake} onChange={setSelectedMake}>
+          <div className="relative">
+            <Listbox.Button
+              className="w-full border border-light-gray rounded-lg py-[13px] px-[15px] text-sm text-gray-700 flex justify-between items-center"
+            >
+              {selectedMake}
+              <FaChevronDown className="text-gray-500" />
+            </Listbox.Button>
 
-            <select className="w-full border border-light-gray rounded-lg py-[13px] px-[15px] text-sm mt-5 text-text-gray">
-              <option>Select Make first</option>
-               <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">
-                            ▼
-                            </div>
-            </select>
+            <Transition
+              as={Fragment}
+              leave="transition ease-in duration-100"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <Listbox.Options
+                className="absolute mt-1 w-full bg-white shadow-lg border border-light-gray rounded-lg max-h-48 overflow-auto z-10"
+              >
+                {makes.map((make, idx) => (
+                  <Listbox.Option
+                    key={idx}
+                    value={make}
+                    className={({ active }) =>
+                      `cursor-pointer px-4 py-2 text-sm ${
+                        active ? "bg-green text-white" : "text-gray-700"
+                      }`
+                    }
+                  >
+                    {make}
+                  </Listbox.Option>
+                ))}
+              </Listbox.Options>
+            </Transition>
           </div>
+        </Listbox>
+
+        {/* ============ MODEL DROPDOWN ============ */}
+        <Listbox value={selectedModel} onChange={setSelectedModel}>
+          <div className="relative">
+            <Listbox.Button
+              className="w-full border border-light-gray rounded-lg py-[13px] px-[15px] text-sm text-gray-700 flex justify-between items-center"
+            >
+              {selectedModel}
+              <FaChevronDown className="text-gray-500" />
+            </Listbox.Button>
+
+            <Transition
+              as={Fragment}
+              leave="transition ease-in duration-100"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <Listbox.Options
+                className="absolute mt-1 w-full bg-white shadow-lg border border-light-gray rounded-lg max-h-48 overflow-auto z-10"
+              >
+                {models.map((model, idx) => (
+                  <Listbox.Option
+                    key={idx}
+                    value={model}
+                    className={({ active }) =>
+                      `cursor-pointer px-4 py-2 text-sm ${
+                        active ? "bg-green text-white" : "text-gray-700"
+                      }`
+                    }
+                  >
+                    {model}
+                  </Listbox.Option>
+                ))}
+              </Listbox.Options>
+            </Transition>
+          </div>
+        </Listbox>
+
+      </Disclosure.Panel>
+          </div>
+            )}
+          </Disclosure>
 
           <div className="border-t border-light-gray my-[30px]" />
 
-          {/* FILTER BY YEAR */}
+        <Disclosure defaultOpen>
+        {({ open }) => (
           <div>
-            <h2 className="font-semibold text-lg mb-[25px] text-gray">Filter by Year</h2>
 
-            <div className="flex items-center justify-between text-sm text-[#373737] mb-2">
-              <span>1990</span>
-              <span>2024</span>
-            </div>
+            <Disclosure.Button className="w-full flex items-center justify-between mb-3">
+              <h2 className="font-semibold text-lg text-gray mont-text">Filter by Year</h2>
+              <FaChevronDown
+                className={`text-gray transition-transform duration-300 ${
+                  open ? "rotate-180" : ""
+                }`}
+              />
+            </Disclosure.Button>
 
-            {/* REAL SLIDER */}
-            <div className="w-full mb-5">
-              <div className="relative w-full h-1 bg-light-gray rounded-full my-4">
+            <Disclosure.Panel>
 
-                <div
-                  className="absolute h-[6px] bg-green rounded-full"
-                  style={{ width: `${progress}%` }}
-                />
-
-                <input
-                  type="range"
-                  min={min}
-                  max={max}
-                  value={value}
-                  onChange={(e) => setValue(Number(e.target.value))}
-                  className="
-                    absolute inset-0 w-full appearance-none bg-transparent cursor-pointer
-                    [&::-webkit-slider-thumb]:appearance-none
-                    [&::-webkit-slider-thumb]:w-4
-                    [&::-webkit-slider-thumb]:h-4
-                    [&::-webkit-slider-thumb]:bg-green
-                    [&::-webkit-slider-thumb]:rounded-full
-                    [&::-webkit-slider-thumb]:cursor-pointer
-                  "
-                />
-              </div>
-            </div>
-
-            <div className="flex gap-3">
-              <div className="w-1/2">
-                <label className="text-base text-[#373737]">From</label>
-                <input
-                  type="number"
-                  className="w-full mt-1 border border-light-gray rounded-lg py-2 px-3 text-base"
-                />
+              {/* LIMITS */}
+              <div className="flex items-center justify-between text-sm text-[#373737] mt-3 mb-1">
+                <span>{min}</span>
+                <span>{max}</span>
               </div>
 
-              <div className="w-1/2">
-                <label className="text-base text-[#373737]">To</label>
-                <input
-                  type="number"
-                  className="w-full mt-1 border border-light-gray rounded-lg py-2 px-3 text-base"
-                />
+              {/* SLIDER */}
+              <div className="w-full mb-5">
+                <div className="relative w-full h-1 bg-light-gray rounded-full mt-4">
+
+                  {/* Filled portion */}
+                  <div
+                    className="absolute h-[6px] bg-green rounded-full top-[50%] -translate-y-1/2"
+                    style={{ width: `${progress}%` }}
+                  />
+
+                  {/* Actual range input */}
+                  <input
+                    type="range"
+                    min={min}
+                    max={max}
+                    value={value}
+                    onChange={(e) => setValue(Number(e.target.value))}
+                    className="
+                      absolute inset-0 w-full appearance-none bg-transparent cursor-pointer
+                      [&::-webkit-slider-thumb]:appearance-none
+                      [&::-webkit-slider-thumb]:w-4
+                      [&::-webkit-slider-thumb]:h-4
+                      [&::-webkit-slider-thumb]:bg-green
+                      [&::-webkit-slider-thumb]:rounded-full
+                      [&::-webkit-slider-thumb]:cursor-pointer
+                    "
+                  />
+                </div>
               </div>
-            </div>
 
-            <div className="border-t border-light-gray my-[30px]" />
+              {/* FROM / TO INPUTS */}
+              <div className="flex gap-3">
+                <div className="w-1/2">
+                  <label className="text-base text-[#373737]">From</label>
+                  <input
+                    type="number"
+                    value={min}
+                    className="w-full mt-1 border border-light-gray rounded-lg py-2 px-3 text-base"
+                  />
+                </div>
 
-            <button className="w-full bg-green text-white py-[14px] text-base rounded-lg">
-              Apply Filter
-            </button>
+                <div className="w-1/2">
+                  <label className="text-base text-[#373737]">To</label>
+                  <input
+                    type="number"
+                    value={value}
+                    className="w-full mt-1 border border-light-gray rounded-lg py-2 px-3 text-base"
+                  />
+                </div>
+              </div>
+
+              {/* DIVIDER */}
+              <div className="border-t border-light-gray my-[30px]" />
+
+              {/* BUTTON */}
+             <button
+            className="w-full bg-green text-white py-[14px] text-base rounded-lg
+            flex items-center justify-center gap-2
+            transition-all duration-300 ease-out
+            hover:bg-green/90 hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] cursor-pointer mont-text"
+          >
+            Apply Filter
+          </button>
+
+
+            </Disclosure.Panel>
           </div>
+        )}
+      </Disclosure>
         </aside>
 
-        {/* DARK OVERLAY WHEN SIDEBAR OPEN (MOBILE ONLY) */}
          <AnimatePresence>
         {openSidebar && (
           <motion.div
@@ -192,84 +360,161 @@ export default function InventoryFilter() {
         )}
          </AnimatePresence>
 
-        {/* ================= PRODUCT GRID ================= */}
         <main className="flex-1">
+         <motion.div
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="flex justify-end mb-5"
+        >
+          <div className="flex items-center gap-3 relative">
+            <span className="text-sm font-medium text-gray mont-text">Sort By:</span>
 
-          {/* SORT BAR */}
-          <motion.div
-           initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-          className="flex justify-end mb-5">
-            <div className="flex items-center gap-3">
-              <span className="text-sm font-medium text-gray">Sort By:</span>
-              <select className="border border-light-gray rounded-lg px-3 py-2 text-sm text-text-gray">
-                <option>Ending Time: Sooner to Late</option>
-              </select>
-            </div>
-          </motion.div>
-
-          {/* PRODUCT GRID */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
-            {Array(9)
-              .fill(0)
-              .map((_, i) => (
-                <motion.div
-                 initial={{ opacity: 0, y: 25 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.45,
-                    delay: i * 0.08,
-                    ease: "easeOut"
-                  }}
-                  key={i}
-                  className="border border-light-gray rounded-[10px] p-[15px] bg-white"
+            <Listbox value={selectedSort} onChange={setSelectedSort}>
+              <div className="relative">
+                {/* BUTTON */}
+                <Listbox.Button
+                  className="
+                    border border-light-gray rounded-lg px-3 py-2 text-sm text-text-gray 
+                    flex items-center gap-2 w-60 pr-8 relative
+                  "
                 >
-                  <div className="w-full rounded-[10px] flex items-center justify-center border border-light-gray py-5 px-3 bg-[#E9E9E926] relative group">
-                    <Image src="/assets/filter1.png" alt="product" width={216} height={123} />
-                    <Link href='/inventory/inventory-detail' className="absolute border border-light-gray rounded-md py-[10px] px-[30px] text-green bg-white text-base leading-[16px] left-1/2 bottom-0 -translate-x-1/2 whitespace-nowrap       opacity-0 translate-y-3 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:-translate-y-3">BID OR BUY</Link>
-                  </div>
+                  {selectedSort}
+                  <FaChevronDown
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray text-xs"
+                  />
+                </Listbox.Button>
 
-                  <div className="px-2 mt-[15px]">
-                    <h3 className="font-normal text-lg mb-[10px] text-[#373737]">
-                      2017 Wheel Loaders John Deere 6125M
-                    </h3>
-
-                    <p className="text-text-gray text-base font-normal mb-[15px] leading-[16px]">
-                      Hours: 3,825
-                    </p>
-
-                    <p className="text-base">
-                      <span className="font-semibold text-green">Price: $22,640</span>
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
+                {/* OPTIONS */}
+                <Transition
+                  as={Fragment}
+                  enter="transition duration-200 ease-out"
+                  enterFrom="opacity-0 -translate-y-1"
+                  enterTo="opacity-100 translate-y-0"
+                  leave="transition duration-150 ease-in"
+                  leaveFrom="opacity-100 translate-y-0"
+                  leaveTo="opacity-0 -translate-y-1"
+                >
+                  <Listbox.Options
+                    className="
+                      absolute mt-2 w-full bg-white border border-light-gray 
+                      rounded-lg shadow-md z-50 overflow-hidden
+                    "
+                  >
+                    {sortOptions.map((option, idx) => (
+                      <Listbox.Option
+                        key={idx}
+                        value={option}
+                        className={({ active }) =>
+                          `
+                          cursor-pointer px-3 py-2 text-sm 
+                          ${
+                            active
+                              ? "bg-green/10 text-green"
+                              : "text-text-gray"
+                          }
+                        `
+                        }
+                      >
+                        {option}
+                      </Listbox.Option>
+                    ))}
+                  </Listbox.Options>
+                </Transition>
+              </div>
+            </Listbox>
           </div>
+        </motion.div>
 
-          {/* PAGINATION */}
-          <motion.div className="flex items-center gap-3 justify-center mt-10 flex-wrap"
-          initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
+
+         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
+          {currentProducts.map((product, i) => (
+            <motion.div
+              key={product.id}
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.45,
+                delay: i * 0.08,
+                ease: "easeOut",
+              }}
+              className="border border-light-gray rounded-[10px] p-[15px] bg-white"
             >
-            <button className="flex items-center gap-2 px-4 py-2 border border-light-gray rounded-xl text-text-gray">
-              <FaChevronLeft className="text-sm" />
-              Back
-            </button>
+              <div className="w-full rounded-[10px] flex items-center justify-center border border-light-gray py-5 px-3 bg-[#E9E9E926] relative group">
+                <Image src="/assets/filter1.png" alt="product" width={216} height={123} />
+                <Link
+                  href="/inventory/inventory-detail"
+                  className="absolute border border-light-gray rounded-md py-[10px] px-[30px] text-green bg-white text-base leading-[16px] left-1/2 bottom-0 -translate-x-1/2 whitespace-nowrap opacity-0 translate-y-3 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:-translate-y-3 mont-text"
+                >
+                  BID OR BUY
+                </Link>
+              </div>
 
-            <button className="px-4 py-2 rounded-xl bg-green text-white font-medium">1</button>
+              <div className="px-2 mt-[15px]">
+                <h3 className="font-normal text-lg mb-[10px] text-[#373737]">
+                  2017 Wheel Loaders John Deere 6125M
+                </h3>
 
-            <button className="px-4 py-2 border border-light-gray rounded-xl text-text-gray">2</button>
-            <button className="px-4 py-2 border border-light-gray rounded-xl text-text-gray">3</button>
-            <button className="px-4 py-2 border border-light-gray rounded-xl text-text-gray">4</button>
-            <button className="px-4 py-2 border border-light-gray rounded-xl text-text-gray">5</button>
+                <p className="text-text-gray text-base font-normal mb-[15px] leading-[16px]">
+                  Hours: {product.hours}
+                </p>
 
-            <button className="flex items-center gap-2 px-4 py-2 border border-light-gray rounded-xl text-text-gray">
-              Next
-              <FaChevronRight className="text-sm" />
-            </button>
+                <p className="text-base mont-text">
+                  <span className="font-semibold text-green">Price: ${product.price}</span>
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+          <motion.div
+  className="flex items-center gap-3 justify-center mt-10 flex-wrap"
+  initial={{ opacity: 0, y: 10 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.4 }}
+>
+  {/* BACK button */}
+  <button
+    onClick={goBack}
+    disabled={currentPage === 1}
+    className={`flex items-center gap-2 px-4 py-2 border border-light-gray rounded-xl text-text-gray transition-all
+      ${currentPage === 1 ? "opacity-40 cursor-not-allowed" : "hover:bg-gray-100"}
+    `}
+  >
+    <FaChevronLeft className="text-sm" />
+    Back
+  </button>
+
+  {/* PAGE numbers */}
+  {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+    <button
+      key={page}
+      onClick={() => setCurrentPage(page)}
+      className={`px-4 py-2 rounded-xl transition-all
+        ${
+          currentPage === page
+            ? "bg-green text-white shadow"
+            : "border border-light-gray text-text-gray hover:bg-gray-100"
+        }
+      `}
+    >
+      {page}
+    </button>
+  ))}
+
+  {/* NEXT button */}
+  <button
+    onClick={goNext}
+    disabled={currentPage === totalPages}
+    className={`flex items-center gap-2 px-4 py-2 border border-light-gray rounded-xl text-text-gray transition-all
+      ${currentPage === totalPages ? "opacity-40 cursor-not-allowed" : "hover:bg-gray-100"}
+    `}
+  >
+    Next
+    <FaChevronRight className="text-sm" />
+  </button>
           </motion.div>
+
         </main>
       </div>
     </div>

@@ -17,7 +17,7 @@ function InventoryHero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="col-span-12 lg:col-span-6 mb-5 lg:mb-0"
           >
-            <h2 className="text-3xl md:text-[42px] leading-[48px] md:leading-[60px] font-extrabold mb-5">
+            <h2 className="text-3xl md:text-[42px] leading-[48px] md:leading-[60px] font-extrabold mb-5 mont-text">
               Discover <span className="text-orange">Quality Machinery </span>{" "}
               for Every Need
             </h2>

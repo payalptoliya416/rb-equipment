@@ -10,7 +10,7 @@ function Hero() {
         initial={{ opacity: 0, scale: 1.05 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
-        className="-mt-32 absolute top-0 left-0 w-full h-full lg:h-[700px] bg-[url(/assets/main-bg.png)] bg-no-repeat bg-top -z-10"
+        className="-mt-32 absolute top-0 left-0 w-full h-full lg:h-[700px] bg-[url(/assets/main-bg.png)] bg-no-repeat bg-top -z-10 "
         style={{ backgroundSize: "100% 100%" }}
       ></motion.div>
       <div className="container-custom mx-auto">

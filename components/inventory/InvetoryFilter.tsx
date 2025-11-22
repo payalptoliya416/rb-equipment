@@ -139,7 +139,7 @@ const [selectedSort, setSelectedSort] = useState(sortOptions[0]);
                     ].map(([label, count], idx) => (
                       <label
                         key={idx}
-                        className="flex items-center justify-between text-base"
+                        className="flex items-center justify-between text-base cursor-pointer"
                       >
                         <div className="flex items-center gap-3">
                           <input

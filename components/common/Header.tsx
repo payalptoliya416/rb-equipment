@@ -13,7 +13,7 @@ function Header() {
 const buttonRef = useRef<HTMLButtonElement | null>(null);
 
   const navItems = [
-    { name: "Index", path: "/" },
+    { name: "Home", path: "/" },
     { name: "Inventory", path: "/inventory" },
     { name: "About us", path: "/about-us" },
     { name: "Services", path: "/services" },
@@ -115,7 +115,7 @@ useEffect(() => {
           className="
             hidden lg:block text-green bg-white py-2 px-4 md:py-3 md:px-6 rounded-lg font-semibold
             transition-all duration-300
-            hover:bg-green hover:text-white 
+            hover:bg-orange hover:text-white 
             hover:-translate-y-[2px]
             hover:shadow-[0_4px_15px_rgba(0,0,0,0.15)]
           "
@@ -174,7 +174,7 @@ useEffect(() => {
     className="
       text-green bg-white py-3 px-6 rounded-lg font-semibold mt-4 
       transition-all duration-300 
-      hover:bg-green hover:text-white hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)]
+      hover:bg-orange hover:text-white hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)]
       hover:-translate-y-1
     "
   >

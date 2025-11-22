@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 function Hero() {
   return (
@@ -35,12 +36,12 @@ function Hero() {
               your equipment, RB Equipment Sales has you covered.
             </p>
             <div className="flex items-center gap-4">
-              <button className="py-3 px-6 text-white bg-green rounded-lg mont-text">
+              <Link href='/inventory/inventory-detail' className="py-3 px-6 text-white bg-green rounded-lg mont-text">
                 Buy Now
-              </button>
-              <button className="py-3 px-6 text-green rounded-lg border border-green mont-text">
+              </Link>
+              <Link href='/inventory/inventory-detail' className="py-3 px-6 text-green rounded-lg border border-green mont-text">
                 Bid Now
-              </button>
+              </Link>
             </div>
           </motion.div>
           <motion.div

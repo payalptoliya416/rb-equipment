@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { BiPlus } from "react-icons/bi";
 import { FaMinus } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface Item {
   question: string;
@@ -27,49 +28,71 @@ function FAQ() {
     { question: "How can I sell my equipment on your platform?", answer: "" },
     { question: "What happens if I win an auction?", answer: "" },
   ];
+
   return (
-    <div className="container-custom mx-auto ">
+    <div className="container-custom mx-auto">
       <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-[38px] md:leading-[38px] mb-[15px] font-extrabold text-gray">
-          Frequently Asked <span className="text-orange">Questions</span>{" "}
-        </h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="text-3xl md:text-[38px] md:leading-[38px] mb-[15px] font-extrabold text-gray"
+        >
+          Frequently Asked <span className="text-orange">Questions</span>
+        </motion.h2>
       </div>
+
       <div className="grid grid-cols-12 w-full justify-center items-center">
         <div className="space-y-4 col-span-10 col-start-2">
           {data.map((item, i) => {
             const isOpen = openIndex === i;
 
             return (
-              <div key={i} className={` overflow-hidden transition-all`}>
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="overflow-hidden"
+              >
                 {/* Header */}
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : i)}
-                  className={`w-full flex items-center justify-between rounded-xl border border-light-gray px-[22px] py-5 text-left font-medium text-[16px] gap-2 md:gap-0
-                transition-all
-                ${isOpen ? "bg-green text-white" : "bg-white text-gray"}
-              `}
+                  className={`w-full flex items-center justify-between rounded-xl border border-light-gray px-[22px] py-5 text-left font-medium text-[16px] gap-2 md:gap-0 transition-all
+                    ${isOpen ? "bg-green text-white" : "bg-white text-gray"}
+                  `}
                 >
                   {item.question}
 
-                  {isOpen ? (
-                    <div>
+                  <motion.div
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {isOpen ? (
                       <FaMinus size={20} className="text-white" />
-                    </div>
-                  ) : (
-                    <div>
-                      {" "}
+                    ) : (
                       <BiPlus size={20} className="text-gray0" />
-                    </div>
-                  )}
+                    )}
+                  </motion.div>
                 </button>
 
                 {/* Content */}
-                {isOpen && item.answer !== "" && (
-                  <div className="px-6 py-4 bg-white text-text-hray text-[15px]">
-                    {item.answer}
-                  </div>
-                )}
-              </div>
+                <AnimatePresence>
+                  {isOpen && item.answer !== "" && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.45 , ease: "easeInOut"}}
+                      className="px-6 py-4 bg-white text-text-gray text-[15px] overflow-hidden"
+                    >
+                      {item.answer}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             );
           })}
         </div>

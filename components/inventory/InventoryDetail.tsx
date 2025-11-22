@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { BsFuelPumpFill } from "react-icons/bs";
@@ -7,48 +9,89 @@ import { FaHandHoldingDollar, FaLocationCrosshairs } from "react-icons/fa6";
 import { GiWeightScale } from "react-icons/gi";
 import { IoLocationSharp } from "react-icons/io5";
 import { MdAccessTimeFilled } from "react-icons/md";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 function InventoryDetail() {
+  const fadeIn = {
+  hidden: { opacity: 0, scale: 0.95 },
+  show: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+};
+  const [activeTab, setActiveTab] = useState("photos");
   return (
     <div className="container-custom mt-10 lg:mt-20 mb-20 lg:mb-[110px]">
       <div className="grid grid-cols-12 gap-5">
         <div className="col-span-12 xl:col-span-7">
           <div className="border border-light-gray  py-[43px] px-[38px] rounded-[15px] mb-[25px]">
+            <motion.div 
+             variants={fadeIn}
+              initial="hidden"
+              animate="show"
+              whileHover={{ scale: 1.02 }}>
             <Image
               src="/assets/detail-img.png"
               alt="detail-image"
               width={700}
               height={500}
             />
+            </motion.div>
           </div>
            <div className="flex border rounded-xl overflow-hidden w-full border-light-gray mb-[25px]">
-          <button className="w-1/2 py-2 sm:py-3 bg-green text-white font-medium">
+          <button 
+           onClick={() => setActiveTab("photos")}
+          className={`w-1/2 py-2 sm:py-3 font-medium ${
+            activeTab === "photos"
+              ? "bg-green text-white"
+              : "bg-white text-gray"
+          }`}
+          >
             Photos
           </button>
-          <button className="w-1/2 py-2 sm:py-3 bg-white text-gray font-medium">
+          <button
+            onClick={() => setActiveTab("videos")}
+          className={`w-1/2 py-2 sm:py-3 font-medium ${
+            activeTab === "videos"
+              ? "bg-green text-white"
+              : "bg-white text-gray"
+          }`}
+          >
             Videos
           </button>
            </div>
-           <div className="flex justify-between gap-2 sm:gap-4 mb-[30px] flex-wrap">
-                  <div className="border border-light-gray flex justify-center items-center w-[98px] h-[98px] rounded-xl">
-                     <Image src='/assets/detail1.png' alt="detail" width={87} height={57}/>
-                  </div>
-                  <div className="border border-light-gray flex justify-center items-center w-[98px] h-[98px] rounded-xl">
-                     <Image src='/assets/detail6.png' alt="detail" width={87} height={57}/>
-                  </div>
-                  <div className="border border-light-gray flex justify-center items-center w-[98px] h-[98px] rounded-xl">
-                     <Image src='/assets/detail2.png' alt="detail" width={87} height={57}/>
-                  </div>
-                  <div className="border border-light-gray flex justify-center items-center w-[98px] h-[98px] rounded-xl">
-                     <Image src='/assets/detail3.png' alt="detail" width={87} height={57}/>
-                  </div>
-                  <div className="border border-light-gray flex justify-center items-center w-[98px] h-[98px] rounded-xl">
-                     <Image src='/assets/detail4.png' alt="detail" width={87} height={57}/>
-                  </div>
-                  <div className="border border-light-gray flex justify-center items-center w-[98px] h-[98px] rounded-xl">
-                     <Image src='/assets/detail5.png' alt="detail" width={87} height={57}/>
-                  </div>
-           </div>
+            {activeTab === "photos" && (
+        <div className="flex justify-between gap-2 sm:gap-1 mb-[30px] flex-wrap">
+          {["detail1.png","detail6.png","detail2.png","detail3.png","detail4.png","detail5.png"].map((img, i) => (
+            <div
+              key={i}
+              className="border border-light-gray flex justify-center items-center w-[98px] h-[98px] rounded-xl"
+            >
+              <Image
+                src={`/assets/${img}`}
+                alt="detail"
+                width={87}
+                height={57}
+              />
+            </div>
+          ))}
+        </div>
+      )}
+            {activeTab === "videos" && (
+        <div className="flex justify-between gap-2 sm:gap-1 mb-[30px] flex-wrap">
+          {["detail5.png","detail3.png","detail4.png","detail1.png","detail6.png","detail5.png"].map((img, i) => (
+            <div
+              key={i}
+              className="border border-light-gray flex justify-center items-center w-[98px] h-[98px] rounded-xl"
+            >
+              <Image
+                src={`/assets/${img}`}
+                alt="detail"
+                width={87}
+                height={57}
+              />
+            </div>
+          ))}
+        </div>
+      )}
           <div className="w-full space-y-6">
 
         <h2 className="text-[22px] font-semibold text-[#333333] mb-[22px]">Overview</h2>

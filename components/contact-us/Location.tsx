@@ -1,45 +1,74 @@
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 function Location() {
+  const cardVariant = {
+    hidden: { opacity: 0, y: 40 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  } as const;
+
+  const containerVariant = {
+    hidden: {},
+    show: {
+      transition: { staggerChildren: 0.2, delayChildren: 0.2 }
+    }
+  } as const;
+
+  const locations = [
+    {
+      icon: "/assets/l1.svg",
+      title: "Office Address",
+      desc: "RB Equipment Sales 123 Industrial Road, Montgomery Village, USA",
+    },
+    {
+      icon: "/assets/l2.svg",
+      title: "Phone Number",
+      desc: "+1 (123) 456 - 7890",
+    },
+    {
+      icon: "/assets/l3.svg",
+      title: "Email Address",
+      desc: "info@rbequipment-sales.com",
+    },
+  ];
+
   return (
     <>
       <section className="my-20 lg:my-[110px]">
         <div className="container-custom mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px]  items-stretch">
-            <div className="h-full flex justify-center items-center flex-col border border-light-gray rounded-xl p-[30px]  text-center">
-              <div className="w-[70px] h-[70px] rounded-[10px] flex justify-center items-center mb-[20px] bg-green">
-                <Image src="/assets/l1.svg" alt="icon" width={36} height={36} />
-              </div>
-              <h3 className="text-gray mb-[10px] text-lg leading-[20px] font-semibold">
-                Office Address
-              </h3>
-              <p className="text-text-gray text-base font-normal">
-                RB Equipment Sales 123 Industrial Road, Montgomery Village, USA
-              </p>
-            </div>
-            <div className="h-full flex justify-center items-center flex-col border border-light-gray rounded-xl p-[30px]  text-center">
-              <div className="w-[70px] h-[70px] rounded-[10px] flex justify-center items-center mb-[20px] bg-green">
-                <Image src="/assets/l2.svg" alt="icon" width={36} height={36} />
-              </div>
-              <h3 className="text-gray mb-[10px] text-lg leading-[20px] font-semibold">
-               Phone Number
-              </h3>
-              <p className="text-text-gray text-base font-normal">
-               +1 (123) 456 - 7890
-              </p>
-            </div>
-            <div className="h-full flex justify-center items-center flex-col border border-light-gray rounded-xl p-[30px]  text-center">
-              <div className="w-[70px] h-[70px] rounded-[10px] flex justify-center items-center mb-[20px] bg-green">
-                <Image src="/assets/l3.svg" alt="icon" width={36} height={36} />
-              </div>
-              <h3 className="text-gray mb-[10px] text-lg leading-[20px] font-semibold">
-                Email Address
-              </h3>
-              <p className="text-text-gray text-base font-normal">
-                info@rbequipment-sales.com
-              </p>
-            </div>
-          </div>
+          <motion.div
+            variants={containerVariant}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px] items-stretch"
+          >
+            {locations.map((item, i) => (
+              <motion.div
+                key={i}
+                variants={cardVariant}
+                className="h-full flex justify-center items-center flex-col border border-light-gray rounded-xl p-[30px] text-center bg-white"
+              >
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="w-[70px] h-[70px] rounded-[10px] flex justify-center items-center mb-[20px] bg-green"
+                >
+                  <Image src={item.icon} alt="icon" width={36} height={36} />
+                </motion.div>
+
+                <h3 className="text-gray mb-[10px] text-lg leading-[20px] font-semibold">
+                  {item.title}
+                </h3>
+
+                <p className="text-text-gray text-base font-normal">
+                  {item.desc}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
     </>

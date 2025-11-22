@@ -1,36 +1,64 @@
-import Image from "next/image"
+"use client";
 
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 function AboutUsHero() {
   return (
-  <section className="relative -mt-32">
-        <div
-          className="absolute top-0 left-0 w-full h-full xl:h-[580px] bg-[url(/assets/main-bg.png)] bg-no-repeat bg-top -z-10" style={{ backgroundSize: "100% 100%" }} ></div>
-        <div className="container-custom mx-auto">
-          <div className="grid grid-cols-12 pt-[150px] md:pt-[130px] items-center">
-            <div className="col-span-12 lg:col-span-6 mb-5 lg:mb-0">
-              <h2 className="text-3xl md:text-[42px] leading-[48px] md:leading-[60px] font-extrabold mb-5">
-            Your<span className="text-orange">Trusted Partner </span>{" "}
-                in Equipment Sales
-              </h2>
-              <p className="text-para textbase leading-[24px] font-normal">
-             RB Equipment Sales connects buyers and sellers with reliable industrial machinery, tractors, and tools through seamless buying, selling, and bidding experiences.
-              </p>
-            </div>
-            <div className="col-span-12 lg:col-span-6">
-              <div className="flex justify-end">
+    <section className="relative -mt-32">
+      {/* Background */}
+      <motion.div
+        className="absolute top-0 left-0 w-full h-full xl:h-[580px] bg-[url(/assets/main-bg.png)] bg-no-repeat bg-top -z-10"
+        style={{ backgroundSize: "100% 100%" }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      />
+
+      <div className="container-custom mx-auto">
+        <div className="grid grid-cols-12 pt-[150px] md:pt-[130px] items-center">
+
+          {/* LEFT CONTENT */}
+          <motion.div
+            className="col-span-12 lg:col-span-6 mb-5 lg:mb-0"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
+            <h2 className="text-3xl md:text-[42px] leading-[48px] md:leading-[60px] font-extrabold mb-5">
+              Your<span className="text-orange"> Trusted Partner </span>{" "}
+              in Equipment Sales
+            </h2>
+
+            <p className="text-para textbase leading-[24px] font-normal">
+              RB Equipment Sales connects buyers and sellers with reliable industrial
+              machinery, tractors, and tools through seamless buying, selling, and
+              bidding experiences.
+            </p>
+          </motion.div>
+
+          {/* RIGHT IMAGE */}
+          <motion.div
+            className="col-span-12 lg:col-span-6"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+          >
+            <div className="flex justify-end">
+              <motion.div whileHover={{ scale: 1.03 }}>
                 <Image
                   src="/assets/about-hero.png"
                   alt="Hero"
                   width={600}
                   height={389}
                 />
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </section>
-  )
+      </div>
+    </section>
+  );
 }
 
-export default AboutUsHero
+export default AboutUsHero;

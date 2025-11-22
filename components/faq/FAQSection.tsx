@@ -1,8 +1,9 @@
-'use client';
+"use client";
 
 import { JSX, useState } from "react";
 import { FaMinus } from "react-icons/fa6";
 import { BiPlus } from "react-icons/bi";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface FAQ {
   question: string;
@@ -72,40 +73,81 @@ export default function FAQSection(): JSX.Element {
     setOpenIndex(openIndex === i ? null : i);
   };
 
+const itemVariant = {
+  hidden: { opacity: 0, y: 80 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: "easeOut" }
+  }
+} as const;
+
+
   return (
-    <div className="container-custom ">
-        <div className="w-full max-w-[900px] mx-auto my-20 lg:my-[110px]">
-      {faqs.map((faq, i) => {
-        const isOpen = openIndex === i;
+    <div className="container-custom">
+      <motion.div
+        className="w-full max-w-[900px] mx-auto my-20 lg:my-[110px]"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        {faqs.map((faq, i) => {
+          const isOpen = openIndex === i;
 
-        return (
-          <div key={i} className="mb-4">
-            <button
-              onClick={() => toggle(i)}
-              className={`
-                w-full flex justify-between items-center px-5 py-4 rounded-xl border cursor-pointer
-                transition-all text-left font-semibold text-lg
-                ${isOpen ? "bg-green text-white border-green" : "bg-white text-gray border-gray-300"}
-              `}
+          return (
+            <motion.div
+              key={i}
+              variants={itemVariant}
+              className="mb-4"
             >
-              {faq.question}
+              {/* Question Button */}
+              <button
+                onClick={() => toggle(i)}
+                className={`
+                  w-full flex justify-between items-center px-5 py-4 rounded-xl border cursor-pointer
+                  transition-all text-left font-semibold text-lg
+                  ${
+                    isOpen
+                      ? "bg-green text-white border-green"
+                      : "bg-white text-gray border-gray-300"
+                  }
+                `}
+              >
+                {faq.question}
 
-              {isOpen ? (
-                <FaMinus className="text-white" size={18} />
-              ) : (
-                <BiPlus className="text-gray" size={22} />
-              )}
-            </button>
+                {/* Icon Animation */}
+                <motion.span
+                  animate={{ rotate: isOpen ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {isOpen ? (
+                    <FaMinus className="text-white" size={18} />
+                  ) : (
+                    <BiPlus className="text-gray" size={22} />
+                  )}
+                </motion.span>
+              </button>
 
-            {isOpen && (
-              <div className="p-5 text-text-gray bg-white rounded-b-xl text-base leading-[26px]">
-                {faq.answer}
-              </div>
-            )}
-          </div>
-        );
-      })}
-    </div>
+              {/* Answer Animation */}
+              <AnimatePresence mode="wait">
+                {isOpen && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.35, ease: "easeOut" }}
+                    className="overflow-hidden"
+                  >
+                    <div className="p-5 text-text-gray bg-white rounded-b-xl text-base leading-[26px]">
+                      {faq.answer}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          );
+        })}
+      </motion.div>
     </div>
   );
 }

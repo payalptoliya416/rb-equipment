@@ -1,82 +1,88 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 function ChooseUs() {
   return (
     <section className="bg-gray py-[60px]">
-      <div className="container-custom mx-auto ">
-        <div className="text-center mb-10">
+      <div className="container-custom mx-auto">
+        
+        {/* TITLE */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-10"
+        >
           <h2 className="text-3xl md:text-[38px] md:leading-[38px] font-extrabold text-white">
             Why <span className="text-orange">Choose Us</span>
           </h2>
-        </div>
+        </motion.div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-[30px] items-center md:items-stretch">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px]">
-            <div className="border border-text-gray rounded-lg p-5">
-              <Image
-                src="/assets/icon1.svg"
-                alt="icon"
-                width={40}
-                height={40}
-                className="mb-5"
-              />
-              <h3 className="text-light-gray text-lg leading-[20px] mb-[15px] font-semibold">
-                Verified Equipment
-              </h3>
-              <p className=" text-base leading-[26px] font-normal text-light-gray">
-                Every listing is inspected and verified to ensure quality,
-                authenticity.
-              </p>
-            </div>
-            <div className="border border-text-gray rounded-lg p-5">
-              <Image
-                src="/assets/icon2.svg"
-                alt="icon"
-                width={40}
-                height={40}
-                className="mb-5"
-              />
-              <h3 className="text-light-gray text-lg leading-[20px] mb-[15px] font-semibold">
-                Verified Equipment
-              </h3>
-              <p className=" text-base leading-[26px] font-normal text-light-gray">
-                Every listing is inspected and verified to ensure quality,
-                authenticity.
-              </p>
-            </div>
-            <div className="border border-text-gray rounded-lg p-5">
-              <Image
-                src="/assets/icon3.svg"
-                alt="icon"
-                width={40}
-                height={40}
-                className="mb-5"
-              />
-              <h3 className="text-light-gray text-lg leading-[20px] mb-[15px] font-semibold">
-                Verified Equipment
-              </h3>
-              <p className=" text-base leading-[26px] font-normal text-light-gray">
-                Every listing is inspected and verified to ensure quality,
-                authenticity.
-              </p>
-            </div>
-            <div className="border border-text-gray rounded-lg p-5">
-              <Image
-                src="/assets/icon4.svg"
-                alt="icon"
-                width={40}
-                height={40}
-                className="mb-5"
-              />
-              <h3 className="text-light-gray text-lg leading-[20px] mb-[15px] font-semibold">
-                Verified Equipment
-              </h3>
-              <p className=" text-base leading-[26px] font-normal text-light-gray">
-                Every listing is inspected and verified to ensure quality,
-                authenticity.
-              </p>
-            </div>
-          </div>
-          <div>
+
+          {/* LEFT SIDE CARDS */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: { staggerChildren: 0.15 },
+              },
+            }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-[30px]"
+          >
+            {/* CARD COMPONENT */}
+            {[
+              { icon: "icon1.svg", title: "Verified Equipment" },
+              { icon: "icon2.svg", title: "Trusted Sellers" },
+              { icon: "icon3.svg", title: "Secure Payments" },
+              { icon: "icon4.svg", title: "Fast Delivery" },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                variants={{
+                  hidden: { opacity: 0, y: 40 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.7, ease: "easeOut" },
+                  },
+                }}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 140, damping: 10 }}
+                className="border border-text-gray rounded-lg p-5 cursor-pointer bg-gray/20 backdrop-blur-sm"
+              >
+                <Image
+                  src={`/assets/${item.icon}`}
+                  alt="icon"
+                  width={40}
+                  height={40}
+                  className="mb-5"
+                />
+                <h3 className="text-light-gray text-lg leading-[20px] mb-[15px] font-semibold">
+                  {item.title}
+                </h3>
+                <p className="text-base leading-[26px] font-normal text-light-gray">
+                  Every listing is inspected and verified to ensure quality,
+                  authenticity.
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* RIGHT SIDE IMAGE */}
+          <motion.div
+            initial={{ opacity: 0, x: 120 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
+            className="flex justify-center"
+          >
             <Image
               src="/assets/chooseus.png"
               alt="chooseus"
@@ -84,7 +90,7 @@ function ChooseUs() {
               height={454}
               className="w-full"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,11 +1,20 @@
+'use client'
+
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 function AboutUs() {
   return (
     <section className="container-custom mx-auto">
-      <div className="grid grid-cols-12 lg:gap-[30px] items-center mt-10 lg:mt-[110px]">
-        <div className="col-span-12 lg:col-span-6 order-2 lg:order-1">
+      <motion.div 
+      className="grid grid-cols-12 lg:gap-[30px] items-center">
+        <motion.div
+            initial={{ opacity: 0, x: -120 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.9, ease: "easeOut" }}
+          className="col-span-12 lg:col-span-6 order-2 lg:order-1">
           <Image
             src="/assets/about.png"
             alt="about"
@@ -13,8 +22,13 @@ function AboutUs() {
             height={445}
             style={{ width: "100%" }}
           />
-        </div>
-        <div className="col-span-12 lg:col-span-6 order-1 lg:order-2 mb-5 lg:mb-0">
+        </motion.div>
+        <motion.div 
+    initial={{ opacity: 0, x: 120 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.9, ease: "easeOut" }}
+        className="col-span-12 lg:col-span-6 order-1 lg:order-2 mb-5 lg:mb-0">
           <h4 className="mb-5 text-orange text-lg font-semibold relative after:absolute after:top-3 after:left-0 after:bg-orange after:w-[15px] after:h-[2px] pl-5 after:rounded-full">
             {" "}
             About Us
@@ -39,8 +53,8 @@ function AboutUs() {
           <button className="text-base py-[14px] px-[22px] text-white rounded-lg bg-green">
             Read More <FaArrowRight className="inline-block ms-[10px]" />
           </button>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

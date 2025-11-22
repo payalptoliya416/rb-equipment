@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function InventoryFilter() {
   const min = 1990;
@@ -19,14 +20,18 @@ export default function InventoryFilter() {
     <div className="w-full container-custom mx-auto my-[80px] lg:my-[110px] px-4">
 
       {/* MOBILE FILTER BUTTON */}
-      <div className="lg:hidden mb-5">
+      <motion.div
+       initial={{ opacity: 0, y: -8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+      className="lg:hidden mb-5">
         <button
           onClick={() => setOpenSidebar(true)}
           className="px-4 py-2 border border-light-gray rounded-lg text-text-gray"
         >
           ☰ Filters
         </button>
-      </div>
+      </motion.div>
 
       <div className="w-full flex flex-col lg:flex-row gap-6">
 
@@ -57,7 +62,9 @@ export default function InventoryFilter() {
           </button>
 
           {/* FILTER BY CATEGORY */}
-          <div>
+          <motion.div   initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}>
             <h2 className="font-semibold text-lg mb-[25px] text-gray">Filter by Category</h2>
 
             <div className="space-y-[21px]">
@@ -87,7 +94,7 @@ export default function InventoryFilter() {
                 </label>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           <div className="border-t border-light-gray my-[30px]" />
 
@@ -176,32 +183,45 @@ export default function InventoryFilter() {
         </aside>
 
         {/* DARK OVERLAY WHEN SIDEBAR OPEN (MOBILE ONLY) */}
+         <AnimatePresence>
         {openSidebar && (
-          <div
+          <motion.div
             onClick={() => setOpenSidebar(false)}
             className="fixed inset-0 bg-black/30 lg:hidden z-[998]"
           />
         )}
+         </AnimatePresence>
 
         {/* ================= PRODUCT GRID ================= */}
         <main className="flex-1">
 
           {/* SORT BAR */}
-          <div className="flex justify-end mb-5">
+          <motion.div
+           initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+          className="flex justify-end mb-5">
             <div className="flex items-center gap-3">
               <span className="text-sm font-medium text-gray">Sort By:</span>
               <select className="border border-light-gray rounded-lg px-3 py-2 text-sm text-text-gray">
                 <option>Ending Time: Sooner to Late</option>
               </select>
             </div>
-          </div>
+          </motion.div>
 
           {/* PRODUCT GRID */}
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
             {Array(9)
               .fill(0)
               .map((_, i) => (
-                <div
+                <motion.div
+                 initial={{ opacity: 0, y: 25 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.45,
+                    delay: i * 0.08,
+                    ease: "easeOut"
+                  }}
                   key={i}
                   className="border border-light-gray rounded-[10px] p-[15px] bg-white"
                 >
@@ -223,12 +243,16 @@ export default function InventoryFilter() {
                       <span className="font-semibold text-green">Price: $22,640</span>
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ))}
           </div>
 
           {/* PAGINATION */}
-          <div className="flex items-center gap-3 justify-center mt-10 flex-wrap">
+          <motion.div className="flex items-center gap-3 justify-center mt-10 flex-wrap"
+          initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            >
             <button className="flex items-center gap-2 px-4 py-2 border border-light-gray rounded-xl text-text-gray">
               <FaChevronLeft className="text-sm" />
               Back
@@ -245,7 +269,7 @@ export default function InventoryFilter() {
               Next
               <FaChevronRight className="text-sm" />
             </button>
-          </div>
+          </motion.div>
         </main>
       </div>
     </div>

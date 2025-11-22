@@ -1,10 +1,11 @@
-'use client';
+"use client";
 
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Image from "next/image";
 import Link from "next/link";
 import { JSX } from "react";
+import { motion } from "framer-motion";
 
 // Validation Schema
 const SignInSchema = Yup.object().shape({
@@ -13,18 +14,60 @@ const SignInSchema = Yup.object().shape({
 });
 
 export default function SignInForm(): JSX.Element {
+  // Variants
+  const cardVariant = {
+    hidden: { opacity: 0, y: 60 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  } as const;
+
+  const staggerVariant = {
+    hidden: {},
+    show: {
+      transition: { staggerChildren: 0.15, delayChildren: 0.25 },
+    },
+  } as const;
+
+  const itemVariant = {
+    hidden: { opacity: 0, y: 20 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  } as const;
+
   return (
     <div className="w-full flex justify-center px-4 my-16">
-      <div className="max-w-[593px] w-full border border-light-gray rounded-2xl p-[30px]">
-
+      {/* Card Animation Wrapper */}
+      <motion.div
+        variants={cardVariant}
+        initial="hidden"
+        animate="show"
+        className="max-w-[593px] w-full border border-light-gray rounded-2xl p-[30px] bg-white"
+      >
         {/* Title */}
-        <h2 className="text-3xl md:text-[38px] font-extrabold text-center text-gray mb-[15px]">
+        <motion.h2
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-3xl md:text-[38px] font-extrabold text-center text-gray mb-[15px]"
+        >
           Sign In your <span className="text-orange">account</span>
-        </h2>
+        </motion.h2>
 
-        <p className="text-text-gray text-center mb-[30px] text-base">
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="text-text-gray text-center mb-[30px] text-base"
+        >
           Enter your email and password to access your account.
-        </p>
+        </motion.p>
 
         {/* Formik */}
         <Formik
@@ -39,90 +82,115 @@ export default function SignInForm(): JSX.Element {
             alert("Sign-In Successful!");
           }}
         >
-          {({ values }) => (
-            <Form className="space-y-6">
+          {() => (
+            <motion.div
+              variants={staggerVariant}
+              initial="hidden"
+              animate="show"
+            >
+              <Form className="space-y-6">
+                {/* Email */}
+                <motion.div variants={itemVariant}>
+                  <label className="text-[#333333] font-medium mb-3 block text-lg leading-[18px]">
+                    Email Address
+                  </label>
+                  <Field
+                    name="email"
+                    type="email"
+                    placeholder="Enter your email address"
+                    className="w-full mt-2 px-5 py-[18px] border border-light-gray rounded-[10px] outline-none focus:ring-2 focus:ring-green text-base"
+                  />
+                  <ErrorMessage
+                    name="email"
+                    component="div"
+                    className="text-red-500 text-sm mt-1"
+                  />
+                </motion.div>
 
-              {/* Email */}
-              <div>
-                <label className="text-[#333333] font-medium mb-3 block text-lg leading-[18px]">Email Address</label>
-                <Field
-                  name="email"
-                  type="email"
-                  placeholder="Enter your email address"
-                  className="w-full mt-2 px-5 py-[18px] border border-light-gray rounded-[10px] outline-none focus:ring-2 focus:ring-green text-base leading-[16px]"
-                />
-                <ErrorMessage
-                  name="email"
-                  component="div"
-                  className="text-red-500 text-sm mt-1"
-                />
-              </div>
+                {/* Password */}
+                <motion.div variants={itemVariant}>
+                  <label className="text-[#333333] font-medium mb-3 block text-lg leading-[18px]">
+                    Password
+                  </label>
+                  <Field
+                    name="password"
+                    type="password"
+                    placeholder="Enter your password"
+                    className="w-full mt-2 px-5 py-[18px] border border-light-gray rounded-[10px] outline-none focus:ring-2 focus:ring-green text-base"
+                  />
+                  <ErrorMessage
+                    name="password"
+                    component="div"
+                    className="text-red-500 text-sm mt-1"
+                  />
+                </motion.div>
 
-              {/* Password */}
-              <div>
-                <label className="text-[#333333] font-medium mb-3 block text-lg leading-[18px]">Password</label>
-                <Field
-                  name="password"
-                  type="password"
-                  placeholder="Enter your password"
-                  className="w-full mt-2 px-5 py-[18px] border border-light-gray rounded-[10px] outline-none focus:ring-2 focus:ring-green  text-base leading-[16px]"
-                />
-                <ErrorMessage
-                  name="password"
-                  component="div"
-                  className="text-red-500 text-sm mt-1"
-                />
-              </div>
+                {/* Remember / Forgot */}
+                <motion.div
+                  variants={itemVariant}
+                  className="flex justify-between items-center"
+                >
+                  <label className="flex items-center gap-2 text-[#4D4D4D]">
+                    <Field type="checkbox" name="remember" />
+                    <span>Remember me</span>
+                  </label>
 
-              {/* Remember / Forgot */}
-              <div className="flex justify-between items-center">
-                <label className="flex items-center gap-2 text-[#4D4D4D]">
-                  <Field type="checkbox" name="remember" />
-                  <span>Remember me</span>
-                </label>
+                  <Link href="/signin/forgot-password" className="text-[#4D4D4D]">
+                    Forgot password?
+                  </Link>
+                </motion.div>
 
-                <Link href="/signin/forgot-password" className="text-[#4D4D4D]">
-                  Forgot password?
-                </Link>
-              </div>
+                {/* Submit Button */}
+                <motion.button
+                  variants={itemVariant}
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  type="submit"
+                  className="w-full bg-green text-white py-[14px] rounded-lg font-semibold text-lg hover:opacity-90 transition"
+                >
+                  Sign In →
+                </motion.button>
 
-              {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full bg-green text-white py-[14px] rounded-lg font-semibold text-lg 
-                hover:opacity-90 transition flex justify-center items-center gap-2"
-              >
-                Sign In →
-              </button>
+                {/* Divider */}
+                <motion.div variants={itemVariant} className="flex items-center gap-4">
+                  <div className="flex-1 h-[1px] bg-gray-300"></div>
+                  <span className="text-gray-500">OR</span>
+                  <div className="flex-1 h-[1px] bg-gray-300"></div>
+                </motion.div>
 
-              {/* Divider */}
-              <div className="flex items-center gap-4">
-                <div className="flex-1 h-[1px] bg-gray-300"></div>
-                <span className="text-gray-500">OR</span>
-                <div className="flex-1 h-[1px] bg-gray-300"></div>
-              </div>
-
-              {/* Google Sign-in */}
-              <button
-                type="button"
-                className="w-full flex items-center justify-center gap-3 border border-light-gray
-                rounded-[10px] py-[18px] hover:bg-gray-50 transition text-[#333333] text-lg leading-[18px] cursor-pointer"
-              >
-                <Image src="/assets/googleicon.png" alt="Google" width={24} height={24} />
-                Continue with Google
-              </button>
-            </Form>
+                {/* Google Button */}
+                <motion.button
+                  variants={itemVariant}
+                  whileHover={{ scale: 1.02 }}
+                  className="w-full flex items-center justify-center gap-3 border border-light-gray rounded-[10px] py-[18px] hover:bg-gray-50 transition text-[#333333] text-lg cursor-pointer"
+                  type="button"
+                >
+                  <Image
+                    src="/assets/googleicon.png"
+                    alt="Google"
+                    width={24}
+                    height={24}
+                  />
+                  Continue with Google
+                </motion.button>
+              </Form>
+            </motion.div>
           )}
         </Formik>
 
         {/* Bottom Link */}
-        <p className="text-center text-[#333333] mt-[25px] text-lg">
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.7, duration: 0.5 }}
+          className="text-center text-[#333333] mt-[25px] text-lg"
+        >
           Don't have an account?{" "}
-          <Link href="/signup" className="text-green ">
+          <Link href="/signup" className="text-green">
             Create account
           </Link>
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
     </div>
   );
 }

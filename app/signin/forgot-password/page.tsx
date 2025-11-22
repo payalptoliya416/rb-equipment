@@ -1,29 +1,72 @@
-'use client';
+"use client";
 
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Link from "next/link";
 import { JSX } from "react";
+import { motion } from "framer-motion";
 
 const ForgotPasswordSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Email is required"),
 });
 
 export default function ForgotPassword(): JSX.Element {
+  const cardVariant = {
+    hidden: { opacity: 0, y: 60 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  } as const;
+
+  const staggerVariant = {
+    hidden: {},
+    show: {
+      transition: { staggerChildren: 0.15, delayChildren: 0.25 },
+    },
+  } as const;
+
+  const itemVariant = {
+    hidden: { opacity: 0, y: 20 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  } as const;
+
   return (
     <div className="w-full flex justify-center px-4 my-20">
-      <div className="max-w-[570px] w-full border border-gray-300 rounded-2xl p-10 shadow-sm">
 
+      {/* Card */}
+      <motion.div
+        variants={cardVariant}
+        initial="hidden"
+        animate="show"
+        className="max-w-[570px] w-full border border-gray-300 rounded-2xl p-10 shadow-sm bg-white"
+      >
         {/* Title */}
-        <h2 className="text-[38px] font-extrabold text-center text-gray mb-[15px] leading-[38px]">
+        <motion.h2
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-[38px] font-extrabold text-center text-gray mb-[15px] leading-[38px]"
+        >
           Forgot Your <span className="text-orange">Password?</span>
-        </h2>
+        </motion.h2>
 
-        <p className="text-text-gray text-center mb-[30px]">
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-text-gray text-center mb-[30px]"
+        >
           We can help you reset it
-        </p>
+        </motion.p>
 
-        {/* Formik Form */}
+        {/* Formik */}
         <Formik
           initialValues={{ email: "" }}
           validationSchema={ForgotPasswordSchema}
@@ -33,45 +76,61 @@ export default function ForgotPassword(): JSX.Element {
           }}
         >
           {() => (
-            <Form className="space-y-6">
+            <motion.div
+              variants={staggerVariant}
+              initial="hidden"
+              animate="show"
+            >
+              <Form className="space-y-6">
 
-              {/* Email Input */}
-              <div>
-                <label className="text-[#333333] font-medium mb-3">Email Address</label>
-                <Field
-                  name="email"
-                  type="email"
-                  placeholder="Enter your email address"
-                  className="w-full mt-2 px-5 py-[18px] border border-light-gray rounded-[10px] outline-none focus:ring-2 focus:ring-green  text-base leading-[16px]"
-                />
-                <ErrorMessage
-                  name="email"
-                  component="div"
-                  className="text-red-500 text-sm mt-1"
-                />
-              </div>
+                {/* Email */}
+                <motion.div variants={itemVariant}>
+                  <label className="text-[#333333] font-medium mb-3">
+                    Email Address
+                  </label>
+                  <Field
+                    name="email"
+                    type="email"
+                    placeholder="Enter your email address"
+                    className="w-full mt-2 px-5 py-[18px] border border-light-gray rounded-[10px] outline-none
+                     focus:ring-2 focus:ring-green text-base leading-[16px]"
+                  />
+                  <ErrorMessage
+                    name="email"
+                    component="div"
+                    className="text-red-500 text-sm mt-1"
+                  />
+                </motion.div>
 
-              {/* Reset Button */}
-              <button
-                type="submit"
-                className="w-full bg-green text-white py-[14px] leading-[14px] rounded-lg text-lg
-                hover:opacity-90 transition"
-              >
-                Reset it
-              </button>
+                {/* Button */}
+                <motion.button
+                  variants={itemVariant}
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  type="submit"
+                  className="w-full bg-green text-white py-[14px] rounded-lg text-lg hover:opacity-90 transition"
+                >
+                  Reset it
+                </motion.button>
 
-            </Form>
+              </Form>
+            </motion.div>
           )}
         </Formik>
 
         {/* Bottom Link */}
-        <p className="text-center text-[#333333] mt-[25px] text-lg">
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.7, duration: 0.5 }}
+          className="text-center text-[#333333] mt-[25px] text-lg"
+        >
           Don't have an account?{" "}
-          <Link href="/signup" className="text-green ">
+          <Link href="/signup" className="text-green">
             Create account
           </Link>
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
     </div>
   );
 }

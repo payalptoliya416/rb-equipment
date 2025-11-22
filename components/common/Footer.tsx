@@ -27,9 +27,9 @@ function Footer() {
               Join thousands of satisfied customers who trust RB Equipment Sales
               for industrial and agricultural machinery.
             </p>
-            <button className="text-green bg-white  py-[14px] px-[22px]  rounded-xl text-base leading-[16px] font-semibold mont-text">
+            <Link href='/inventory/inventory-detail' className="text-green bg-white  py-[14px] px-[22px]  rounded-xl text-base leading-[16px] font-semibold mont-text">
               Start Now
-            </button>
+            </Link>
           </div>
         </div>
       </section>

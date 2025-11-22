@@ -9,7 +9,7 @@ function AboutUs() {
   return (
     <section className="container-custom mx-auto">
       <motion.div 
-      className="grid grid-cols-12 lg:gap-[30px] items-center">
+      className="grid grid-cols-12 lg:gap-[30px] items-center hero-custom-mt">
         <motion.div
             initial={{ opacity: 0, x: -120 }}
       whileInView={{ opacity: 1, x: 0 }}

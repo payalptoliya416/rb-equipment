@@ -10,7 +10,7 @@ function InventoryHero() {
         style={{ backgroundSize: "100% 100%" }}
       ></div>
       <div className="container-custom mx-auto">
-        <div className="grid grid-cols-12 pt-[120px] items-center">
+        <div className="grid grid-cols-12 pt-[130px] sm:pt-[120px] items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}

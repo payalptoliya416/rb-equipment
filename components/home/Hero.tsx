@@ -14,17 +14,17 @@ function Hero() {
         style={{ backgroundSize: "100% 100%" }}
       ></motion.div>
       <div className="container-custom mx-auto">
-        <div className="grid grid-cols-12 pt-14">
+        <div className="grid grid-cols-12 pt-10 sm:pt-20">
           <motion.div
             initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="col-span-12 lg:col-span-6"
           >
-            <h4 className="text-gray text-lg xl:text-xl font-semibold mb-4 xl:mb-6  relative after:absolute after:top-3 after:left-0 after:bg-gray after:w-[15px] after:h-[2px] pl-5 after:rounded-full mont-text">
+            <h4 className="text-gray text-lg xl:text-xl font-semibold mb-4 xl:mb-6 relative after:absolute after:top-3 after:left-0 after:bg-gray after:w-[15px] after:h-[2px] pl-5 after:rounded-full mont-text">
               Welcome to RB EQUIPMENT SALES
             </h4>
-            <h2 className="text-2xl sm:text-4xl xl:text-[50px] font-extrabold text-gray  sm:leading-[52px] xl:leading-[68px] mb-5 mont-text">
+            <h2 className="text-2xl sm:text-4xl xl:text-[50px] font-bold text-gray  sm:leading-[52px] xl:leading-[68px] mb-5 mont-text">
               Reliable <span className="text-orange">Industrial</span> &{" "}
               <span className="text-orange">Farm Equipment</span> Sales &
               Auctions
@@ -47,7 +47,7 @@ function Hero() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="col-span-12 lg:col-span-6 -mr-16 2xl:-mr-28 mt-12"
+            className="col-span-12 lg:col-span-6 mt-10 2xl:mt-8  hero-img-margin"
           >
             <Image
               src="/assets/zasi1.png"

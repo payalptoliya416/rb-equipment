@@ -3,12 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { HiBars3BottomRight } from "react-icons/hi2";
 
 function Header() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement | null>(null);
+const buttonRef = useRef<HTMLButtonElement | null>(null);
 
   const navItems = [
     { name: "Index", path: "/" },
@@ -26,6 +28,40 @@ function Header() {
   "/signin/forgot-password",
   "/signup",
 ];
+
+useEffect(() => {
+  if (isMenuOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+
+  function handleClickOutside(e: MouseEvent) {
+    if (
+      menuRef.current &&
+      !menuRef.current.contains(e.target as Node) &&
+      !buttonRef.current?.contains(e.target as Node)
+    ) {
+      setIsMenuOpen(false);
+    }
+  }
+
+  function handleEsc(e: KeyboardEvent) {
+    if (e.key === "Escape") setIsMenuOpen(false);
+  }
+
+  document.addEventListener("mousedown", handleClickOutside);
+  document.addEventListener("keydown", handleEsc);
+
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+    document.removeEventListener("keydown", handleEsc);
+  };
+}, [isMenuOpen]);
+
+useEffect(() => {
+  setIsMenuOpen(false);
+}, [pathname]);
 
   return (
     <header
@@ -89,6 +125,7 @@ function Header() {
 
         {/* Hamburger Icon for Mobile */}
         <button
+         ref={buttonRef}
           className="lg:hidden text-white focus:outline-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
@@ -97,7 +134,7 @@ function Header() {
       </div>
 
       {/* Mobile Menu */}
-      <div
+      <div   ref={menuRef}
         className={`lg:hidden ${isMenuOpen ? 'block' : 'hidden'} bg-[#00796B]/10 backdrop-blur-md absolute top-28 left-0 right-0 w-full p-4 shadow-lg `}
       >
         <ul className="flex flex-col items-center gap-4">

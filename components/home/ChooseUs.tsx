@@ -77,11 +77,11 @@ function ChooseUs() {
 
           {/* RIGHT SIDE IMAGE */}
           <motion.div
-            initial={{ opacity: 0, x: 120 }}
-            whileInView={{ opacity: 1, x: 0 }}
+           initial={{ opacity: 0, y: 120 }} 
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease: "easeOut" }}
-            className="flex justify-center"
+  className="flex justify-center" 
           >
             <Image
               src="/assets/chooseus.png"

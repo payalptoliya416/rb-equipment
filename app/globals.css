@@ -3,7 +3,7 @@
 @layer base {
   body {
     font-family: var(--font-mont);
-     font-family: var(--font-sfpro);
+    font-family: var(--font-sfpro);
   }
 }
 
@@ -17,7 +17,7 @@
 }
 
 .mont-text {
-   font-family: var(--font-mont);
+  font-family: var(--font-mont);
 }
 
 .py-30 {
@@ -27,10 +27,15 @@
   margin-bottom: 30px;
 }
 .gradient {
-  background: linear-gradient(180deg,#ff6f6100 0%,  #ff6f6119 50%, #ff6f61 100%);
+  background: linear-gradient(
+    180deg,
+    #ff6f6100 0%,
+    #ff6f6119 50%,
+    #ff6f61 100%
+  );
 }
 .bg-gradient {
-  background: linear-gradient(180deg,#ff6f6100 0%,  #37373714 8%);
+  background: linear-gradient(180deg, #ff6f6100 0%, #37373714 8%);
 }
 .container-custom {
   padding-left: 20px;
@@ -47,29 +52,58 @@
 }
 
 @media (min-width: 640px) {
-  .container-custom { max-width: 640px; }
+  .container-custom {
+    max-width: 640px;
+  }
 }
 
 @media (min-width: 768px) {
-  .container-custom { max-width: 768px; }
+  .container-custom {
+    max-width: 768px;
+  }
 }
 
 @media (min-width: 1024px) {
-  .container-custom { max-width: 1024px; }
+  .container-custom {
+    max-width: 1024px;
+  }
 }
 
 @media (min-width: 1280px) {
-  .container-custom { max-width: 1170px; } /* figma size */
+  .container-custom {
+    max-width: 1170px;
+  } /* figma size */
 }
 
 @media (min-width: 1441px) {
-  .container-custom { max-width: 1320px; } /* balanced */
+  .container-custom {
+    max-width: 1320px;
+  } /* balanced */
 }
 
 @media (min-width: 1600px) {
-  .container-custom { max-width: 1400px; } /* less empty space */
+  .container-custom {
+    max-width: 1400px;
+  } /* less empty space */
 }
 
 @media (min-width: 1920px) {
-  .container-custom { max-width: 1600px; } /* modern wide layout */
+  .container-custom {
+    max-width: 1600px;
+  } 
+}
+
+@media(min-width:1024px){
+  .hero-custom-mt {
+  margin-top: 80px;
+}
+}
+
+@media (min-width: 1400px) {
+  .hero-img-margin {
+    margin-right: -5rem;
+  }
+  .hero-custom-mt {
+    margin-top: 0px;
+  }
 }

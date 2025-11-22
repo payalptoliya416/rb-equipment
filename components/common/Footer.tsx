@@ -96,7 +96,7 @@ function Footer() {
                 <h3 className="text-orange mb-5 text-lg leading-[18px]  mont-text">Quick Links</h3>
               <ul className="space-y-[15px]">
                 <li>
-                  <Link href='/' className="text-light-gray text-base leading-[16px] font-normal">Index</Link>
+                  <Link href='/' className="text-light-gray text-base leading-[16px] font-normal">Home</Link>
                 </li>
                 <li>
                   <Link href='/inventory' className="text-light-gray text-base leading-[16px] font-normal">Inventory</Link>

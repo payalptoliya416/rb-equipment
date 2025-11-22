@@ -70,7 +70,7 @@ function Header() {
         </ul>
 
         {/* Contact Button for Desktop & Tablet */}
-        <Link href='/contact-us' className="hidden lg:block text-white bg-orange py-2 px-4 md:py-3 md:px-6 rounded-lg font-semibold hover:bg-orange transition-colors">
+        <Link href='/contact-us' className="hidden lg:block text-green bg-white py-2 px-4 md:py-3 md:px-6 rounded-lg font-semibold hover:bg-orange transition-colors">
           Contact Us
         </Link>
 
@@ -114,7 +114,7 @@ function Header() {
 
         {/* Contact Button for Mobile */}
         <div className="flex justify-center">
-        <Link href='/contact-us' className=" text-white bg-orange py-3 px-6 rounded-lg font-semibold mt-4 hover:bg-orange transition-colors">
+        <Link href='/contact-us' className=" text-green bg-white py-3 px-6 rounded-lg font-semibold mt-4 hover:bg-orange transition-colors">
           Contact Us
         </Link>
         </div>

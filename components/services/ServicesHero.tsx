@@ -7,7 +7,7 @@ function ServicesHero() {
     <section className="relative -mt-32">
       {/* Background */}
       <div
-        className="absolute top-0 left-0 w-full h-full xl:h-[580px] bg-[url(/assets/main-bg.png)] bg-no-repeat bg-top -z-10"
+        className="absolute top-0 left-0 w-full h-full xl:h-[500px] bg-[url(/assets/main-bg.png)] bg-no-repeat bg-top -z-10"
         style={{ backgroundSize: "100% 100%" }}
       ></div>
 
@@ -58,12 +58,13 @@ function ServicesHero() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7 }}
+                  className="-mr-9"
               >
                 <Image
                   src="/assets/services-hero.png"
                   alt="Hero"
-                  width={600}
-                  height={389}
+                  width={556}
+                  height={380}
                 />
               </motion.div>
             </div>

@@ -52,19 +52,44 @@ function Footer() {
                 and tools.
               </p>
               <div className="flex items-center gap-[15px]">
-                <div className="border border-light-gray w-7 h-7 rounded-full flex justify-center items-center">
-                  <FaFacebookF className="text-light-gray" />
-                </div>
-                <div className="border border-light-gray w-7 h-7 rounded-full flex justify-center items-center">
-                  <FaXTwitter className="text-light-gray" />
-                </div>
-                <div className="border border-light-gray w-7 h-7 rounded-full flex justify-center items-center">
-                  <FaInstagram className="text-light-gray" />
-                </div>
-                <div className="border border-light-gray w-7 h-7 rounded-full flex justify-center items-center">
-                  <FaLinkedinIn className="text-light-gray" />
-                </div>
-              </div>
+
+  {/* Facebook */}
+  <a
+    href="https://facebook.com/"
+    target="_blank"
+    className="border border-light-gray w-7 h-7 rounded-full flex justify-center items-center"
+  >
+    <FaFacebookF className="text-light-gray" />
+  </a>
+
+  {/* Twitter / X */}
+  <a
+    href="https://twitter.com/"
+    target="_blank"
+    className="border border-light-gray w-7 h-7 rounded-full flex justify-center items-center"
+  >
+    <FaXTwitter className="text-light-gray" />
+  </a>
+
+  {/* Instagram */}
+  <a
+    href="https://instagram.com/"
+    target="_blank"
+    className="border border-light-gray w-7 h-7 rounded-full flex justify-center items-center"
+  >
+    <FaInstagram className="text-light-gray" />
+  </a>
+
+  {/* LinkedIn */}
+  <a
+    href="https://linkedin.com/"
+    target="_blank"
+    className="border border-light-gray w-7 h-7 rounded-full flex justify-center items-center"
+  >
+    <FaLinkedinIn className="text-light-gray" />
+  </a>
+
+             </div>
             </div>
             <div className="col-span-12 sm:col-span-6 lg:col-span-4 flex lg:justify-center mb-10 sm:mb-0">
               <div>
@@ -90,7 +115,7 @@ function Footer() {
             </div>
             <div className="col-span-12 sm:col-span-6 lg:col-span-4">
                  <h3 className="text-orange mb-5 text-lg leading-[18px]">Quick Links</h3>
-                 <div className="mb-5">
+                  <a href="tel:+345209001307" className="block mb-5">
                   <div className="flex gap-3 items-center">
                    <div>
                      <div className="flex justify-center items-center w-10 h-10 rounded-full bg-white/10">
@@ -99,8 +124,12 @@ function Footer() {
                    </div>
                        <h3 className="text-light-gray text-base">Sales: +34 520-900-1307</h3>
                   </div>
-                 </div>
-                 <div className="mb-5">
+                 </a>
+                   <a
+                    href="https://www.google.com/maps/search/?api=1&query=RB+Equipment+Sales+123+Industrial+Road+Montgomery+Village+USA"
+                    target="_blank"
+                    className="block mb-5"
+                  >
                   <div className="flex gap-3 items-center">
                     <div>
                       <div className="flex justify-center items-center w-10 h-10 rounded-full bg-white/10">
@@ -109,8 +138,8 @@ function Footer() {
                     </div>
                        <h3 className="text-light-gray text-base">RB Equipment Sales 123 Industrial Road, Montgomery Village, USA</h3>
                   </div>
-                 </div>
-                 <div className="mb-5">
+                 </a>
+                 <a href="mailto:rb@equipmentsales.com" className="block mb-5">
                   <div className="flex gap-3 items-center">
                    <div>
                      <div className="flex justify-center items-center w-10 h-10 rounded-full bg-white/10">
@@ -119,7 +148,7 @@ function Footer() {
                    </div>
                        <h3 className="text-light-gray text-base">rb@equipmentsales.com</h3>
                   </div>
-                 </div>
+                 </a>
                  <div>
                   <div className="flex gap-3 items-center">
                     <div>

@@ -56,12 +56,13 @@ function TrackingHero() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
+                  className="-mr-9"
               >
                 <Image
                   src="/assets/tracking.png"
                   alt="Hero"
-                  width={600}
-                  height={389}
+                  width={679}
+                  height={289}
                 />
               </motion.div>
             </div>

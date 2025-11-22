@@ -8,7 +8,7 @@ function AboutUsHero() {
     <section className="relative -mt-32">
       {/* Background */}
       <motion.div
-        className="absolute top-0 left-0 w-full h-full xl:h-[580px] bg-[url(/assets/main-bg.png)] bg-no-repeat bg-top -z-10"
+        className="absolute top-0 left-0 w-full h-full xl:h-[500px] bg-[url(/assets/main-bg.png)] bg-no-repeat bg-top -z-10"
         style={{ backgroundSize: "100% 100%" }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -16,7 +16,7 @@ function AboutUsHero() {
       />
 
       <div className="container-custom mx-auto">
-        <div className="grid grid-cols-12 pt-[150px] md:pt-[130px] items-center">
+        <div className="grid grid-cols-12 pt-[150px] md:pt-[120px] items-center">
 
           {/* LEFT CONTENT */}
           <motion.div
@@ -49,8 +49,8 @@ function AboutUsHero() {
                 <Image
                   src="/assets/about-hero.png"
                   alt="Hero"
-                  width={600}
-                  height={389}
+                  width={530}
+                  height={392}
                 />
               </motion.div>
             </div>

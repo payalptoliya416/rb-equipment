@@ -8,7 +8,7 @@ function FaqHero() {
       
       {/* Background */}
       <div
-        className="absolute top-0 left-0 w-full h-full xl:h-[580px] bg-[url(/assets/main-bg.png)] bg-no-repeat bg-top -z-10"
+        className="absolute top-0 left-0 w-full h-full xl:h-[500px] bg-[url(/assets/main-bg.png)] bg-no-repeat bg-top -z-10"
         style={{ backgroundSize: "100% 100%" }}
       ></div>
 
@@ -29,7 +29,7 @@ function FaqHero() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              Track <span className="text-orange">Your Order</span>
+              Frequently <span className="text-orange">Asked Questions</span>
             </motion.h2>
 
             <motion.p
@@ -38,8 +38,7 @@ function FaqHero() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             >
-              Easily check the status of your equipment order or shipment. Enter
-              your tracking number below to see real-time updates on your delivery.
+           Find quick answers to the most common queries below — or reach out to our team anytime.
             </motion.p>
           </motion.div>
 
@@ -60,8 +59,8 @@ function FaqHero() {
                 <Image
                   src="/assets/faq.png"
                   alt="Hero"
-                  width={600}
-                  height={389}
+                  width={507}
+                  height={419}
                 />
               </motion.div>
             </div>

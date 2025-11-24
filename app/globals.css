@@ -2,8 +2,7 @@
 
 @layer base {
   body {
-    font-family: var(--font-mont);
-    font-family: var(--font-sfpro);
+    font-family: var(--font-sfpro), var(--font-mont), sans-serif;
   }
 }
 
@@ -14,8 +13,9 @@
   --color-para: #4d4d4d;
   --color-text-gray: #646464;
   --color-light-gray: #d3d3d3;
+}.dad{
+  background-image: url('../public/fonts/Mont/fonnts.com-Mont_Blanc_ExtraBold.ttf');
 }
-
 .mont-text {
   font-family: var(--font-mont);
 }

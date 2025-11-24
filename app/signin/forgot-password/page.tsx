@@ -108,7 +108,7 @@ export default function ForgotPassword(): JSX.Element {
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   type="submit"
-                  className="w-full bg-green text-white py-[14px] rounded-lg text-lg hover:opacity-90 transition  mont-text"
+                  className="w-full bg-green text-white py-[14px] rounded-lg text-lg hover:opacity-90 transition  mont-text font-semibold"
                 >
                   Reset it
                 </motion.button>

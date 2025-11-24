@@ -69,7 +69,7 @@ const [selectedSort, setSelectedSort] = useState(sortOptions[0]);
       className="lg:hidden mb-5">
         <button
           onClick={() => setOpenSidebar(true)}
-          className="px-4 py-2 border border-light-gray rounded-lg text-text-gray mont-text"
+          className="px-4 py-2 border border-light-gray rounded-lg text-text-gray mont-text font-semibold"
         >
           ☰ Filters
         </button>
@@ -339,7 +339,7 @@ const [selectedSort, setSelectedSort] = useState(sortOptions[0]);
             className="w-full bg-green text-white py-[14px] text-base rounded-lg
             flex items-center justify-center gap-2
             transition-all duration-300 ease-out
-            hover:bg-green/90 hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] cursor-pointer mont-text"
+            hover:bg-green/90 hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] cursor-pointer mont-text font-semibold"
           >
             Apply Filter
           </button>
@@ -459,7 +459,7 @@ const [selectedSort, setSelectedSort] = useState(sortOptions[0]);
                   Hours: {product.hours}
                 </p>
 
-                <p className="text-base mont-text">
+                <p className="text-base mont-text font-semibold">
                   <span className="font-semibold text-green">Price: ${product.price}</span>
                 </p>
               </div>

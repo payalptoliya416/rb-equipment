@@ -83,7 +83,7 @@ function VerifyAccount(): JSX.Element {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-            className="text-base text-[#7A7A7A] py-[10px] leading-[16px] px-[20px] rounded-md border border-[#7A7A7A] mont-text">
+            className="text-base text-[#7A7A7A] py-[10px] leading-[16px] px-[20px] rounded-md border border-[#7A7A7A] mont-text font-semibold">
               {selectedFile ? selectedFile.name : "Choose File"}
             </motion.div>
            </AnimatePresence>
@@ -106,7 +106,7 @@ function VerifyAccount(): JSX.Element {
               whileTap={{ scale: 0.92 }}
               className="
                 bg-green text-white px-[22px] py-[14px] rounded-lg 
-                hover:opacity-90 transition leading-[16px] text-base cursor-pointer mont-text" >
+                hover:opacity-90 transition leading-[16px] text-base cursor-pointer mont-text font-semibold" >
               Submit
             </motion.button>
           </div>

@@ -5,15 +5,17 @@ import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 
 // ---------------- MONT FONT ----------------
-
 const mont = localFont({
   src: [
-    { path: "../public/fonts/Mont/fonnts.com-Mont_Thin.ttf", weight: "100", style: "normal" },
-    { path: "../public/fonts/Mont/fonnts.com-Mont_Blanc_ExtraLight.ttf", weight: "200", style: "normal" },
-    { path: "../public/fonts/Mont/fonnts.com-Mont_Blanc_ExtraLight.ttf", weight: "300", style: "normal" },
-    { path: "../public/fonts/Mont/fonnts.com-Mont_Regular.ttf", weight: "400", style: "normal" },
-    { path: "../public/fonts/Mont/fonnts.com-Mont_Bold.ttf", weight: "700", style: "normal" },
-    { path: "../public/fonts/Mont/fonnts.com-Mont_Heavy_DEMO.ttf", weight: "900", style: "normal" },
+    { path: "../public/fonts/Mont/Mont-Hairline.ttf", weight: "100", style: "normal" },
+    { path: "../public/fonts/Mont/Mont-Thin.ttf", weight: "200", style: "normal" },
+    { path: "../public/fonts/Mont/Mont-ExtraLight.ttf", weight: "300", style: "normal" },
+    { path: "../public/fonts/Mont/Mont-Light.ttf", weight: "400", style: "normal" },
+    { path: "../public/fonts/Mont/Mont-Regular.ttf", weight: "500", style: "normal" },
+    { path: "../public/fonts/Mont/Mont-SemiBold.ttf", weight: "600", style: "normal" },
+    { path: "../public/fonts/Mont/Mont-Bold.ttf", weight: "700", style: "normal" },
+    { path: "../public/fonts/Mont/Mont-Black.ttf", weight: "800", style: "normal" },
+    { path: "../public/fonts/Mont/Mont-Heavy.ttf", weight: "900", style: "normal" },
   ],
   variable: "--font-mont",
   display: "swap",

@@ -40,7 +40,7 @@ function Hero() {
   {/* Buy Now */}
   <Link
     href="/inventory/inventory-detail"
-    className="group relative overflow-hidden py-3 px-6 text-white bg-green rounded-lg mont-text transition-all duration-300"
+    className="group relative overflow-hidden py-3 px-6 text-white bg-green rounded-lg mont-text transition-all duration-300 font-semibold"
   >
     <span className="relative z-10">Buy Now</span>
 
@@ -54,7 +54,7 @@ function Hero() {
   {/* Bid Now */}
   <Link
     href="/inventory/inventory-detail"
-    className="group relative overflow-hidden py-3 px-6 text-green border border-green rounded-lg mont-text transition-all duration-300"
+    className="group relative overflow-hidden py-3 px-6 text-green border border-green rounded-lg mont-text transition-all duration-300 font-semibold"
   >
     <span className="relative z-10">Bid Now</span>
 

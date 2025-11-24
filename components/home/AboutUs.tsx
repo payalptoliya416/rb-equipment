@@ -52,7 +52,7 @@ function AboutUs() {
             you need to make every transaction smooth and successful.
           </p>
        <Link href='/about-us' className="group relative overflow-hidden inline-block text-base py-[14px] px-[22px] text-white rounded-lg bg-green transition-all duration-300 mont-text">
-      <span className="relative z-10 flex items-center cursor-pointer">
+      <span className="relative z-10 flex items-center cursor-pointer font-semibold">
         Read More
         <FaArrowRight
           className="inline-block ms-[10px] transition-all duration-300 group-hover:translate-x-2"

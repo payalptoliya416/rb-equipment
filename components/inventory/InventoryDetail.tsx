@@ -184,7 +184,7 @@ function InventoryDetail() {
             </div>
             <div className="flex items-center gap-3">
                 <div className="flex items-center gap-[15px]">
-                <p className="text-text-gray mb-[6px] text-base leading-[16px] mont-text">Condition </p>
+                <p className="text-text-gray mb-[6px] text-base leading-[16px] mont-text font-semibold">Condition </p>
                 <span className="bg-[#1DAF50] text-white text-sm px-2 py-[6px] rounded-md whitespace-nowrap">
                 Very Good
                 </span>
@@ -199,7 +199,7 @@ function InventoryDetail() {
             <div className="flex items-center gap-4 md:justify-end">
             <div className="w-[50px] h-[50px]"></div>
             <div>
-                <p className="bg-[#E9E9E9] text-gray text-sm px-[8px] py-[6px] rounded-md mont-text">
+                <p className="bg-[#E9E9E9] text-gray text-sm px-[8px] py-[6px] rounded-md mont-text font-semibold">
                 #S/N HG-2745
                 </p>
             </div>
@@ -209,7 +209,7 @@ function InventoryDetail() {
         <div className="border-t border-light-gray"></div>
           </div>
            <div className="mt-[30px]">
-              <h3 className="mb-[15px] text-[#333333] text-[22px] leading-[22px] mont-text">Description</h3>
+              <h3 className="mb-[15px] text-[#333333] text-[22px] leading-[22px] mont-text font-semibold">Description</h3>
               <p className="text-text-gray mb-[15px] text-base font-normal">This John Deere 6140R is a powerful and reliable tractor ideal for medium to large-scale farming and industrial operations.</p>
                 <p className="text-text-gray mb-[15px] text-base font-normal">It features advanced hydraulics, a fuel-efficient engine, and operator-friendly controls to maximize performance and comfort. It features advanced hydraulics, a fuel efficient engine, and operator-friendly controls to maximize performance and comfort.</p>
            </div>
@@ -270,7 +270,7 @@ function InventoryDetail() {
         </div>
         <div className="col-span-12 xl:col-span-5">    
             <div className="border border-light-gray p-5 rounded-[15px]">
-             <h4 className="text-orange text-lg xl:text-lg xl:mb-[15px]  relative after:absolute after:top-3 after:left-0 after:bg-orange after:w-[15px] after:h-[2px] pl-5 after:rounded-full mont-text">
+             <h4 className="text-orange text-lg xl:text-lg xl:mb-[15px]  relative after:absolute after:top-3 after:left-0 after:bg-orange after:w-[15px] after:h-[2px] pl-5 after:rounded-full mont-text font-semibold">
                    Tractor Loader Backhoe
                   </h4>
                   <h2 className="text-[#373737] text-[26px] sm:text-[28px] sm:leading-[38px] mb-[30px] font-semibold mont-text">2017 Wheel Loaders John Deere 6125M</h2>
@@ -371,7 +371,7 @@ function InventoryDetail() {
 
                           {/* ZIP CODE INPUT */}
                           <div className="mb-[25px]">
-                            <label className="text-[#333333] text-lg mb-2 block mont-text">Zip code</label>
+                            <label className="text-[#333333] text-lg mb-2 block mont-text font-semibold">Zip code</label>
 
                             <Field
                               name="zip"
@@ -389,7 +389,7 @@ function InventoryDetail() {
 
                           {/* COUNTRY DROPDOWN - HEADLESS UI LISTBOX */}
                           <div>
-                            <label className="text-[#333333] text-lg mb-2 block mont-text">
+                            <label className="text-[#333333] text-lg mb-2 block mont-text font-semibold">
                               Choose country
                             </label>
 
@@ -465,7 +465,7 @@ function InventoryDetail() {
 
                         <p className="text-green font-bold text-[26px] mb-[10px] mont-text">$2.000</p>
 
-                        <p className="text-text-gray flex items-center gap-1 text-sm mt-1 mont-text">
+                        <p className="text-text-gray flex items-center gap-1 text-sm mt-1 mont-text font-semibold">
                         Power By Google  
                         <Image src="/assets/google.png" alt="google" width={48} height={17}/>
                         </p>

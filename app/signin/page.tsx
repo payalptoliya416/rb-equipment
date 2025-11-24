@@ -162,7 +162,7 @@ export default function SignInForm(): JSX.Element {
                 <motion.button
                   variants={itemVariant}
                   whileHover={{ scale: 1.02 }}
-                  className="w-full flex items-center justify-center gap-3 border border-light-gray rounded-[10px] py-[18px] hover:bg-gray-50 transition text-[#333333] text-lg cursor-pointer  mont-text"
+                  className="w-full flex items-center justify-center gap-3 border border-light-gray rounded-[10px] py-[18px] hover:bg-gray-50 transition text-[#333333] text-lg cursor-pointer  mont-text font-semibold"
                   type="button"
                 >
                   <Image

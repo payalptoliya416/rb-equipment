@@ -287,36 +287,34 @@ function InventoryDetail() {
                   </div>
                    <div className="flex gap-[10px] items-center mb-[15px]">
                     <p className="text-[#373737] text-lg leading-[18px]">Current bid:</p>
-                    <p className="text-green text-[26px] leading-[26px] font-semibold mont-text">$22,640.00</p>
+                    <p className="text-green text-[26px] leading-[26px] font-semibold mont-text">$22,640.00 </p>
                     </div>
-                    <div className="flex items-center bg-[#F2F8F7] text-green border border-[#CCE4E1] px-4 py-3 rounded-xl gap-[10px] text-base leading-[16px] mb-[30px] mont-text">
+                    <div className="flex items-center bg-[#F2F8F7] text-green border border-[#CCE4E1] px-4 py-3 rounded-xl gap-[10px] text-base leading-[16px] mb-[30px] mont-text font-normal">
                     <span><Image src='/assets/fire.png' alt="icon" width={30} height={30} /></span> 1 Offer was received
                     </div>
                     {/* BID Button */}
-<Link
-  href="/inventory/inventory-detail/verify-account"
-  className="w-full py-[15px] bg-green text-white rounded-lg text-base leading-[16px] font-medium 
-             mb-[15px] flex justify-center items-center gap-[10px] mont-text 
-             transition-all duration-300 hover:brightness-110 hover:bg-green/90"
->
-  <Image src="/assets/hammer.png" alt="icon" width={15} height={15} />
-  BID from $24,000.00
-</Link>
+                      <Link
+                        href="/inventory/inventory-detail/verify-account"
+                        className="w-full py-[15px] bg-green text-white rounded-lg text-base leading-[16px] font-medium 
+                                  mb-[15px] flex justify-center items-center gap-[10px] mont-text 
+                                  transition-all duration-300 hover:brightness-110 hover:bg-green/90"
+                      >
+                        <Image src="/assets/hammer.png" alt="icon" width={15} height={15} />
+                        BID from $24,000.00
+                      </Link>
 
-<div className="text-center text-[#4D4D4D] text-lg leading-[18px] mb-[15px]">- OR -</div>
+                      <div className="text-center text-[#4D4D4D] text-lg leading-[18px] mb-[15px]">- OR -</div>
 
-{/* BUY NOW Button */}
-<Link
-  href="/inventory/inventory-detail/verify-account"
-  className="w-full py-[15px] bg-white text-green rounded-lg text-base leading-[16px] font-medium 
-             flex justify-center items-center gap-[10px] border border-green mont-text 
-             transition-all duration-300 hover:bg-green hover:text-white"
->
-  <Image src="/assets/bag.png" alt="icon" width={15} height={15} />
-  Buy Now for $25,000.00
-</Link>
-
-
+                      {/* BUY NOW Button */}
+                      <Link
+                        href="/inventory/inventory-detail/verify-account"
+                        className="w-full py-[15px] bg-white text-green rounded-lg text-base leading-[16px] font-medium 
+                                  flex justify-center items-center gap-[10px] border border-green mont-text 
+                                  transition-all duration-300 hover:bg-green hover:text-white"
+                      >
+                        <Image src="/assets/bag.png" alt="icon" width={15} height={15} />
+                        Buy Now for $25,000.00
+                      </Link>
                     <div className="border-t border-light-gray my-[30px]"></div>
 
                     <div className="w-full space-y-6">

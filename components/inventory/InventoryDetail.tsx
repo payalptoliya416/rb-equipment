@@ -289,7 +289,7 @@ function InventoryDetail() {
                     <p className="text-[#373737] text-lg leading-[18px]">Current bid:</p>
                     <p className="text-green text-[26px] leading-[26px] font-semibold mont-text">$22,640.00 </p>
                     </div>
-                    <div className="flex items-center bg-[#F2F8F7] text-green border border-[#CCE4E1] px-4 py-3 rounded-xl gap-[10px] text-base leading-[16px] mb-[30px] mont-text font-normal">
+                    <div className="flex items-center bg-[#F2F8F7] text-green border border-[#CCE4E1] px-4 py-3 rounded-xl gap-[10px] text-base leading-[16px] mb-[30px] font-normal">
                     <span><Image src='/assets/fire.png' alt="icon" width={30} height={30} /></span> 1 Offer was received
                     </div>
                     {/* BID Button */}

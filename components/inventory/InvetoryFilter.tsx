@@ -440,11 +440,11 @@ const [selectedSort, setSelectedSort] = useState(sortOptions[0]);
               }}
               className="border border-light-gray rounded-[10px] p-[15px] bg-white"
             >
-              <div className="w-full rounded-[10px] flex items-center justify-center border border-light-gray py-5 px-3 bg-[#E9E9E926] relative group">
+              <div className="w-full rounded-[10px] flex items-center justify-center border border-light-gray py-5 px-3 bg-[#E9E9E926] relative group ">
                 <Image src="/assets/filter1.png" alt="product" width={216} height={123} />
                 <Link
                   href="/inventory/inventory-detail"
-                  className="absolute border border-light-gray rounded-md py-[10px] px-[30px] text-green bg-white text-base leading-[16px] left-1/2 bottom-0 -translate-x-1/2 whitespace-nowrap opacity-0 translate-y-3 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:-translate-y-3 mont-text"
+                  className="absolute border border-light-gray rounded-md py-[10px] px-[30px] text-green bg-white text-base leading-[16px] left-1/2 bottom-0 -translate-x-1/2 whitespace-nowrap opacity-0 translate-y-3 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:-translate-y-3"
                 >
                   BID OR BUY
                 </Link>

@@ -44,28 +44,36 @@ function InventoryDetail() {
             />
             </motion.div>
           </div>
-           <div className="flex border rounded-xl overflow-hidden w-full border-light-gray mb-[25px]">
-          <button 
-           onClick={() => setActiveTab("photos")}
-          className={`w-1/2 py-2 sm:py-3 font-medium mont-text ${
-            activeTab === "photos"
-              ? "bg-green text-white"
-              : "bg-white text-gray"
-          }`}
-          >
-            Photos
-          </button>
-          <button
-            onClick={() => setActiveTab("videos")}
-          className={`w-1/2 py-2 sm:py-3 font-medium mont-text ${
-            activeTab === "videos"
-              ? "bg-green text-white"
-              : "bg-white text-gray"
-          }`}
-          >
-            Videos
-          </button>
-           </div>
+          <div className="flex border rounded-xl overflow-hidden w-full border-light-gray mb-[25px]">
+
+  {/* Photos */}
+                <button
+                  onClick={() => setActiveTab("photos")}
+                  className={`w-1/2 py-2 sm:py-3 font-medium mont-text transition-all duration-200 cursor-pointer
+                    ${
+                      activeTab === "photos"
+                        ? "bg-green text-white"
+                        : "bg-white text-gray hover:bg-light-gray/20 hover:text-green"
+                    }`}
+                >
+                  Photos
+                </button>
+
+                {/* Videos */}
+                <button
+                  onClick={() => setActiveTab("videos")}
+                  className={`w-1/2 py-2 sm:py-3 font-medium mont-text transition-all duration-200  cursor-pointer
+                    ${
+                      activeTab === "videos"
+                        ? "bg-green text-white"
+                        : "bg-white text-gray hover:bg-light-gray/20 hover:text-green"
+                    }`}
+                >
+                  Videos
+                </button>
+
+              </div>
+
             {activeTab === "photos" && (
         <div className="flex justify-between gap-2 sm:gap-1 mb-[30px] flex-wrap">
           {["detail1.png","detail6.png","detail2.png","detail3.png","detail4.png","detail5.png"].map((img, i) => (
@@ -284,13 +292,30 @@ function InventoryDetail() {
                     <div className="flex items-center bg-[#F2F8F7] text-green border border-[#CCE4E1] px-4 py-3 rounded-xl gap-[10px] text-base leading-[16px] mb-[30px] mont-text">
                     <span><Image src='/assets/fire.png' alt="icon" width={30} height={30} /></span> 1 Offer was received
                     </div>
-                     <Link href='/inventory/inventory-detail/verify-account' className="w-full py-[15px] bg-green text-white rounded-lg text-base leading-[16px] font-medium mb-[15px] flex justify-center items-center gap-[10px] mont-text">
-                    <Image src='/assets/hammer.png' alt="icon" width={15} height={15} /> BID from $24,000.00
-                    </Link>
-                    <div className="text-center text-[#4D4D4D] text-lg leading-[18px] mb-[15px]">- OR -</div>
-                      <Link href='/inventory/inventory-detail/verify-account' className="w-full py-[15px] bg-white text-green rounded-lg text-base leading-[16px] font-medium flex justify-center items-center gap-[10px] border border-green mont-text">
-                    <Image src='/assets/bag.png' alt="icon" width={15} height={15} />Buy Now for $25,000.00
-                    </Link>
+                    {/* BID Button */}
+<Link
+  href="/inventory/inventory-detail/verify-account"
+  className="w-full py-[15px] bg-green text-white rounded-lg text-base leading-[16px] font-medium 
+             mb-[15px] flex justify-center items-center gap-[10px] mont-text 
+             transition-all duration-300 hover:brightness-110 hover:bg-green/90"
+>
+  <Image src="/assets/hammer.png" alt="icon" width={15} height={15} />
+  BID from $24,000.00
+</Link>
+
+<div className="text-center text-[#4D4D4D] text-lg leading-[18px] mb-[15px]">- OR -</div>
+
+{/* BUY NOW Button */}
+<Link
+  href="/inventory/inventory-detail/verify-account"
+  className="w-full py-[15px] bg-white text-green rounded-lg text-base leading-[16px] font-medium 
+             flex justify-center items-center gap-[10px] border border-green mont-text 
+             transition-all duration-300 hover:bg-green hover:text-white"
+>
+  <Image src="/assets/bag.png" alt="icon" width={15} height={15} />
+  Buy Now for $25,000.00
+</Link>
+
 
                     <div className="border-t border-light-gray my-[30px]"></div>
 
@@ -449,77 +474,74 @@ function InventoryDetail() {
                     </div>
                       <div className="border-t border-light-gray my-[30px]"></div>
                       <div className="w-full space-y-8">
+                      {/* Pay at delivery */}
+                        <div className="space-y-2">
+                          <div className="flex items-center gap-2">
+                            <span className="text-xl"><FaHandHoldingDollar/></span>
+                            <h3 className="text-lg font-semibold text-gray mb-[10px] leading-[18px] mont-text">
+                              Pay at delivery
+                            </h3>
+                          </div>
+                          <p className="text-text-gray text-base leading-[16px]">100% safe payment.</p>
 
-  {/* Pay at delivery */}
-  <div className="space-y-2">
-    <div className="flex items-center gap-2">
-      <span className="text-xl"><FaHandHoldingDollar/></span>
-      <h3 className="text-lg font-semibold text-gray mb-[10px] leading-[18px] mont-text">
-        Pay at delivery
-      </h3>
-    </div>
-    <p className="text-text-gray text-base leading-[16px]">100% safe payment.</p>
+                          <div className="border-t border-gray-200 mt-[30px]"></div>
+                        </div>
 
-    <div className="border-t border-gray-200 mt-[30px]"></div>
-  </div>
+                      {/* Money back guaranteed */}
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2">
+                          <span className="text-xl"><FaHandHoldingDollar/></span>
+                          <h3 className="text-lg font-semibold text-gray leading-[18px] mont-text">
+                            Money back guaranteed
+                          </h3>
+                        </div>
+                        <p className="text-text-gray text-base">
+                          Test the machine for 30 days with a 100% Money-Back Guarantee!
+                        </p>
 
-  {/* Money back guaranteed */}
-  <div className="space-y-2">
-    <div className="flex items-center gap-2">
-      <span className="text-xl"><FaHandHoldingDollar/></span>
-      <h3 className="text-lg font-semibold text-gray leading-[18px] mont-text">
-        Money back guaranteed
-      </h3>
-    </div>
-    <p className="text-text-gray text-base">
-      Test the machine for 30 days with a 100% Money-Back Guarantee!
-    </p>
+                        <div className="border-t border-gray-200 mt-[30px]"></div>
+                      </div>
 
-    <div className="border-t border-gray-200 mt-[30px]"></div>
-  </div>
+                      {/* Feature list */}
+                      <div className="space-y-4">
 
-  {/* Feature list */}
-  <div className="space-y-4">
+                        {/* Item */}
+                                    <div className="flex items-center gap-3 p-4 rounded-xl 
+                                    bg-[linear-gradient(90deg,#f6f6f6_0%,#ffffff_100%)]
+                                    ">
+                                    <Image src="/assets/van.svg" alt="vehicle" width={22} height={22}/>
+                                    <p className="text-[#373737]">
+                                        Delivery anywhere within the USA & Canada
+                                    </p>
+                                    </div>
 
-    {/* Item */}
-                <div className="flex items-center gap-3 p-4 rounded-xl 
-                bg-[linear-gradient(90deg,#f6f6f6_0%,#ffffff_100%)]
-                ">
-                <Image src="/assets/van.svg" alt="vehicle" width={22} height={22}/>
-                <p className="text-[#373737]">
-                    Delivery anywhere within the USA & Canada
-                </p>
-                </div>
-
-                <div className="flex items-center gap-3 p-4 rounded-xl 
-                bg-[linear-gradient(90deg,#f6f6f6_0%,#ffffff_100%)]
-                ">
-                <Image src="/assets/van1.svg" alt="return" width={22} height={22}/>
-                <p className="text-[#373737]">
-                   hassle
-                </p>
-                </div>
-                <div className="flex items-center gap-3 p-4 rounded-xl 
-                bg-[linear-gradient(90deg,#f6f6f6_0%,#ffffff_100%)]
-                ">
-                <Image src="/assets/van3.svg" alt="return" width={22} height={22}/>
-                <p className="text-[#373737]">
-                    30-day hassle-free returns
-                </p>
-                </div>
-                <div className="flex items-center gap-3 p-4 rounded-xl 
-                bg-[linear-gradient(90deg,#f6f6f6_0%,#ffffff_100%)]
-                ">
-                <Image src="/assets/van4.svg" alt="return" width={22} height={22}/>
-                <p className="text-[#373737]">
-                    30-day hassle-free returns
-                </p>
-                </div>
-  </div>
-</div>
-
+                                    <div className="flex items-center gap-3 p-4 rounded-xl 
+                                    bg-[linear-gradient(90deg,#f6f6f6_0%,#ffffff_100%)]
+                                    ">
+                                    <Image src="/assets/van1.svg" alt="return" width={22} height={22}/>
+                                    <p className="text-[#373737]">
+                                      hassle
+                                    </p>
+                                    </div>
+                                    <div className="flex items-center gap-3 p-4 rounded-xl 
+                                    bg-[linear-gradient(90deg,#f6f6f6_0%,#ffffff_100%)]
+                                    ">
+                                    <Image src="/assets/van3.svg" alt="return" width={22} height={22}/>
+                                    <p className="text-[#373737]">
+                                        30-day hassle-free returns
+                                    </p>
+                                    </div>
+                                    <div className="flex items-center gap-3 p-4 rounded-xl 
+                                    bg-[linear-gradient(90deg,#f6f6f6_0%,#ffffff_100%)]
+                                    ">
+                                    <Image src="/assets/van4.svg" alt="return" width={22} height={22}/>
+                                    <p className="text-[#373737]">
+                                        30-day hassle-free returns
+                                    </p>
+                                    </div>
+                      </div>
                     </div>
-
+                    </div>
             </div>
         </div>
       </div>

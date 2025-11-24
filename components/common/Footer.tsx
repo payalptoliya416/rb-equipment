@@ -27,9 +27,18 @@ function Footer() {
               Join thousands of satisfied customers who trust RB Equipment Sales
               for industrial and agricultural machinery.
             </p>
-            <Link href='/inventory/inventory-detail' className="text-green bg-white  py-[14px] px-[22px]  rounded-xl text-base leading-[16px] font-semibold mont-text">
-              Start Now
-            </Link>
+          <Link
+            href="/inventory/inventory-detail"
+            className="group relative overflow-hidden text-green bg-white py-[14px] px-[22px] rounded-xl 
+                      text-base leading-[16px] font-semibold mont-text border border-green transition-all duration-300"
+          >
+            <span className="relative z-10">Start Now</span>
+
+            <span
+              className="absolute inset-0 bg-green/20 translate-x-[-100%] 
+                        group-hover:translate-x-[100%] transition-all duration-500"
+            ></span>
+          </Link>
           </div>
         </div>
       </section>
@@ -51,115 +60,212 @@ function Footer() {
                 selling, and auctioning quality industrial machinery, tractors,
                 and tools.
               </p>
-              <div className="flex items-center gap-[15px]">
+             <div className="flex items-center gap-[15px]">
 
-              {/* Facebook */}
-              <a
-                href="https://facebook.com/"
-                target="_blank"
-                className="border border-light-gray w-7 h-7 rounded-full flex justify-center items-center"
-              >
-                <FaFacebookF className="text-light-gray" />
-              </a>
+  {/* Facebook */}
+  <a
+    href="https://facebook.com/"
+    target="_blank"
+    className="group border border-light-gray w-7 h-7 rounded-full flex justify-center items-center 
+               transition-all duration-300 hover:border-green hover:bg-green/10 hover:scale-110"
+  >
+    <FaFacebookF className="text-light-gray transition-all duration-300 group-hover:text-green" />
+  </a>
 
-              {/* Twitter / X */}
-              <a
-                href="https://twitter.com/"
-                target="_blank"
-                className="border border-light-gray w-7 h-7 rounded-full flex justify-center items-center"
-              >
-                <FaXTwitter className="text-light-gray" />
-              </a>
+  {/* Twitter / X */}
+  <a
+    href="https://twitter.com/"
+    target="_blank"
+    className="group border border-light-gray w-7 h-7 rounded-full flex justify-center items-center 
+               transition-all duration-300 hover:border-green hover:bg-green/10 hover:scale-110"
+  >
+    <FaXTwitter className="text-light-gray transition-all duration-300 group-hover:text-green" />
+  </a>
 
-              {/* Instagram */}
-              <a
-                href="https://instagram.com/"
-                target="_blank"
-                className="border border-light-gray w-7 h-7 rounded-full flex justify-center items-center"
-              >
-                <FaInstagram className="text-light-gray" />
-              </a>
+  {/* Instagram */}
+  <a
+    href="https://instagram.com/"
+    target="_blank"
+    className="group border border-light-gray w-7 h-7 rounded-full flex justify-center items-center 
+               transition-all duration-300 hover:border-green hover:bg-green/10 hover:scale-110"
+  >
+    <FaInstagram className="text-light-gray transition-all duration-300 group-hover:text-green" />
+  </a>
 
-              {/* LinkedIn */}
-              <a
-                href="https://linkedin.com/"
-                target="_blank"
-                className="border border-light-gray w-7 h-7 rounded-full flex justify-center items-center"
-              >
-                <FaLinkedinIn className="text-light-gray" />
-              </a>
+  {/* LinkedIn */}
+  <a
+    href="https://linkedin.com/"
+    target="_blank"
+    className="group border border-light-gray w-7 h-7 rounded-full flex justify-center items-center 
+               transition-all duration-300 hover:border-green hover:bg-green/10 hover:scale-110"
+  >
+    <FaLinkedinIn className="text-light-gray transition-all duration-300 group-hover:text-green" />
+  </a>
 
-             </div>
+</div>
+
             </div>
-            <div className="col-span-12 sm:col-span-6 lg:col-span-4 flex lg:justify-center mb-10 sm:mb-0">
-              <div>
-                <h3 className="text-orange mb-5 text-lg leading-[18px]  mont-text">Quick Links</h3>
-              <ul className="space-y-[15px]">
-                <li>
-                  <Link href='/' className="text-light-gray text-base leading-[16px] font-normal">Home</Link>
-                </li>
-                <li>
-                  <Link href='/inventory' className="text-light-gray text-base leading-[16px] font-normal">Inventory</Link>
-                </li>
-                <li>
-                  <Link href='/about-us' className="text-light-gray text-base leading-[16px] font-normal">About</Link>
-                </li>
-                <li>
-                  <Link href='/faq' className="text-light-gray text-base leading-[16px] font-normal">FAQ</Link>
-                </li>
-                <li>
-                  <Link href='/contact-us' className="text-light-gray text-base leading-[16px] font-normal">Contact</Link>
-                </li>
-              </ul>
-              </div>
-            </div>
-            <div className="col-span-12 sm:col-span-6 lg:col-span-4">
-                 <h3 className="text-orange mb-5 text-lg leading-[18px]  mont-text">Contact Info</h3>
-                  <a href="tel:+345209001307" className="block mb-5">
-                  <div className="flex gap-3 items-center">
-                   <div>
-                     <div className="flex justify-center items-center w-10 h-10 rounded-full bg-white/10">
-                    <IoCallOutline className="text-white"/>
-                    </div>
-                   </div>
-                       <h3 className="text-light-gray text-base">Sales: +34 520-900-1307</h3>
-                  </div>
-                 </a>
-                   <a
-                    href="https://www.google.com/maps/search/?api=1&query=RB+Equipment+Sales+123+Industrial+Road+Montgomery+Village+USA"
-                    target="_blank"
-                    className="block mb-5"
-                  >
-                  <div className="flex gap-3 items-center">
-                    <div>
-                      <div className="flex justify-center items-center w-10 h-10 rounded-full bg-white/10">
-                    <GrLocation className="text-white"/>
-                    </div>
-                    </div>
-                       <h3 className="text-light-gray text-base">RB Equipment Sales 123 Industrial Road, Montgomery Village, USA</h3>
-                  </div>
-                 </a>
-                 <a href="mailto:rb@equipmentsales.com" className="block mb-5">
-                  <div className="flex gap-3 items-center">
-                   <div>
-                     <div className="flex justify-center items-center w-10 h-10 rounded-full bg-white/10">
-                    <LuMail className="text-white"/>
-                    </div>
-                   </div>
-                       <h3 className="text-light-gray text-base">rb@equipmentsales.com</h3>
-                  </div>
-                 </a>
-                 <div>
-                  <div className="flex gap-3 items-center">
-                    <div>
-                      <div className="flex justify-center items-center w-10 h-10 rounded-full bg-white/10">
-                    <IoTimeOutline className="text-white"/>
-                    </div>
-                    </div>
-                       <h3 className="text-light-gray text-base">9am - 5pm Monday to Friday</h3>
-                  </div>
-                 </div>
-            </div>
+      <div className="col-span-12 sm:col-span-6 lg:col-span-4 flex lg:justify-center mb-10 sm:mb-0">
+  <div>
+    <h3 className="text-orange mb-5 text-lg leading-[18px] mont-text">Quick Links</h3>
+
+    <ul className="space-y-[15px]">
+
+      <li>
+        <Link
+          href="/"
+          className="relative text-light-gray text-base leading-[16px] font-normal group"
+        >
+          Home
+          <span
+            className="absolute left-0 -bottom-1 h-[2px] w-0 bg-green transition-all duration-300 group-hover:w-full"
+          ></span>
+        </Link>
+      </li>
+
+      <li>
+        <Link
+          href="/inventory"
+          className="relative text-light-gray text-base leading-[16px] font-normal group"
+        >
+          Inventory
+          <span
+            className="absolute left-0 -bottom-1 h-[2px] w-0 bg-green transition-all duration-300 group-hover:w-full"
+          ></span>
+        </Link>
+      </li>
+
+      <li>
+        <Link
+          href="/about-us"
+          className="relative text-light-gray text-base leading-[16px] font-normal group"
+        >
+          About
+          <span
+            className="absolute left-0 -bottom-1 h-[2px] w-0 bg-green transition-all duration-300 group-hover:w-full"
+          ></span>
+        </Link>
+      </li>
+
+      <li>
+        <Link
+          href="/faq"
+          className="relative text-light-gray text-base leading-[16px] font-normal group"
+        >
+          FAQ
+          <span
+            className="absolute left-0 -bottom-1 h-[2px] w-0 bg-green transition-all duration-300 group-hover:w-full"
+          ></span>
+        </Link>
+      </li>
+
+      <li>
+        <Link
+          href="/contact-us"
+          className="relative text-light-gray text-base leading-[16px] font-normal group"
+        >
+          Contact
+          <span
+            className="absolute left-0 -bottom-1 h-[2px] w-0 bg-green transition-all duration-300 group-hover:w-full"
+          ></span>
+        </Link>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+         <div className="col-span-12 sm:col-span-6 lg:col-span-4">
+  <h3 className="text-orange mb-5 text-lg leading-[18px] mont-text">Contact Info</h3>
+
+  {/* Phone */}
+  <a
+    href="tel:+345209001307"
+    className="group block mb-5 transition-all duration-300"
+  >
+    <div className="flex gap-3 items-center">
+      <div>
+        <div
+          className="flex justify-center items-center w-10 h-10 rounded-full bg-white/10
+                     transition-all duration-300 group-hover:bg-green group-hover:scale-110"
+        >
+          <IoCallOutline className="text-white" />
+        </div>
+      </div>
+      <h3
+        className="text-light-gray text-base transition-all duration-300 group-hover:text-white"
+      >
+        Sales: +34 520-900-1307
+      </h3>
+    </div>
+  </a>
+
+  {/* Location */}
+  <a
+    href="https://www.google.com/maps/search/?api=1&query=RB+Equipment+Sales+123+Industrial+Road+Montgomery+Village+USA"
+    target="_blank"
+    className="group block mb-5 transition-all duration-300"
+  >
+    <div className="flex gap-3 items-center">
+      <div>
+        <div
+          className="flex justify-center items-center w-10 h-10 rounded-full bg-white/10
+                     transition-all duration-300 group-hover:bg-green group-hover:scale-110"
+        >
+          <GrLocation className="text-white" />
+        </div>
+      </div>
+      <h3
+        className="text-light-gray text-base transition-all duration-300 group-hover:text-white"
+      >
+        RB Equipment Sales 123 Industrial Road, Montgomery Village, USA
+      </h3>
+    </div>
+  </a>
+
+  {/* Email */}
+  <a
+    href="mailto:rb@equipmentsales.com"
+    className="group block mb-5 transition-all duration-300"
+  >
+    <div className="flex gap-3 items-center">
+      <div>
+        <div
+          className="flex justify-center items-center w-10 h-10 rounded-full bg-white/10
+                     transition-all duration-300 group-hover:bg-green group-hover:scale-110"
+        >
+          <LuMail className="text-white" />
+        </div>
+      </div>
+      <h3
+        className="text-light-gray text-base transition-all duration-300 group-hover:text-white"
+      >
+        rb@equipmentsales.com
+      </h3>
+    </div>
+  </a>
+
+  {/* Time */}
+  <div className="group transition-all duration-300">
+    <div className="flex gap-3 items-center">
+      <div>
+        <div
+          className="flex justify-center items-center w-10 h-10 rounded-full bg-white/10
+                     transition-all duration-300 group-hover:bg-green group-hover:scale-110"
+        >
+          <IoTimeOutline className="text-white" />
+        </div>
+      </div>
+      <h3
+        className="text-light-gray text-base transition-all duration-300 group-hover:text-white"
+      >
+        9am - 5pm Monday to Friday
+      </h3>
+    </div>
+  </div>
+
+</div>
+
           </div>
           <div className="flex justify-center sm:justify-between items-center pt-5 flex-wrap gap-4 text-center">
             <p className="text-light-gray text-base font-normal">Copyright 2025 © All Right Reserved</p>

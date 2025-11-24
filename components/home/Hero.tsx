@@ -35,14 +35,38 @@ function Hero() {
               trusted sellers. Whether you’re expanding your fleet or upgrading
               your equipment, RB Equipment Sales has you covered.
             </p>
-            <div className="flex items-center gap-4">
-              <Link href='/inventory/inventory-detail' className="py-3 px-6 text-white bg-green rounded-lg mont-text">
-                Buy Now
-              </Link>
-              <Link href='/inventory/inventory-detail' className="py-3 px-6 text-green rounded-lg border border-green mont-text">
-                Bid Now
-              </Link>
-            </div>
+           <div className="flex items-center gap-4">
+
+  {/* Buy Now */}
+  <Link
+    href="/inventory/inventory-detail"
+    className="group relative overflow-hidden py-3 px-6 text-white bg-green rounded-lg mont-text transition-all duration-300"
+  >
+    <span className="relative z-10">Buy Now</span>
+
+    {/* Sliding overlay effect */}
+    <span
+      className="absolute inset-0 bg-white/20 translate-x-[-100%] 
+                 group-hover:translate-x-[100%] transition-all duration-500"
+    ></span>
+  </Link>
+
+  {/* Bid Now */}
+  <Link
+    href="/inventory/inventory-detail"
+    className="group relative overflow-hidden py-3 px-6 text-green border border-green rounded-lg mont-text transition-all duration-300"
+  >
+    <span className="relative z-10">Bid Now</span>
+
+    {/* Sliding overlay effect */}
+    <span
+      className="absolute inset-0 bg-green/20 translate-x-[-100%] 
+                 group-hover:translate-x-[100%] transition-all duration-500"
+    ></span>
+  </Link>
+
+</div>
+
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: -20 }}

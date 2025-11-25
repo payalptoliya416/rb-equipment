@@ -57,11 +57,7 @@ function Equipment() {
 
   return (
     <section className="container-custom mx-auto my-20 lg:my-[110px]">
-      <motion.div
-       initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
+      <div
       className="text-center mb-10">
         <h2 className="text-3xl md:text-[38px] md:leading-[38px] mb-[15px] font-bold text-gray mont-text">
           Our Main <span className="text-orange">Equipment</span>
@@ -69,21 +65,11 @@ function Equipment() {
         <p className="text-base leading-[16px] text-text-gray">
           Browse through top categories to find what fits your business needs.
         </p>
-      </motion.div>
+      </div>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[30px]">
   {equipmentData.map((item, i) => (
-    <motion.div
+    <div
       key={item.id}
-      variants={cardVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{
-        duration: 0.7,
-        delay: i * 0.15,
-        ease: "easeOut",
-      }}
-      whileHover={{ scale: 1.05 }}
       className="bg-green p-[15px] rounded-xl cursor-pointer"
     >
       <Link href={item.link}>
@@ -105,7 +91,7 @@ function Equipment() {
           </p>
         </div>
       </Link>
-    </motion.div>
+    </div>
   ))}
 </div>
 

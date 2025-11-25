@@ -3,6 +3,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
+import ToastProvider from "@/components/common/ToastProvider";
 
 // ---------------- MONT FONT ----------------
 const mont = localFont({
@@ -55,6 +56,7 @@ export default function RootLayout({
       >
         <Header/>
         {children}
+        {/* <ToastProvider/> */}
         <Footer/>
       </body>
     </html>

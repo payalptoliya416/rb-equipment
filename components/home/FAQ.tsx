@@ -65,7 +65,7 @@ function FAQ() {
                 {/* Header */}
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : i)}
-                  className={`w-full flex items-center justify-between rounded-xl border border-light-gray px-[22px] py-5 text-left font-semibold text-[16px] gap-2 md:gap-0 transition-all mont-text
+                  className={`w-full flex items-center justify-between rounded-xl border border-light-gray px-[22px] py-5 text-left font-semibold text-[16px] gap-2 md:gap-0 transition-all mont-text cursor-pointer
                     ${isOpen ? "bg-green text-white" : "bg-white text-gray"}
                   `}
                 >

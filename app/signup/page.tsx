@@ -65,7 +65,7 @@ export default function CreateAccount(): JSX.Element {
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-3xl md:text-[38px] font-bold text-center text-gray mb-[15px] leading-[38px]  mont-text"
+          className="text-3xl md:text-[38px] font-extrabold text-center text-gray mb-[15px] leading-[38px]  mont-text"
         >
           Create Your <span className="text-orange">Account</span>
         </motion.h2>
@@ -335,45 +335,86 @@ export default function CreateAccount(): JSX.Element {
                 </motion.div>
 
                 {/* Checkboxes */}
-                <motion.div variants={itemVariant} className="space-y-[22px]">
-                  <label className="flex items-center gap-3 text-[#4D4D4D]">
-                    <Field type="checkbox" name="terms" />
-                    <span>
-                      I agree to the{" "}
-                      <span className="text-green font-semibold">
-                        Terms of Service
-                      </span>{" "}
-                      and{" "}
-                      <span className="text-green font-semibold">
-                        Privacy Policy
-                      </span>
-                    </span>
-                  </label>
-                  <ErrorMessage
-                    name="terms"
-                    className="text-red-500 text-sm"
-                    component="div"
-                  />
+           <motion.div variants={itemVariant} className="space-y-[22px]">
 
-                  <label className="flex items-center gap-3 text-[#4D4D4D]">
-                    <Field type="checkbox" name="marketing" />
-                    <span>
-                      I would like to receive marketing communications about
-                      products, services, and promotions.
-                    </span>
-                  </label>
-                </motion.div>
+  {/* TERMS CHECKBOX */}
+  <label className="flex items-start gap-3 text-[#4D4D4D] cursor-pointer select-none">
 
+    {/* Custom Checkbox Wrapper */}
+    <div className="relative">
+      <Field
+        type="checkbox"
+        name="terms"
+        className="
+          peer appearance-none w-5 h-5 border border-[#CFCFCF] rounded-sm 
+          checked:bg-green checked:border-green transition cursor-pointer
+        "
+      />
+
+      {/* Tick icon */}
+      <svg
+        className="
+          absolute left-[3px] top-[2px] w-4 h-4 hidden peer-checked:block 
+          pointer-events-none fill-none stroke-white stroke-[3px]
+        "
+        viewBox="0 0 24 24"
+      >
+        <path d="M5 13l4 4L19 7" />
+      </svg>
+    </div>
+
+    <span>
+      I agree to the{" "}
+      <span className="text-green font-semibold">Terms of Service</span> and{" "}
+      <span className="text-green font-semibold">Privacy Policy</span>
+    </span>
+  </label>
+
+  <ErrorMessage
+    name="terms"
+    className="text-red-500 text-sm"
+    component="div"
+  />
+
+  {/* MARKETING CHECKBOX */}
+  <label className="flex items-start gap-3 text-[#4D4D4D] cursor-pointer select-none">
+
+    {/* Custom Checkbox Wrapper */}
+    <div className="relative">
+      <Field
+        type="checkbox"
+        name="marketing"
+        className="
+          peer appearance-none w-5 h-5 border border-[#CFCFCF] rounded-sm 
+          checked:bg-green checked:border-green transition cursor-pointer
+        "
+      />
+
+      {/* Tick icon */}
+      <svg
+        className="
+          absolute left-[3px] top-[2px] w-4 h-4 hidden peer-checked:block 
+          pointer-events-none fill-none stroke-white stroke-[3px]
+        "
+        viewBox="0 0 24 24"
+      >
+        <path d="M5 13l4 4L19 7" />
+      </svg>
+    </div>
+
+    <span>
+      I would like to receive marketing communications about products, services,
+      and promotions.
+    </span>
+  </label>
+</motion.div>
                 {/* Submit Button */}
-                <motion.button
-                  variants={itemVariant}
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
+                <button
                   type="submit"
-                  className="w-full bg-green text-white py-[18px] rounded-lg font-semibold text-lg leading-[18px] hover:opacity-90 transition  mont-text"
+                  className="w-full bg-green text-white py-[18px] rounded-lg font-semibold text-lg leading-[18px] hover:opacity-90 transition  mont-text cursor-pointer"
                 >
                   Create Account
-                </motion.button>
+                </button>
               </Form>
             </motion.div>
           )}

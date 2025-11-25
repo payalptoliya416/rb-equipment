@@ -31,24 +31,14 @@ function CoreServices() {
     <section className="container-custom mx-auto my-20 lg:my-[110px]">
 
       {/* Title Animation */}
-      <motion.div
-        className="text-center"
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
-      >
+      <div  className="text-center">
         <h2 className="text-3xl md:text-[38px] md:leading-[38px] mb-10 lg:mb-20 font-bold text-gray mont-text">
           Core <span className="text-orange">Services</span>
         </h2>
-      </motion.div>
+      </div>
 
       {/* Grid Animation */}
-      <motion.div
-        variants={containerVariant}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
+      <div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px] items-stretch"
       >
         {[
@@ -105,7 +95,7 @@ function CoreServices() {
             <p className="text-text-gray text-base font-normal">{service.desc}</p>
           </motion.div>
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 }

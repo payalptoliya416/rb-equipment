@@ -1,27 +1,48 @@
 'use client';
 
-import { useState, FormEvent, ChangeEvent, JSX } from "react";
+import { useState, FormEvent, ChangeEvent, JSX, DragEvent } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import toast from "react-hot-toast";
 
 function VerifyAccount(): JSX.Element {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
 
   const handleFileUpload = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0] || null;
     setSelectedFile(file);
   };
 
+  
+  const handleDrop = (e: DragEvent<HTMLLabelElement>) => {
+    e.preventDefault();
+    setIsDragging(false);
+
+    const file = e.dataTransfer.files?.[0];
+    if (file) setSelectedFile(file);
+  };
+
+  const handleDragOver = (e: DragEvent<HTMLLabelElement>) => {
+    e.preventDefault();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = () => {
+    setIsDragging(false);
+  };
+
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!selectedFile) {
-      alert("Please upload a file first!");
+      toast.error("Please upload a file first!");
       return;
     }
 
     console.log("Uploaded File:", selectedFile);
-    alert("File submitted successfully!");
+    toast.success("File submitted successfully!");
   };
 
   return (
@@ -58,14 +79,21 @@ function VerifyAccount(): JSX.Element {
 
           <p className="text-[#333333] text-lg leading-[18px] font-medium mb-[12px] mont-text">Driving License</p>
 
-          <motion.label
-           whileHover={{ scale: 1.02 }}
+           <motion.label
+            whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             htmlFor="fileUpload"
-            className="
-              w-full border border-dashed border-[#4D4D4D] rounded-xl
-              py-[20px] px-4 flex flex-col justify-center items-center cursor-pointer
-              hover:bg-gray-50 transition bg-[#E9E9E933]">
+            onDrop={handleDrop}
+            onDragOver={handleDragOver}
+            onDragLeave={handleDragLeave}
+            className={`
+              w-full border rounded-xl py-[20px] px-4 flex flex-col justify-center 
+              items-center cursor-pointer transition 
+              bg-[#E9E9E933]
+              border-dashed 
+              ${isDragging ? "border-green bg-green/10" : "border-[#4D4D4D]"}
+            `}
+          >
             <Image
               src="/assets/upload.svg"
               alt="upload"
@@ -74,19 +102,21 @@ function VerifyAccount(): JSX.Element {
               className="mb-[15px]"
             />
 
-                <p className="text-[#333333] font-medium mb-[25px] text-lg leading-[18px] mont-text">
-              Upload a File
+            <p className="text-[#333333] font-medium mb-[25px] text-lg leading-[18px] mont-text">
+              {isDragging ? "Drop file here..." : "Upload a File"}
             </p>
-           <AnimatePresence mode="wait">
-            <motion.div
-              key={selectedFile ? selectedFile.name : "no-file"}
+
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={selectedFile ? selectedFile.name : "no-file"}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-            className="text-base text-[#7A7A7A] py-[10px] leading-[16px] px-[20px] rounded-md border border-[#7A7A7A] mont-text font-semibold">
-              {selectedFile ? selectedFile.name : "Choose File"}
-            </motion.div>
-           </AnimatePresence>
+                className="text-base text-[#7A7A7A] py-[10px] leading-[16px] px-[20px] rounded-md border border-[#7A7A7A] mont-text font-semibold"
+              >
+                {selectedFile ? selectedFile.name : "Choose File"}
+              </motion.div>
+            </AnimatePresence>
 
             {/* Hidden Input */}
             <input
@@ -98,7 +128,6 @@ function VerifyAccount(): JSX.Element {
             />
           </motion.label>
 
-          {/* Submit Button */}
           <div className="flex justify-center">
             <motion.button
               type="submit"

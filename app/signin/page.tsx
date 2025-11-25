@@ -130,10 +130,26 @@ export default function SignInForm(): JSX.Element {
                   variants={itemVariant}
                   className="flex justify-between items-center"
                 >
-                  <label className="flex items-center gap-2 text-[#4D4D4D]">
-                    <Field type="checkbox" name="remember" />
-                    <span>Remember me</span>
-                  </label>
+                 <label className="flex items-center gap-2 cursor-pointer select-none text-[#4D4D4D]">
+                <input
+                  type="checkbox"
+                  className="
+                    peer appearance-none w-5 h-5 border border-[#CFCFCF] rounded-sm 
+                    checked:bg-green checked:border-green transition
+                    flex justify-center items-center
+                  "
+                />
+                <span>Remember me</span>
+
+                {/* Custom Tick */}
+                <svg
+                  className="absolute w-4 h-4 pointer-events-none fill-none stroke-white stroke-[3px] 
+                            hidden peer-checked:block ml-[2px]"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+              </label>
 
                   <Link href="/signin/forgot-password" className="text-[#4D4D4D]">
                     Forgot password?
@@ -141,15 +157,12 @@ export default function SignInForm(): JSX.Element {
                 </motion.div>
 
                 {/* Submit Button */}
-                <motion.button
-                  variants={itemVariant}
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
+                <button
                   type="submit"
-                  className="w-full bg-green text-white py-[14px] rounded-lg font-semibold text-lg hover:opacity-90 transition mont-text"
+                  className="w-full bg-green text-white py-[14px] rounded-lg font-semibold text-lg hover:opacity-90 transition mont-text cursor-pointer"
                 >
                   Sign In →
-                </motion.button>
+                </button>
 
                 {/* Divider */}
                 <motion.div variants={itemVariant} className="flex items-center gap-4">
@@ -159,9 +172,7 @@ export default function SignInForm(): JSX.Element {
                 </motion.div>
 
                 {/* Google Button */}
-                <motion.button
-                  variants={itemVariant}
-                  whileHover={{ scale: 1.02 }}
+                <button
                   className="w-full flex items-center justify-center gap-3 border border-light-gray rounded-[10px] py-[18px] hover:bg-gray-50 transition text-[#333333] text-lg cursor-pointer  mont-text font-semibold"
                   type="button"
                 >
@@ -172,7 +183,7 @@ export default function SignInForm(): JSX.Element {
                     height={24}
                   />
                   Continue with Google
-                </motion.button>
+                </button>
               </Form>
             </motion.div>
           )}

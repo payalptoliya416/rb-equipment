@@ -27,45 +27,29 @@ export default function TrackingForm(): JSX.Element {
 
   return (
     <div className="w-full flex justify-center px-4 my-20 xl:mb-16 xl:mt-[141px]">
-      <motion.div
-        variants={formContainer}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
+      <div
         className="max-w-[700px] w-full border border-light-gray rounded-2xl p-8 shadow-sm"
       >
         {/* Title */}
-        <motion.h2
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
+        <h2
           className="text-3xl md:text-[38px] font-bold text-center text-gray-900 mb-3 mont-text"
         >
           Enter Your <span className="text-orange">Tracking Number</span>
-        </motion.h2>
+        </h2>
 
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-          viewport={{ once: true }}
+        <p
           className="text-center text-gray-500 mb-10 leading-relaxed"
         >
           Please enter your Order ID or Tracking Number provided in your
           confirmation email.
-        </motion.p>
+        </p>
 
         {/* FORM FIELDS WITH STAGGER */}
-        <motion.form
-          variants={staggerGroup}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
+        <form
           className="space-y-6"
         >
           {/* Tracking Number */}
-          <motion.div variants={inputItem}>
+          <div>
             <label className="text-gray-800 font-medium mont-text">Tracking Number</label>
             <input
               type="text"
@@ -75,11 +59,11 @@ export default function TrackingForm(): JSX.Element {
                 outline-none focus:ring-2 focus:ring-green
               "
             />
-          </motion.div>
+          </div>
 
           {/* Email + Phone Fields */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <motion.div variants={inputItem}>
+            <div>
               <label className="text-gray-800 font-medium mont-text">Email Address</label>
               <input
                 type="email"
@@ -89,9 +73,9 @@ export default function TrackingForm(): JSX.Element {
                   outline-none focus:ring-2 focus:ring-green
                 "
               />
-            </motion.div>
+            </div>
 
-            <motion.div variants={inputItem}>
+            <div>
               <label className="text-gray-800 font-medium mont-text">Phone Number</label>
               <input
                 type="text"
@@ -101,7 +85,7 @@ export default function TrackingForm(): JSX.Element {
                   outline-none focus:ring-2 focus:ring-green
                 "
               />
-            </motion.div>
+            </div>
           </div>
 
           {/* Submit Button */}
@@ -122,8 +106,8 @@ export default function TrackingForm(): JSX.Element {
               Track Now
             </motion.button>
           </motion.div>
-        </motion.form>
-      </motion.div>
+        </form>
+      </div>
     </div>
   );
 }

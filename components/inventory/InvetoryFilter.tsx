@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Disclosure } from "@headlessui/react";
 import { Listbox, Transition } from "@headlessui/react";
 import { FaChevronDown } from "react-icons/fa";
+import { HiMiniBars3BottomLeft, HiOutlineBars3BottomLeft } from "react-icons/hi2";
 
 export default function InventoryFilter() {
   const min = 1990;
@@ -21,6 +22,8 @@ export default function InventoryFilter() {
 
   const models = ["Select Make first", "Model A", "Model B", "Model C"];
   const [selectedModel, setSelectedModel] = useState(models[0]);
+   const [show, setShow] = useState(false);
+const [showMap, setShowMap] = useState<Record<number, boolean>>({});
 
   // pagination
  const allProducts = Array.from({ length: 20 }, (_, i) => ({
@@ -61,20 +64,6 @@ const [selectedSort, setSelectedSort] = useState(sortOptions[0]);
   return (
     <div className="w-full container-custom mx-auto my-[80px] lg:my-[110px] px-4">
 
-      {/* MOBILE FILTER BUTTON */}
-      <motion.div
-       initial={{ opacity: 0, y: -8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
-      className="lg:hidden mb-5">
-        <button
-          onClick={() => setOpenSidebar(true)}
-          className="px-4 py-2 border border-light-gray rounded-lg text-text-gray mont-text font-semibold"
-        >
-          ☰ Filters
-        </button>
-      </motion.div>
-
       <div className="w-full flex flex-col lg:flex-row gap-6">
 
         {/* ================= LEFT SIDEBAR ================= */}
@@ -104,9 +93,7 @@ const [selectedSort, setSelectedSort] = useState(sortOptions[0]);
           </button>
 
           {/* FILTER BY CATEGORY */}
-          <motion.div   initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4 }}>
+          <div>
               <Disclosure defaultOpen>
              {({ open }) => (
               <>
@@ -158,7 +145,7 @@ const [selectedSort, setSelectedSort] = useState(sortOptions[0]);
               </>
              )}
               </Disclosure>
-          </motion.div>
+          </div>
 
           <div className="border-t border-light-gray my-[30px]" />
 
@@ -342,9 +329,7 @@ const [selectedSort, setSelectedSort] = useState(sortOptions[0]);
             hover:bg-green/90 hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] cursor-pointer mont-text font-semibold"
           >
             Apply Filter
-          </button>
-
-
+             </button>
             </Disclosure.Panel>
           </div>
         )}
@@ -365,9 +350,23 @@ const [selectedSort, setSelectedSort] = useState(sortOptions[0]);
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="flex justify-end mb-5"
+          className="flex justify-between items-end lg:justify-end mb-5 gap-2 lg:gap-0"
         >
-          <div className="flex items-center gap-3 relative">
+           {/* MOBILE FILTER BUTTON */}
+      <motion.div
+       initial={{ opacity: 0, y: -8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+      className="lg:hidden">
+        <button
+          onClick={() => setOpenSidebar(true)}
+          className="w-10 h-10 border border-light-gray rounded-lg text-xl text-black mont-text font-semibold flex justify-center items-center"
+        >
+          <HiMiniBars3BottomLeft scale={28}/> 
+        </button>
+      </motion.div>
+
+          <div className="flex items-end sm:items-center gap-3 relative flex-col sm:flex-row">
             <span className="text-sm font-medium text-gray mont-text">Sort By:</span>
 
             <Listbox value={selectedSort} onChange={setSelectedSort}>
@@ -426,28 +425,41 @@ const [selectedSort, setSelectedSort] = useState(sortOptions[0]);
           </div>
         </motion.div>
 
-
          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
           {currentProducts.map((product, i) => (
-            <motion.div
+            <div
               key={product.id}
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.45,
-                delay: i * 0.08,
-                ease: "easeOut",
-              }}
+                        onClick={() =>
+            setShowMap(prev => ({
+              ...prev,
+              [product.id]: !prev[product.id]   // toggle only this product
+            }))
+          }
               className="border border-light-gray rounded-[10px] p-[15px] bg-white"
             >
-              <div className="w-full rounded-[10px] flex items-center justify-center border border-light-gray py-5 px-3 bg-[#E9E9E926] relative group ">
+              <div className="w-full rounded-[10px] flex items-center justify-center border border-light-gray py-5 px-3 bg-[#E9E9E926] relative group " >
                 <Image src="/assets/filter1.png" alt="product" width={216} height={123} />
                 <Link
-                  href="/inventory/inventory-detail"
-                  className="absolute border border-light-gray rounded-md py-[10px] px-[30px] text-green bg-white text-base leading-[16px] left-1/2 bottom-0 -translate-x-1/2 whitespace-nowrap opacity-0 translate-y-3 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:-translate-y-3"
-                >
-                  BID OR BUY
-                </Link>
+        href="/inventory/inventory-detail"
+        className={`
+          absolute border border-light-gray rounded-md py-[10px] px-[30px]
+          text-green bg-white text-base leading-[16px]
+          left-1/2 bottom-0 -translate-x-1/2 whitespace-nowrap
+          transition-all duration-300 ease-out
+
+          /* Desktop Hover */
+          group-hover:opacity-100 group-hover:-translate-y-3
+
+          /* Mobile Click */
+          ${
+            showMap[product.id]
+              ? "opacity-100 -translate-y-3"
+              : "opacity-0 translate-y-3"
+          }
+        `}
+      >
+        BID OR BUY
+      </Link>
               </div>
 
               <div className="px-2 mt-[15px]">
@@ -462,58 +474,62 @@ const [selectedSort, setSelectedSort] = useState(sortOptions[0]);
                 <p className="text-base mont-text font-semibold">
                   <span className="font-semibold text-green">Price: ${product.price}</span>
                 </p>
+
+                 {/* <Link
+                  href="/inventory/inventory-detail"
+                  className="border border-light-gray rounded-md py-[10px] px-[30px] text-green bg-white text-base leading-[16px] whitespace-nowrap translate-y-3 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:-translate-y-3 mb-2 inline-block"
+                >
+                  BID OR BUY
+                </Link> */}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-          <motion.div
-  className="flex items-center gap-3 justify-center mt-10 flex-wrap"
-  initial={{ opacity: 0, y: 10 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.4 }}
->
-  {/* BACK button */}
-  <button
-    onClick={goBack}
-    disabled={currentPage === 1}
-    className={`flex items-center gap-2 px-2 sm:px-4 py-1 sm:py-2 border border-light-gray rounded-md sm:rounded-xl text-text-gray transition-all
-      ${currentPage === 1 ? "opacity-40 cursor-not-allowed" : "hover:bg-gray-100"}
-    `}
-  >
-    <FaChevronLeft className="text-sm" />
-    Back
-  </button>
+          <div
+          className="flex items-center gap-3 justify-center mt-10 flex-wrap"
+        >
+          {/* BACK button */}
+          <button
+            onClick={goBack}
+            disabled={currentPage === 1}
+            className={`flex items-center gap-2 px-2 sm:px-4 py-1 sm:py-2 border border-light-gray rounded-md sm:rounded-xl text-text-gray transition-all cursor-pointer
+              ${currentPage === 1 ? "opacity-40 cursor-not-allowed" : "hover:bg-gray-100"}
+            `}
+          >
+            <FaChevronLeft className="text-sm" />
+            Back
+          </button>
 
-  {/* PAGE numbers */}
-  {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-    <button
-      key={page}
-      onClick={() => setCurrentPage(page)}
-      className={`px-2 sm:px-4 py-1 sm:py-2 rounded-md sm:rounded-xl transition-all
-        ${
-          currentPage === page
-            ? "bg-green text-white shadow"
-            : "border border-light-gray text-text-gray hover:bg-gray-100"
-        }
-      `}
-    >
-      {page}
-    </button>
-  ))}
+          {/* PAGE numbers */}
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+            <button
+              key={page}
+              onClick={() => setCurrentPage(page)}
+              className={`px-2 sm:px-4 py-1 sm:py-2 rounded-md sm:rounded-xl transition-all  cursor-pointer
+                ${
+                  currentPage === page
+                    ? "bg-green text-white shadow"
+                    : "border border-light-gray text-text-gray hover:bg-gray-100"
+                }
+              `}
+            >
+              {page}
+            </button>
+          ))}
 
-  {/* NEXT button */}
-  <button
-    onClick={goNext}
-    disabled={currentPage === totalPages}
-    className={`flex items-center gap-2 px-2 sm:px-4 py-1 sm:py-2 border border-light-gray rounded-md sm:rounded-xl text-text-gray transition-all
-      ${currentPage === totalPages ? "opacity-40 cursor-not-allowed" : "hover:bg-gray-100"}
-    `}
-  >
-    Next
-    <FaChevronRight className="text-sm" />
-  </button>
-          </motion.div>
+          {/* NEXT button */}
+          <button
+            onClick={goNext}
+            disabled={currentPage === totalPages}
+            className={`flex items-center gap-2 px-2 sm:px-4 py-1 sm:py-2 border border-light-gray rounded-md sm:rounded-xl text-text-gray transition-all  cursor-pointer
+              ${currentPage === totalPages ? "opacity-40 cursor-not-allowed" : "hover:bg-gray-100"}
+            `}
+          >
+            Next
+            <FaChevronRight className="text-sm" />
+          </button>
+          </div>
 
         </main>
       </div>

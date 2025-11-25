@@ -64,6 +64,11 @@ const faqs: FAQ[] = [
     answer:
       "Yes, we serve customers across multiple countries through our network.",
   },
+  {
+    question: "How can I contact customer support?",
+    answer:
+      "Yes, we serve customers across multiple countries through our network.",
+  },
 ];
 
 export default function FAQSection(): JSX.Element {

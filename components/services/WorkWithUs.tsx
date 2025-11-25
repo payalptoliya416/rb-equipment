@@ -77,14 +77,11 @@ const listItem = {
           transition={{ duration: 0.8 }}
         >
           {/* Heading */}
-          <motion.h2
+          <h2
             className="text-[38px] font-bold text-gray mb-[20px] mont-text"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
           >
             Why <span className="text-orange">Work With</span> Us
-          </motion.h2>
+          </h2>
 
           {/* Staggered List */}
           <motion.div
@@ -95,9 +92,8 @@ const listItem = {
             viewport={{ once: true, amount: 0.3 }}
           >
             {items.map((item, i) => (
-              <motion.div
+              <div
                 key={i}
-                variants={listItem}
                 className="bg-[linear-gradient(90deg,#00796B14,#00796B00)] p-5 rounded-xl flex gap-3 items-start"
               >
                 <div>
@@ -118,7 +114,7 @@ const listItem = {
                     {item.desc}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </motion.div>
         </motion.div>

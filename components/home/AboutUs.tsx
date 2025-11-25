@@ -10,11 +10,7 @@ function AboutUs() {
     <section className="container-custom mx-auto">
       <motion.div 
       className="grid grid-cols-12 lg:gap-[30px] items-center hero-custom-mt">
-        <motion.div
-            initial={{ opacity: 0, x: -120 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.9, ease: "easeOut" }}
+        <div
           className="col-span-12 lg:col-span-6 order-2 lg:order-1">
           <Image
             src="/assets/about.png"
@@ -23,12 +19,8 @@ function AboutUs() {
             height={445}
             style={{ width: "100%" }}
           />
-        </motion.div>
-        <motion.div 
-    initial={{ opacity: 0, x: 120 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.9, ease: "easeOut" }}
+        </div>
+        <div 
         className="col-span-12 lg:col-span-6 order-1 lg:order-2 mb-5 lg:mb-0">
           <h4 className="mb-5 text-orange text-xl font-semibold relative after:absolute after:top-3 after:left-0 after:bg-orange after:w-[15px] after:h-[2px] pl-5 after:rounded-full mont-text">
             {" "}
@@ -60,7 +52,7 @@ function AboutUs() {
       </span>
       <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-all duration-500"></span>
     </Link>
-        </motion.div>
+        </div>
       </motion.div>
     </section>
   );

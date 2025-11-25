@@ -134,53 +134,75 @@ useEffect(() => {
       </div>
 
       {/* Mobile Menu */}
-      <div   ref={menuRef}
-        className={`lg:hidden ${isMenuOpen ? 'block' : 'hidden'} bg-[#00796B]/10 backdrop-blur-md absolute top-28 left-0 right-0 w-full p-4 shadow-lg `}
-      >
-        <ul className="flex flex-col items-center gap-4">
-          {navItems.map((item) => (
-            <li key={item.path}>
-             <Link
-              href={item.path}
-              className={`
-                text-base relative
-                after:content-[''] after:absolute after:-bottom-1
-                after:left-1/2 after:-translate-x-1/2
-                after:h-1 after:w-0
-                after:bg-orange
-                after:transition-all after:duration-300
-                hover:after:w-8 hover:text-orange transition-all duration-300
-                ${
-                  item.path === "/"
-                    ? pathname === "/"
-                      ? "text-orange font-bold after:w-8"
-                      : "text-gray-700 font-medium"
-                    : pathname.startsWith(item.path)
-                      ? "text-orange font-bold after:w-8"
-                      : "text-gray-700 font-medium"
-                }
-              `}
-            >
-              {item.name}
-            </Link>
-            </li>
-          ))}
-        </ul>
+      <div ref={menuRef} className={`lg:hidden ${isMenuOpen ? 'block' : 'hidden'} ...`}>
 
-        {/* Contact Button for Mobile */}
-      <div className="flex justify-center">
+      {/* Overlay */}
+<div
+  className={`lg:hidden fixed inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300
+    ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}
+  `}
+  onClick={() => setIsMenuOpen(false)}
+></div>
+
+{/* Sidebar Menu */}
+<div
+  ref={menuRef}
+  className={`
+    lg:hidden fixed top-0 left-0 h-full w-[260px] bg-white shadow-xl z-[100]
+    px-6 py-8 transition-transform duration-300
+    ${isMenuOpen ? "sidebar-open" : "sidebar-closed"}
+  `}
+>
+  {/* Close Button */}
+  <button
+    onClick={() => setIsMenuOpen(false)}
+    className="absolute top-5 right-5 text-gray-700 text-2xl"
+  >
+    ✕
+  </button>
+
+  <ul className="flex flex-col gap-6 mt-10">
+    {navItems.map((item) => (
+      <li key={item.path}>
+      <Link
+  href={item.path}
+  className={`
+    block text-lg font-medium transition-all duration-300
+    relative pb-1
+    after:content-[''] after:absolute after:left-0 after:bottom-0
+    after:h-[3px] after:w-0 after:bg-orange after:rounded
+    hover:after:w-8 hover:text-orange
+    ${
+      item.path === "/"
+        ? pathname === "/"
+          ? "text-orange font-bold after:w-8"
+          : "text-gray-700"
+        : pathname.startsWith(item.path)
+          ? "text-orange font-bold after:w-8"
+          : "text-gray-700"
+    }
+  `}
+>
+          {item.name}
+        </Link>
+      </li>
+    ))}
+  </ul>
+
+  {/* Contact button inside sidebar */}
   <Link
     href="/contact-us"
     className="
-      text-green bg-white py-3 px-6 rounded-lg font-semibold mt-4 
+      mt-10 block text-center text-green bg-white border border-green 
+      py-3 px-6 rounded-lg font-semibold 
       transition-all duration-300 
-      hover:bg-orange hover:text-white hover:shadow-[0_8px_20px_rgba(0,0,0,0.15)]
-      hover:-translate-y-1
+      hover:bg-orange hover:text-white hover:border-orange
     "
   >
     Contact Us
   </Link>
 </div>
+
 
       </div>
     </header>

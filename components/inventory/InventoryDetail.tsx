@@ -15,6 +15,7 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { Listbox, Transition } from "@headlessui/react";
 import { FaChevronDown } from "react-icons/fa";
+import ProductSlider from "./ProductSlider";
 
 const countries = ["Choose country", "USA", "CANADA"];
 
@@ -30,7 +31,7 @@ function InventoryDetail() {
     <div className="container-custom mt-10 lg:mt-20 mb-20 lg:mb-[110px]">
       <div className="grid grid-cols-12 gap-5">
         <div className="col-span-12 xl:col-span-7">
-          <div className="border border-light-gray  py-[43px] px-[38px] rounded-[15px] mb-[25px]">
+          {/* <div className="border border-light-gray  py-[43px] px-[38px] rounded-[15px] mb-[25px]">
             <motion.div 
              variants={fadeIn}
               initial="hidden"
@@ -45,8 +46,6 @@ function InventoryDetail() {
             </motion.div>
           </div>
           <div className="flex border rounded-xl overflow-hidden w-full border-light-gray mb-[25px]">
-
-  {/* Photos */}
                 <button
                   onClick={() => setActiveTab("photos")}
                   className={`w-1/2 py-2 sm:py-3 font-medium mont-text transition-all duration-200 cursor-pointer
@@ -58,8 +57,6 @@ function InventoryDetail() {
                 >
                   Photos
                 </button>
-
-                {/* Videos */}
                 <button
                   onClick={() => setActiveTab("videos")}
                   className={`w-1/2 py-2 sm:py-3 font-medium mont-text transition-all duration-200  cursor-pointer
@@ -72,8 +69,7 @@ function InventoryDetail() {
                   Videos
                 </button>
 
-              </div>
-
+          </div>
             {activeTab === "photos" && (
         <div className="flex justify-between gap-2 sm:gap-1 mb-[30px] flex-wrap">
           {["detail1.png","detail6.png","detail2.png","detail3.png","detail4.png","detail5.png"].map((img, i) => (
@@ -90,24 +86,26 @@ function InventoryDetail() {
             </div>
           ))}
         </div>
-      )}
+            )}
             {activeTab === "videos" && (
-        <div className="flex justify-between gap-2 sm:gap-1 mb-[30px] flex-wrap">
-          {["detail5.png","detail3.png","detail4.png","detail1.png","detail6.png","detail5.png"].map((img, i) => (
-            <div
-              key={i}
-              className="border border-light-gray flex justify-center items-center w-[98px] h-[98px] rounded-xl"
-            >
-              <Image
-                src={`/assets/${img}`}
-                alt="detail"
-                width={87}
-                height={57}
-              />
-            </div>
-          ))}
-        </div>
-      )}
+              <div className="flex justify-between gap-2 sm:gap-1 mb-[30px] flex-wrap">
+                {["detail5.png","detail3.png","detail4.png","detail1.png","detail6.png","detail5.png"].map((img, i) => (
+                  <div
+                    key={i}
+                    className="border border-light-gray flex justify-center items-center w-[98px] h-[98px] rounded-xl"
+                  >
+                    <Image
+                      src={`/assets/${img}`}
+                      alt="detail"
+                      width={87}
+                      height={57}
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
+             */}
+             <ProductSlider/>
           <div className="w-full space-y-6">
 
         <h2 className="text-[22px] font-semibold text-[#333333] mb-[22px] mont-text">Overview</h2>

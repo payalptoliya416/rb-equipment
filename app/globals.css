@@ -48,6 +48,15 @@
   transform: translateX(-100%);
 }
 
+select option:checked {
+  background-color: #027b66 !important;
+  color: #fff !important;
+}
+select option:checked {
+  background-color: #027b66 !important; 
+  color: white !important;
+}
+
 .bg-position {
   background-size: cover;
   background-position: 100% 100%;

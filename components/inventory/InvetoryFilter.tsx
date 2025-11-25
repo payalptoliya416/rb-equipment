@@ -477,7 +477,7 @@ const [selectedSort, setSelectedSort] = useState(sortOptions[0]);
   <button
     onClick={goBack}
     disabled={currentPage === 1}
-    className={`flex items-center gap-2 px-4 py-2 border border-light-gray rounded-xl text-text-gray transition-all
+    className={`flex items-center gap-2 px-2 sm:px-4 py-1 sm:py-2 border border-light-gray rounded-md sm:rounded-xl text-text-gray transition-all
       ${currentPage === 1 ? "opacity-40 cursor-not-allowed" : "hover:bg-gray-100"}
     `}
   >
@@ -490,7 +490,7 @@ const [selectedSort, setSelectedSort] = useState(sortOptions[0]);
     <button
       key={page}
       onClick={() => setCurrentPage(page)}
-      className={`px-4 py-2 rounded-xl transition-all
+      className={`px-2 sm:px-4 py-1 sm:py-2 rounded-md sm:rounded-xl transition-all
         ${
           currentPage === page
             ? "bg-green text-white shadow"
@@ -506,7 +506,7 @@ const [selectedSort, setSelectedSort] = useState(sortOptions[0]);
   <button
     onClick={goNext}
     disabled={currentPage === totalPages}
-    className={`flex items-center gap-2 px-4 py-2 border border-light-gray rounded-xl text-text-gray transition-all
+    className={`flex items-center gap-2 px-2 sm:px-4 py-1 sm:py-2 border border-light-gray rounded-md sm:rounded-xl text-text-gray transition-all
       ${currentPage === totalPages ? "opacity-40 cursor-not-allowed" : "hover:bg-gray-100"}
     `}
   >

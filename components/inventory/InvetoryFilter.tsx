@@ -201,33 +201,6 @@ const [selectedSort, setSelectedSort] = useState(sortOptions[0]);
             </Transition>
           </div>
         </Listbox> */}
-<div className="relative w-full">
-  <select
-    value={selectedMake}
-    onChange={(e) => setSelectedMake(e.target.value)}
-    className="
-      w-full border border-gray-300 rounded-lg py-[13px] px-[15px]
-      text-sm text-gray-700 bg-white appearance-none
-      focus:border-teal-600 focus:ring-0
-    "
-  >
-    {makes.map((make, idx) => (
-      <option
-        key={idx}
-        value={make}
-        className="py-2"
-      >
-        {make}
-      </option>
-    ))}
-  </select>
-
-  {/* Chevron Icon */}
-  <FaChevronDown
-    className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none"
-  />
-</div>
-
 
         {/* ============ MODEL DROPDOWN ============ */}
         {/* <Listbox value={selectedModel} onChange={setSelectedModel}>
@@ -265,31 +238,91 @@ const [selectedSort, setSelectedSort] = useState(sortOptions[0]);
             </Transition>
           </div>
         </Listbox> */}
-        <div className="relative w-full">
-        <select
-          value={selectedMake}
-          onChange={(e) => setSelectedMake(e.target.value)}
-          className="
-            w-full border border-gray-300 rounded-lg py-[13px] px-[15px]
-            text-sm text-gray-700 bg-white appearance-none
-            focus:border-teal-600 focus:ring-0
-          "
-        >
-          {models.map((make, idx) => (
-            <option
-              key={idx}
-              value={make}
-              className="py-2 text-gray-700"
-            >
-              {make}
-            </option>
-          ))}
-        </select>
+        {/* ============ MAKE DROPDOWN ============ */}
+          <Listbox value={selectedMake} onChange={setSelectedMake}>
+              {({ open }) => (
+            <div className="relative">
+              <Listbox.Button
+                className="w-full border border-gray-300 rounded-lg py-[13px] px-[15px] text-sm text-gray-700 flex justify-between items-center bg-white focus:outline-none focus:ring-2 focus:ring-green"
+              >
+                {selectedMake}
+                <FaChevronDown   className={`text-gray-500 text-xs transform transition-transform duration-200 ${
+    open ? "rotate-180" : "rotate-0"
+  }`} />
+              </Listbox.Button>
 
-        <FaChevronDown
-          className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none"
-        />
-      </div>
+              <Transition
+                as={Fragment}
+                enter="transition ease-out duration-150"
+                enterFrom="opacity-0 translate-y-1"
+                enterTo="opacity-100 translate-y-0"
+                leave="transition ease-in duration-100"
+                leaveFrom="opacity-100"
+                leaveTo="opacity-0"
+              >
+                <Listbox.Options
+                  className="absolute left-0 right-0 mt-2 bg-white shadow-xl border border-gray-200 rounded-lg max-h-52 overflow-auto z-20"
+                >
+                  {makes.map((make, idx) => (
+                    <Listbox.Option
+                      key={idx}
+                      value={make}
+                      className={({ active }) =>
+                        `cursor-pointer px-4 py-2 text-sm rounded-md
+                        ${active ? "bg-green text-white" : "text-gray-700"}`
+                      }
+                    >
+                      {make}
+                    </Listbox.Option>
+                  ))}
+                </Listbox.Options>
+              </Transition>
+            </div>
+              )}
+          </Listbox>
+
+          {/* ============ MODEL DROPDOWN ============ */}
+          <Listbox value={selectedModel} onChange={setSelectedModel}>
+              {({ open }) => (
+            <div className="relative">
+              <Listbox.Button
+                className="w-full border border-gray-300 rounded-lg py-[13px] px-[15px] text-sm text-gray-700 flex justify-between items-center bg-white focus:outline-none focus:ring-2 focus:ring-green"
+              >
+                {selectedModel}
+                <FaChevronDown   className={`text-gray-500 text-xs transform transition-transform duration-200 ${
+    open ? "rotate-180" : "rotate-0"
+  }`} />
+              </Listbox.Button>
+
+              <Transition
+                as={Fragment}
+                enter="transition ease-out duration-150"
+                enterFrom="opacity-0 translate-y-1"
+                enterTo="opacity-100 translate-y-0"
+                leave="transition ease-in duration-100"
+                leaveFrom="opacity-100"
+                leaveTo="opacity-0"
+              >
+                <Listbox.Options
+                  className="absolute left-0 right-0 mt-2 bg-white shadow-xl border border-gray-200 rounded-lg max-h-52 overflow-auto z-20"
+                >
+                  {models.map((model, idx) => (
+                    <Listbox.Option
+                      key={idx}
+                      value={model}
+                      className={({ active }) =>
+                        `cursor-pointer px-4 py-2 text-sm rounded-md
+                        ${active ? "bg-green text-white" : "text-gray-700"}`
+                      }
+                    >
+                      {model}
+                    </Listbox.Option>
+                  ))}
+                </Listbox.Options>
+              </Transition>
+            </div>
+              )}
+          </Listbox>
 
       </Disclosure.Panel>
           </div>
@@ -420,35 +453,10 @@ const [selectedSort, setSelectedSort] = useState(sortOptions[0]);
 
           <div className="flex items-end sm:items-center gap-3 relative flex-col sm:flex-row">
             <span className="text-sm font-medium text-gray mont-text">Sort By:</span>
-            <div className="relative w-60">
-              <select
-                value={selectedSort}
-                onChange={(e) => setSelectedSort(e.target.value)}
-                className="
-                  border border-light-gray rounded-lg px-3 py-2 text-sm text-text-gray 
-                  w-full pr-8 bg-white appearance-none
-                  focus:border-teal-600 focus:ring-0
-                "
-              >
-                {sortOptions.map((option, idx) => (
-                  <option
-                    key={idx}
-                    value={option}
-                    className="text-text-gray"
-                  >
-                    {option}
-                  </option>
-                ))}
-              </select>
-
-              {/* Chevron Icon */}
-              <FaChevronDown
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray text-xs pointer-events-none"
-              />
-            </div>
-
-            {/* <Listbox value={selectedSort} onChange={setSelectedSort}>
+            <Listbox value={selectedSort} onChange={setSelectedSort}>
+                {({ open }) => (
               <div className="relative">
+                {/* BUTTON */}
                 <Listbox.Button
                   className="
                     border border-light-gray rounded-lg px-3 py-2 text-sm text-text-gray 
@@ -457,10 +465,15 @@ const [selectedSort, setSelectedSort] = useState(sortOptions[0]);
                 >
                   {selectedSort}
                   <FaChevronDown
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray text-xs"
+                    className={`
+            absolute right-3 top-1/2 -translate-y-1/2 text-gray text-xs
+            transform transition-transform duration-200
+            ${open ? "rotate-180" : "rotate-0"}
+          `}
                   />
                 </Listbox.Button>
 
+                {/* OPTIONS */}
                 <Transition
                   as={Fragment}
                   enter="transition duration-200 ease-out"
@@ -497,7 +510,8 @@ const [selectedSort, setSelectedSort] = useState(sortOptions[0]);
                   </Listbox.Options>
                 </Transition>
               </div>
-            </Listbox> */}
+                )}
+            </Listbox>
           </div>
         </motion.div>
 

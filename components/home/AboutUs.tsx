@@ -30,7 +30,7 @@ function AboutUs() {
       viewport={{ once: true }}
       transition={{ duration: 0.9, ease: "easeOut" }}
         className="col-span-12 lg:col-span-6 order-1 lg:order-2 mb-5 lg:mb-0">
-          <h4 className="mb-5 text-orange text-lg font-semibold relative after:absolute after:top-3 after:left-0 after:bg-orange after:w-[15px] after:h-[2px] pl-5 after:rounded-full mont-text">
+          <h4 className="mb-5 text-orange text-xl font-semibold relative after:absolute after:top-3 after:left-0 after:bg-orange after:w-[15px] after:h-[2px] pl-5 after:rounded-full mont-text">
             {" "}
             About Us
           </h4>

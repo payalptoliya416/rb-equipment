@@ -64,7 +64,7 @@ function ChooseUs() {
                   height={40}
                   className="mb-5"
                 />
-                <h3 className="text-light-gray text-lg leading-[20px] mb-[15px] font-semibold mont-text">
+                <h3 className="text-light-gray text-xl leading-[20px] mb-[15px] font-semibold mont-text">
                   {item.title}
                 </h3>
                 <p className="text-base leading-[26px] font-normal text-light-gray">

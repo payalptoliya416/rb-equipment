@@ -88,7 +88,7 @@ function Testimonial() {
                     className="rounded-full"
                   />
                   <div>
-                    <h3 className="text-gray text-lg leading-[20px] mb-[10px] font-semibold  mont-text">
+                    <h3 className="text-gray text-xl leading-[20px] mb-[10px] font-semibold  mont-text">
                       {item.name}
                     </h3>
                     <p className="text-text-gray text-base leading-[16px] font-normal">

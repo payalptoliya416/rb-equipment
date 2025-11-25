@@ -98,7 +98,7 @@ function CoreServices() {
               <Image src={service.icon} alt="icon" width={40} height={40} />
             </motion.div>
 
-            <h3 className="text-gray mb-[10px] text-lg leading-[20px] font-semibold mont-text">
+            <h3 className="text-gray mb-[10px] text-xl leading-[20px] font-semibold mont-text">
               {service.title}
             </h3>
 

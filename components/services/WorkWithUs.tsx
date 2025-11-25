@@ -110,7 +110,7 @@ const listItem = {
                 </div>
 
                 <div>
-                  <h3 className="text-lg leading-[20px] font-semibold text-gray mb-[14px] mont-text">
+                  <h3 className="text-xl leading-[20px] font-semibold text-gray mb-[14px] mont-text">
                     {item.title}
                   </h3>
 

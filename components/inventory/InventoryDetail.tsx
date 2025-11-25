@@ -124,7 +124,7 @@ function InventoryDetail() {
                 </div>
             <div>
                 <p className="text-text-gray mb-[6px] text-base leading-[16px]">Year</p>
-                <p className="text-gray font-semibold text-lg leading-[20px] mont-text">2017</p>
+                <p className="text-gray font-semibold text-xl leading-[20px] mont-text">2017</p>
             </div>
             </div>
 
@@ -137,7 +137,7 @@ function InventoryDetail() {
                 </div>
             <div>
                 <p className="text-text-gray mb-[6px] text-base leading-[16px]">Weight</p>
-                <p className="text-gray font-semibold text-lg leading-[20px] mont-text">6,000 LBS</p>
+                <p className="text-gray font-semibold text-xl leading-[20px] mont-text">6,000 LBS</p>
             </div>
             </div>
 
@@ -150,7 +150,7 @@ function InventoryDetail() {
                 </div>
             <div>
                 <p className="text-text-gray mb-[6px] text-base leading-[16px]">Working Hours</p>
-                <p className="text-gray font-semibold text-lg leading-[20px] mont-text">1,200 hrs</p>
+                <p className="text-gray font-semibold text-xl leading-[20px] mont-text">1,200 hrs</p>
             </div>
             </div>
 
@@ -171,7 +171,7 @@ function InventoryDetail() {
                 </div>
             <div>
                 <p className="text-text-gray mb-[6px] text-base leading-[16px]">Fuel Type</p>
-                <p className="text-gray font-semibold text-lg leading-[20px] mont-text">Diesel</p>
+                <p className="text-gray font-semibold text-xl leading-[20px] mont-text">Diesel</p>
             </div>
             </div>
 
@@ -217,8 +217,8 @@ function InventoryDetail() {
 
   {/* Header */}
   <div className="flex justify-between items-center">
-    <h2 className="text-lg leading-[20px] font-semibold text-gray mont-text">Specification</h2>
-    <p className="text-lg leading-[20px] font-semibold text-gray mont-text">Details</p>
+    <h2 className="text-xl leading-[20px] font-semibold text-gray mont-text">Specification</h2>
+    <p className="text-xl leading-[20px] font-semibold text-gray mont-text">Details</p>
   </div>
 
   <div className="border-t border-light-gray"></div>

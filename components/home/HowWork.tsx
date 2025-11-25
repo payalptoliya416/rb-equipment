@@ -35,7 +35,7 @@ function HowWork() {
           <div className="text-white w-20 h-20 rounded-[10px] mx-auto flex justify-center items-center bg-green mb-[30px]">
             <Image src="/assets/icon5.svg" width={40} height={40} alt="icon" />
           </div>
-          <h3 className="mb-[10px] text-gray text-lg leading-[20px] font-semibold mont-text">
+          <h3 className="mb-[10px] text-gray text-xl leading-[20px] font-semibold mont-text">
             Browse Inventory
           </h3>
           <p className=" text-base leading-[26px] text-text-gray">
@@ -47,7 +47,7 @@ function HowWork() {
           <div className="text-white w-20 h-20 rounded-[10px] mx-auto flex justify-center items-center bg-green mb-[30px]">
             <Image src="/assets/icon6.svg" width={40} height={40} alt="icon" />
           </div>
-          <h3 className="mb-[10px] text-gray text-lg leading-[20px] font-semibold mont-text">
+          <h3 className="mb-[10px] text-gray text-xl leading-[20px] font-semibold mont-text">
             Bid & Buy
           </h3>
           <p className=" text-base leading-[26px] text-text-gray">
@@ -59,7 +59,7 @@ function HowWork() {
           <div className="text-white w-20 h-20 rounded-[10px] mx-auto flex justify-center items-center bg-green mb-[30px]">
             <Image src="/assets/icon7.svg" width={40} height={40} alt="icon" />
           </div>
-          <h3 className="mb-[10px] text-gray text-lg leading-[20px] font-semibold mont-text">
+          <h3 className="mb-[10px] text-gray text-xl leading-[20px] font-semibold mont-text">
             Track Order
           </h3>
           <p className=" text-base leading-[26px] text-text-gray">

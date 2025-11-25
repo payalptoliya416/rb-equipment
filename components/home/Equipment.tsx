@@ -97,7 +97,7 @@ function Equipment() {
         </div>
 
         <div className="pt-5">
-          <h3 className="text-lg leading-[20px] mb-[15px] text-white text-center font-semibold mont-text">
+          <h3 className="text-xl leading-[20px] mb-[15px] text-white text-center font-semibold mont-text">
             {item.title}
           </h3>
           <p className="text-base leading-[16px] text-white text-center font-semibold pb-[5px]">

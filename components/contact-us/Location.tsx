@@ -59,7 +59,7 @@ function Location() {
                   <Image src={item.icon} alt="icon" width={36} height={36} />
                 </motion.div>
 
-                <h3 className="text-gray mb-[10px] text-lg leading-[20px] font-semibold mont-text">
+                <h3 className="text-gray mb-[10px] text-xl leading-[20px] font-semibold mont-text">
                   {item.title}
                 </h3>
 

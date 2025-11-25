@@ -17,7 +17,7 @@ function Testimonial() {
           transition={{ duration: 0.7 }}
           className="text-center mb-10"
         >
-          <h2 className="text-3xl md:text-[38px] md:leading-[38px] mb-[15px] font-extrabold text-gray  mont-text">
+          <h2 className="text-3xl md:text-[38px] md:leading-[38px] mb-[15px] font-bold text-gray  mont-text">
             What <span className="text-orange">Our Clients</span> Say
           </h2>
         </motion.div>

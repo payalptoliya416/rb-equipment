@@ -42,7 +42,7 @@ function FAQ() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-3xl md:text-[38px] md:leading-[38px] mb-[15px] font-extrabold text-gray mont-text"
+          className="text-3xl md:text-[38px] md:leading-[38px] mb-[15px] font-bold text-gray mont-text"
         >
           Frequently Asked <span className="text-orange">Questions</span>
         </motion.h2>

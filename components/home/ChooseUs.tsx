@@ -16,7 +16,7 @@ function ChooseUs() {
           transition={{ duration: 0.7 }}
           className="text-center mb-10"
         >
-          <h2 className="text-3xl md:text-[38px] md:leading-[38px] font-extrabold text-white mont-text">
+          <h2 className="text-3xl md:text-[38px] md:leading-[38px] font-bold text-white mont-text">
             Why <span className="text-orange">Choose Us</span>
           </h2>
         </motion.div>

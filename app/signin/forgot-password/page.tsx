@@ -51,7 +51,7 @@ export default function ForgotPassword(): JSX.Element {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-[38px] font-extrabold text-center text-gray mb-[15px] leading-[38px]  mont-text"
+          className="text-[38px] font-bold text-center text-gray mb-[15px] leading-[38px]  mont-text"
         >
           Forgot Your <span className="text-orange">Password?</span>
         </motion.h2>

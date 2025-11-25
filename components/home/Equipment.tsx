@@ -63,7 +63,7 @@ function Equipment() {
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
       className="text-center mb-10">
-        <h2 className="text-3xl md:text-[38px] md:leading-[38px] mb-[15px] font-extrabold text-gray mont-text">
+        <h2 className="text-3xl md:text-[38px] md:leading-[38px] mb-[15px] font-bold text-gray mont-text">
           Our Main <span className="text-orange">Equipment</span>
         </h2>
         <p className="text-base leading-[16px] text-text-gray">

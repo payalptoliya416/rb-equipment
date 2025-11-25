@@ -54,7 +54,7 @@ export default function SignInForm(): JSX.Element {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-3xl md:text-[38px] font-extrabold text-center text-gray mb-[15px] mont-text"
+          className="text-3xl md:text-[38px] font-bold text-center text-gray mb-[15px] mont-text"
         >
           Sign In your <span className="text-orange">account</span>
         </motion.h2>

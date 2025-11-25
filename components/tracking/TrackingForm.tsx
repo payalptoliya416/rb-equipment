@@ -40,7 +40,7 @@ export default function TrackingForm(): JSX.Element {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="text-3xl md:text-[38px] font-extrabold text-center text-gray-900 mb-3 mont-text"
+          className="text-3xl md:text-[38px] font-bold text-center text-gray-900 mb-3 mont-text"
         >
           Enter Your <span className="text-orange">Tracking Number</span>
         </motion.h2>

@@ -96,10 +96,10 @@ useEffect(() => {
                 ${
                   item.path === "/"
                     ? pathname === "/"
-                      ? "text-orange font-extrabold after:w-8"
+                      ? "text-orange font-bold after:w-8"
                       : "text-gray-700 font-medium"
                     : pathname.startsWith(item.path)
-                      ? "text-orange font-extrabold after:w-8"
+                      ? "text-orange font-bold after:w-8"
                       : "text-gray-700 font-medium"
                 }
               `}
@@ -153,10 +153,10 @@ useEffect(() => {
                 ${
                   item.path === "/"
                     ? pathname === "/"
-                      ? "text-orange font-extrabold after:w-8"
+                      ? "text-orange font-bold after:w-8"
                       : "text-gray-700 font-medium"
                     : pathname.startsWith(item.path)
-                      ? "text-orange font-extrabold after:w-8"
+                      ? "text-orange font-bold after:w-8"
                       : "text-gray-700 font-medium"
                 }
               `}

@@ -4,7 +4,7 @@ function HowWork() {
   return (
     <section className="container-custom mx-auto my-20 lg:my-[110px]">
       <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-[38px] md:leading-[38px] mb-[15px] font-extrabold text-gray mont-text">
+        <h2 className="text-3xl md:text-[38px] md:leading-[38px] mb-[15px] font-bold text-gray mont-text">
           How It <span className="text-orange">Works</span>
         </h2>
         <p className="text-base leading-[16px] text-text-gray">

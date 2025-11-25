@@ -63,7 +63,7 @@ export default function ContactForm(): JSX.Element {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="text-3xl md:text-[38px] font-extrabold text-center text-gray mb-[15px] mont-text"
+            className="text-3xl md:text-[38px] font-bold text-center text-gray mb-[15px] mont-text"
           >
             Send Us a <span className="text-orange">Message</span>
           </motion.h2>

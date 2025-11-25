@@ -68,7 +68,7 @@ export default function StatsSection(): JSX.Element {
 
         {stats.map((stat, index) => (
           <div key={stat.id} className="flex flex-col items-center">
-            <p className="text-4xl md:leading-[50px] md:text-[40px] font-extrabold text-gray mb-[15px] mont-text">
+            <p className="text-4xl md:leading-[50px] md:text-[40px] font-bold text-gray mb-[15px] mont-text">
               {counts[index]}{stat.id === 1 ? "+" : ""}
             </p>
             <p className="text-[#4D4D4D] text-sm md:text-lg">

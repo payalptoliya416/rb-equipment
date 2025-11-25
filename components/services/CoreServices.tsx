@@ -38,7 +38,7 @@ function CoreServices() {
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
       >
-        <h2 className="text-3xl md:text-[38px] md:leading-[38px] mb-10 lg:mb-20 font-extrabold text-gray mont-text">
+        <h2 className="text-3xl md:text-[38px] md:leading-[38px] mb-10 lg:mb-20 font-bold text-gray mont-text">
           Core <span className="text-orange">Services</span>
         </h2>
       </motion.div>

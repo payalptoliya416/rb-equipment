@@ -473,7 +473,7 @@ function InventoryDetail() {
                       {/* Pay at delivery */}
                         <div className="space-y-2">
                           <div className="flex items-center gap-2">
-                            <span className="text-xl"><FaHandHoldingDollar/></span>
+                            <span className="text-xl"><Image src='/assets/dollar.svg' alt='secure' className="-mt-2" width={18} height={18}/></span>
                             <h3 className="text-lg font-semibold text-gray mb-[10px] leading-[18px] mont-text">
                               Pay at delivery
                             </h3>
@@ -486,7 +486,7 @@ function InventoryDetail() {
                       {/* Money back guaranteed */}
                       <div className="space-y-2">
                         <div className="flex items-center gap-2">
-                          <span className="text-xl"><FaHandHoldingDollar/></span>
+                          <span className="text-xl"><Image src='/assets/dollar1.svg' alt='secure' width={20} height={18}/></span>
                           <h3 className="text-lg font-semibold text-gray leading-[18px] mont-text">
                             Money back guaranteed
                           </h3>

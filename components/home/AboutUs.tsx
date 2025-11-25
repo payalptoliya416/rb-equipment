@@ -34,7 +34,7 @@ function AboutUs() {
             {" "}
             About Us
           </h4>
-          <h2 className="text-gray mb-[15px] font-extrabold text-[30px] leading-[44px] mont-text">
+          <h2 className="text-gray mb-[15px] font-bold text-[30px] leading-[44px] mont-text">
             Powering the Future of Equipment Trading
           </h2>
           <p className="mb-[15px] text-[16px] leading-[26px] font-normal">

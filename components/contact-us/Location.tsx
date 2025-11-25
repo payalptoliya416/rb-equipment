@@ -48,7 +48,7 @@ function Location() {
               <motion.div
                 key={i}
                 variants={cardVariant}
-                className="h-full flex justify-center items-center flex-col border border-light-gray rounded-xl p-[30px] text-center bg-white"
+                className="h-full flex justify-start items-center flex-col border border-light-gray rounded-xl p-[30px] text-center bg-white"
               >
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}

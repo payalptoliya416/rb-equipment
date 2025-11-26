@@ -50,7 +50,8 @@ function InventoryHero() {
                 width={530}
                 height={389}
                 style={{ height: "auto" }} 
-                className="w-full"
+                className="w-full h-auto max-w-[530px]"
+                  loading="eager"  priority
               />
             </motion.div>
           </motion.div>

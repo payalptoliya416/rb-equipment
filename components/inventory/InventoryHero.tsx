@@ -49,6 +49,8 @@ function InventoryHero() {
                 alt="inventory hero"
                 width={530}
                 height={389}
+                style={{ height: "auto" }} 
+                className="w-full"
               />
             </motion.div>
           </motion.div>

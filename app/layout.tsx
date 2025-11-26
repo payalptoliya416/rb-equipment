@@ -3,20 +3,15 @@ import "./globals.css";
 import localFont from "next/font/local";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
-import ToastProvider from "@/components/common/ToastProvider";
 
 // ---------------- MONT FONT ----------------
 const mont = localFont({
   src: [
-    { path: "../public/fonts/Mont/Mont-Hairline.ttf", weight: "100", style: "normal" },
-    { path: "../public/fonts/Mont/Mont-Thin.ttf", weight: "200", style: "normal" },
-    { path: "../public/fonts/Mont/Mont-ExtraLight.ttf", weight: "300", style: "normal" },
     { path: "../public/fonts/Mont/Mont-Light.ttf", weight: "400", style: "normal" },
     { path: "../public/fonts/Mont/Mont-Regular.ttf", weight: "500", style: "normal" },
     { path: "../public/fonts/Mont/Mont-SemiBold.ttf", weight: "600", style: "normal" },
     { path: "../public/fonts/Mont/Mont-Bold.ttf", weight: "700", style: "normal" },
     { path: "../public/fonts/Mont/Mont-Black.ttf", weight: "800", style: "normal" },
-    { path: "../public/fonts/Mont/Mont-Heavy.ttf", weight: "900", style: "normal" },
   ],
   variable: "--font-mont",
   display: "swap",
@@ -26,9 +21,6 @@ const mont = localFont({
 
 const sfPro = localFont({
   src: [
-    { path: "../public/fonts/SF-Pro-Text/SF-Pro-Text-Ultralight.otf", weight: "200", style: "normal" },
-    { path: "../public/fonts/SF-Pro-Text/SF-Pro-Text-Thin.otf", weight: "300", style: "normal" },
-    { path: "../public/fonts/SF-Pro-Text/SF-Pro-Text-Light.otf", weight: "300", style: "normal" },
     { path: "../public/fonts/SF-Pro-Text/SF-Pro-Text-Regular.otf", weight: "400", style: "normal" },
     { path: "../public/fonts/SF-Pro-Text/SF-Pro-Text-Medium.otf", weight: "500", style: "normal" },
     { path: "../public/fonts/SF-Pro-Text/SF-Pro-Text-Semibold.otf", weight: "600", style: "normal" },

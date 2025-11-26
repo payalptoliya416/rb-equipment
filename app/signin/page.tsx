@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { JSX } from "react";
 import { motion } from "framer-motion";
+import toast from "react-hot-toast";
 
 // Validation Schema
 const SignInSchema = Yup.object().shape({
@@ -84,7 +85,7 @@ export default function SignInForm(): JSX.Element {
           validationSchema={SignInSchema}
           onSubmit={(values) => {
             console.log("Form Submitted", values);
-            alert("Sign-In Successful!");
+            toast.success("Sign-In Successful!");
           }}
         >
           {() => (

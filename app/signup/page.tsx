@@ -5,6 +5,7 @@ import * as Yup from "yup";
 import Link from "next/link";
 import { JSX } from "react";
 import { motion } from "framer-motion";
+import toast from "react-hot-toast";
 
 // Validation Schema
 const CreateAccountSchema = Yup.object().shape({
@@ -99,7 +100,7 @@ export default function CreateAccount(): JSX.Element {
           validationSchema={CreateAccountSchema}
           onSubmit={(values) => {
             console.log(values);
-            alert("Account Created Successfully!");
+            toast.success("Account Created Successfully!");
           }}
         >
           {() => (

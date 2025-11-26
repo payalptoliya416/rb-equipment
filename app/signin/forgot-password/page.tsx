@@ -5,6 +5,7 @@ import * as Yup from "yup";
 import Link from "next/link";
 import { JSX } from "react";
 import { motion } from "framer-motion";
+import toast from "react-hot-toast";
 
 const ForgotPasswordSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Email is required"),
@@ -72,7 +73,7 @@ export default function ForgotPassword(): JSX.Element {
           validationSchema={ForgotPasswordSchema}
           onSubmit={(values) => {
             console.log("Reset request:", values);
-            alert("Reset link sent to your email!");
+            toast.success("Reset link sent to your email!");
           }}
         >
           {() => (

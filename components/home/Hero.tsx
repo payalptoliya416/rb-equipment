@@ -79,6 +79,8 @@ function Hero() {
               alt="Hero"
               width={749}
               height={609}
+              loading="eager"
+              priority
               className="w-full"
             />
           </motion.div>

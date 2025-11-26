@@ -3,8 +3,6 @@
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import "swiper/css";
-
 function Partner() {
   return (
     <section className="my-20 lg:my-[110px] px-5 ">

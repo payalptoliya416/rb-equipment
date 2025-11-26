@@ -1,7 +1,12 @@
 import { NextResponse } from "next/server";
 
-export function middleware(req: Request) {
+// Run middleware for every request on site
+export const config = {
+  matcher: "/:path*",
+};
+
+export function middleware() {
   const res = NextResponse.next();
-  res.headers.delete("Link"); // removes CSS preload header
+  res.headers.delete("Link");   // ← CSS preload header removed
   return res;
 }

@@ -28,7 +28,7 @@ function Footer() {
             </p>
           <Link
             href="/inventory/inventory-detail"
-            className="group relative overflow-hidden text-green bg-white py-[14px] px-[22px] rounded-xl 
+            className="group relative overflow-hidden text-green bg-white py-[14px] px-[22px] rounded-lg 
                       text-base leading-[16px] font-semibold mont-text border border-green transition-all duration-300"
           >
             <span className="relative z-10">Start Now</span>

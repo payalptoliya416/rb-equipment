@@ -1,13 +1,8 @@
 'use client'
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Link from "next/link";
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 60 },
-  visible: { opacity: 1, y: 0 },
-};
 const equipmentData = [
   {
     id: 1,

@@ -7,8 +7,6 @@ import HowWork from "@/components/home/HowWork"
 import Partner from "@/components/home/Partner"
 import StatsSection from "@/components/inventory/StatsSection"
 
-
-
 function AboutUs() {
   return (
     <>

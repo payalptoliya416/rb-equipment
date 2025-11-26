@@ -10,7 +10,6 @@ import { FaLocationCrosshairs } from "react-icons/fa6";
 import { GiWeightScale } from "react-icons/gi";
 import { IoLocationSharp } from "react-icons/io5";
 import { MdAccessTimeFilled } from "react-icons/md";
-import { motion } from "framer-motion";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { Listbox, Transition } from "@headlessui/react";
@@ -475,9 +474,9 @@ function InventoryDetail() {
                           <div className="flex items-center gap-2">
                             <span className="text-xl">
                               <Image src='/assets/dollar.svg' alt='secure'  width={0}
-  height={0}
-  sizes="100vw"
-  className="w-[20px] h-auto -mt-2" /></span>
+                              height={0}
+                              sizes="100vw"
+                              className="w-[20px] h-auto -mt-2" /></span>
                             <h3 className="text-lg font-semibold text-gray mb-[10px] leading-[18px] mont-text">
                               Pay at delivery
                             </h3>
@@ -491,9 +490,9 @@ function InventoryDetail() {
                       <div className="space-y-2">
                         <div className="flex items-center gap-2">
                           <span className="text-xl"><Image src='/assets/dollar1.svg' alt='secure'   width={0}
-  height={0}
-  sizes="100vw"
-  className="w-[20px] h-auto" /></span>
+                          height={0}
+                          sizes="100vw"
+                          className="w-[20px] h-auto" /></span>
                           <h3 className="text-lg font-semibold text-gray leading-[18px] mont-text">
                             Money back guaranteed
                           </h3>

@@ -4,22 +4,7 @@ import { JSX } from "react";
 import { motion } from "framer-motion";
 
 export default function TrackingForm(): JSX.Element {
-  const formContainer = {
-    hidden: { opacity: 0, y: 40 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: "easeOut" }
-    }
-  } as const;
-
-  const staggerGroup = {
-    hidden: {},
-    show: {
-      transition: { staggerChildren: 0.15, delayChildren: 0.2 }
-    }
-  } as const;
-
+  
   const inputItem = {
     hidden: { opacity: 0, y: 15 },
     show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }

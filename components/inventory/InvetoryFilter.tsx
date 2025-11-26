@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Disclosure } from "@headlessui/react";
 import { Listbox, Transition } from "@headlessui/react";
 import { FaChevronDown } from "react-icons/fa";
-import { HiMiniBars3BottomLeft, HiOutlineBars3BottomLeft } from "react-icons/hi2";
+import { HiMiniBars3BottomLeft } from "react-icons/hi2";
 
 export default function InventoryFilter() {
   const min = 1990;

@@ -2,17 +2,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const containerVariant = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.2,
-    },
-  },
-};
-
 const cardVariant = {
   hidden: { opacity: 0, y: 30, scale: 0.95 },
   show: {

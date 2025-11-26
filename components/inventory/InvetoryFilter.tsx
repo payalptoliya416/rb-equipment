@@ -389,6 +389,7 @@ const [selectedSort, setSelectedSort] = useState(sortOptions[0]);
                   <input
                     type="number"
                     value={min}
+                    onChange={() => {}} 
                     className="w-full mt-1 border border-light-gray rounded-lg py-2 px-3 text-base"
                   />
                 </div>
@@ -398,6 +399,7 @@ const [selectedSort, setSelectedSort] = useState(sortOptions[0]);
                   <input
                     type="number"
                     value={value}
+                      onChange={(e) => setValue(Number(e.target.value))} 
                     className="w-full mt-1 border border-light-gray rounded-lg py-2 px-3 text-base"
                   />
                 </div>

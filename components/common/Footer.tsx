@@ -52,6 +52,7 @@ function Footer() {
                   height={90}
                   width={178}
                   className="mb-[30px]"
+                  loading="eager"  priority
                 />
               </Link>
               <p className="text-light-gray text-base leading-[26px] mb-[30px] w-full">

@@ -49,8 +49,11 @@ function AboutUsHero() {
                 <Image
                   src="/assets/about-hero.png"
                   alt="Hero"
-                  width={530}
-                  height={392}
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="w-full h-auto max-w-[530px]"
+                  loading="eager"  priority
                 />
               </motion.div>
             </div>

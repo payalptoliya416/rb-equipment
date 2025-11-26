@@ -19,7 +19,7 @@ function Partner() {
                     delay: 1800,
                     disableOnInteraction: false,
                   }}
-                  loop={true}
+                  loop={false}
                   spaceBetween={20}
                   breakpoints={{
                     0: { slidesPerView: 2 },       // Mobile
@@ -30,7 +30,7 @@ function Partner() {
                   className="pt-2"
                 >
 
-          {["logo1", "logo2", "logo3", "logo4", "logo5"].map((item, index) => (
+          {["logo1", "logo2", "logo3", "logo4", "logo5","logo2","logo3"].map((item, index) => (
              <SwiperSlide key={index} className="flex justify-center">
                <Image
                  key={index}

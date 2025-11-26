@@ -6,7 +6,7 @@ import Link from "next/link";
 import { BsFuelPumpFill } from "react-icons/bs";
 import { CgNotes } from "react-icons/cg";
 import { FaCalendarAlt } from "react-icons/fa";
-import { FaHandHoldingDollar, FaLocationCrosshairs } from "react-icons/fa6";
+import { FaLocationCrosshairs } from "react-icons/fa6";
 import { GiWeightScale } from "react-icons/gi";
 import { IoLocationSharp } from "react-icons/io5";
 import { MdAccessTimeFilled } from "react-icons/md";
@@ -473,7 +473,11 @@ function InventoryDetail() {
                       {/* Pay at delivery */}
                         <div className="space-y-2">
                           <div className="flex items-center gap-2">
-                            <span className="text-xl"><Image src='/assets/dollar.svg' alt='secure' className="-mt-2" width={18} height={18}/></span>
+                            <span className="text-xl">
+                              <Image src='/assets/dollar.svg' alt='secure'  width={0}
+  height={0}
+  sizes="100vw"
+  className="w-[20px] h-auto -mt-2" /></span>
                             <h3 className="text-lg font-semibold text-gray mb-[10px] leading-[18px] mont-text">
                               Pay at delivery
                             </h3>
@@ -486,7 +490,10 @@ function InventoryDetail() {
                       {/* Money back guaranteed */}
                       <div className="space-y-2">
                         <div className="flex items-center gap-2">
-                          <span className="text-xl"><Image src='/assets/dollar1.svg' alt='secure' width={20} height={18}/></span>
+                          <span className="text-xl"><Image src='/assets/dollar1.svg' alt='secure'   width={0}
+  height={0}
+  sizes="100vw"
+  className="w-[20px] h-auto" /></span>
                           <h3 className="text-lg font-semibold text-gray leading-[18px] mont-text">
                             Money back guaranteed
                           </h3>

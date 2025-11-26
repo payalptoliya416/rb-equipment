@@ -59,8 +59,10 @@ function FaqHero() {
                 <Image
                   src="/assets/faq.png"
                   alt="Hero"
-                  width={507}
-                  height={419}
+                   width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="w-full h-auto max-w-[507px]"
                 />
               </motion.div>
             </div>

@@ -76,7 +76,7 @@ useEffect(() => {
 >
       <div className="container-custom mx-auto flex justify-between items-center py-4 px-4 md:px-0">
         <Link href='/'>
-          <Image src="/assets/logo.png" alt="Logo" height={90} width={178}/>
+          <Image src="/assets/logo.png" alt="Logo" height={90} width={178}  loading="eager"  priority/>
         </Link>
 
         {/* Desktop & Tablet Navbar */}

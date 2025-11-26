@@ -46,7 +46,7 @@ function InventoryHero() {
             >
               <Image
                 src="/assets/inventoryhero.png"
-                alt="Hero"
+                alt="inventory hero"
                 width={530}
                 height={389}
               />

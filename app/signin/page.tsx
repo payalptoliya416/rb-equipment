@@ -9,8 +9,13 @@ import { motion } from "framer-motion";
 
 // Validation Schema
 const SignInSchema = Yup.object().shape({
-  email: Yup.string().email("Invalid email").required("Required"),
-  password: Yup.string().min(6, "Too short").required("Required"),
+  email: Yup.string()
+    .email("Please enter a valid email address")
+    .required("Email is required"),
+
+  password: Yup.string()
+    .min(6, "Password must be at least 6 characters")
+    .required("Password is required"),
 });
 
 export default function SignInForm(): JSX.Element {
@@ -97,6 +102,7 @@ export default function SignInForm(): JSX.Element {
                   <Field
                     name="email"
                     type="email"
+                    autoComplete="email"
                     placeholder="Enter your email address"
                     className="w-full mt-2 px-5 py-[18px] border border-light-gray rounded-[10px] outline-none focus:ring-2 focus:ring-green text-base"
                   />
@@ -115,6 +121,7 @@ export default function SignInForm(): JSX.Element {
                   <Field
                     name="password"
                     type="password"
+                    autoComplete="current-password" 
                     placeholder="Enter your password"
                     className="w-full mt-2 px-5 py-[18px] border border-light-gray rounded-[10px] outline-none focus:ring-2 focus:ring-green text-base"
                   />

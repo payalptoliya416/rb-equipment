@@ -8,20 +8,19 @@ import { motion } from "framer-motion";
 
 // Validation Schema
 const CreateAccountSchema = Yup.object().shape({
-  firstName: Yup.string().required("Required"),
-  lastName: Yup.string().required("Required"),
-  email: Yup.string().email("Invalid email").required("Required"),
-  phone: Yup.string().required("Required"),
-  address: Yup.string().required("Required"),
-  company: Yup.string().required("Required"),
-  city: Yup.string().required("Required"),
-  state: Yup.string().required("Required"),
-  zip: Yup.string().required("Required"),
-  password: Yup.string().min(6, "Min 6 characters").required("Required"),
-  confirmPassword: Yup.string()
-    .oneOf([Yup.ref("password")], "Passwords must match")
-    .required("Required"),
-  terms: Yup.boolean().oneOf([true], "You must agree to continue"),
+firstName: Yup.string().required("First name is required"),
+lastName: Yup.string().required("Last name is required"),
+email: Yup.string().email("Enter a valid email").required("Email is required"),
+phone: Yup.string().required("Phone number is required"),
+address: Yup.string().required("Address is required"),
+company: Yup.string().required("Company name is required"),
+city: Yup.string().required("City is required"),
+state: Yup.string().required("State selection is required"),
+zip: Yup.string().required("Zip code is required"),
+password: Yup.string().min(6, "Password must be at least 6 characters").required("Password is required"),
+confirmPassword: Yup.string().oneOf([Yup.ref("password")], "Passwords must match").required("Confirm your password"),
+terms: Yup.boolean().oneOf([true], "You must accept the terms to continue"),
+
 });
 
 export default function CreateAccount(): JSX.Element {
@@ -282,6 +281,7 @@ export default function CreateAccount(): JSX.Element {
                     <Field
                       name="zip"
                       placeholder="Enter zip code"
+                       autoComplete="postal-code"  
                       className="w-full mt-2 px-5 py-[18px] border border-light-gray rounded-xl outline-none focus:ring-2 focus:ring-green"
                     />
                     <ErrorMessage
@@ -306,6 +306,7 @@ export default function CreateAccount(): JSX.Element {
                       name="password"
                       type="password"
                       placeholder="Enter your password"
+                        autoComplete="new-password" 
                       className="w-full mt-2 px-5 py-[18px] border border-light-gray rounded-xl outline-none focus:ring-2 focus:ring-green"
                     />
                     <ErrorMessage
@@ -324,6 +325,7 @@ export default function CreateAccount(): JSX.Element {
                       name="confirmPassword"
                       type="password"
                       placeholder="Enter your confirm password"
+                      autoComplete="new-password"
                       className="w-full mt-2 px-5 py-[18px] border border-light-gray rounded-xl outline-none focus:ring-2 focus:ring-green"
                     />
                     <ErrorMessage

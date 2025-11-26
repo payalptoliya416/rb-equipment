@@ -51,9 +51,12 @@ export default function ProductSlider() {
                 <Image
                   src={`/assets/${img}`}
                   alt="detail-image"
-                  width={623}
-                  height={414}
-                  className="m-auto"
+                  width={0}
+                  height={0}
+                  loading="eager"
+                  priority    
+                  sizes="100vw"
+                  className="w-full h-auto max-w-[623px] mx-auto"
                 />
               </SwiperSlide>
             ))}
@@ -104,12 +107,14 @@ export default function ProductSlider() {
         {activeImages.map((img, i) => (
           <SwiperSlide key={i}>
             <div className="border border-light-gray flex justify-center items-center w-[98px] h-[98px] rounded-xl cursor-pointer">
-              <Image
-                src={`/assets/${img}`}
-                alt="detail"
-                width={87}
-                height={57}
-              />
+               <Image
+              src={`/assets/${img}`}
+              alt="detail"
+              width={0}
+              height={0}
+              sizes="100vw"
+              className="w-full h-auto"
+            />
             </div>
           </SwiperSlide>
         ))}

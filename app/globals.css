@@ -1,9 +1,11 @@
 @import "tailwindcss";
 
-@layer base {
-  body {
-    font-family: var(--font-sfpro), sans-serif;
-  }
+body {
+  font-family: var(--font-sfpro), sans-serif;
+}
+
+.mont-text {
+  font-family: var(--font-mont);
 }
 
 @theme {
@@ -13,9 +15,6 @@
   --color-para: #4d4d4d;
   --color-text-gray: #646464;
   --color-light-gray: #d3d3d3;
-}
-.mont-text {
-  font-family: var(--font-mont);
 }
 
 .py-30 {

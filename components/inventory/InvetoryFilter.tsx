@@ -529,7 +529,7 @@ const [selectedSort, setSelectedSort] = useState(sortOptions[0]);
           }
               className="border border-light-gray rounded-[10px] p-[15px] bg-white"
             >
-              <div className="w-full rounded-[10px] flex items-center justify-center border border-light-gray py-5 px-3 bg-[#E9E9E926] relative group " >
+              <div className="w-full rounded-[10px]- flex items-center justify-center border border-light-gray py-5 px-3 bg-[#E9E9E926] relative group " >
                 <Image src="/assets/filter1.png" alt="product" width={216} height={123} />
                 <Link
         href="/inventory/inventory-detail"

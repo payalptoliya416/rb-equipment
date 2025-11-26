@@ -64,7 +64,7 @@ export default function CreateAccount(): JSX.Element {
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-3xl md:text-[38px] font-extrabold text-center text-gray mb-[15px] leading-[38px]  mont-text"
+          className="text-3xl md:text-[38px] font-bold text-center text-gray mb-[15px] leading-[38px]  mont-text"
         >
           Create Your <span className="text-orange">Account</span>
         </motion.h2>

@@ -14,12 +14,7 @@ function Partner() {
           Partners & Brands
         </h3>
          <Swiper
-                  modules={[Autoplay]}
-                  autoplay={{
-                    delay: 1800,
-                    disableOnInteraction: false,
-                  }}
-                  loop={false}
+                  loop={true}
                   spaceBetween={20}
                   breakpoints={{
                     0: { slidesPerView: 2 },       // Mobile

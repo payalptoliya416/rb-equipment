@@ -116,7 +116,7 @@ function InventoryDetail() {
             <div className="flex items-center gap-[10px]">
                 <div>
             <div className="w-[50px] h-[50px] bg-green rounded-md flex items-center justify-center">
-                <span className="text-white text-2xl"><FaCalendarAlt/></span>
+                <span className="text-white text-2xl"><Image src='/assets/n1.svg' alt="icon" width={23} height={23}/></span>
             </div>
                 </div>
             <div>
@@ -129,7 +129,7 @@ function InventoryDetail() {
             <div className="flex items-center gap-[10px]">
                 <div>
             <div className="w-[50px] h-[50px] bg-green rounded-md flex items-center justify-center">
-                <span className="text-white text-2xl"><GiWeightScale/></span>
+                <span className="text-white text-2xl"><Image src='/assets/n2.svg' alt="icon" width={23} height={23}/></span>
             </div>
                 </div>
             <div>
@@ -142,7 +142,7 @@ function InventoryDetail() {
             <div className="flex items-center gap-[10px] md:justify-end">
                 <div>
             <div className="w-[50px] h-[50px] bg-green rounded-md flex items-center justify-center">
-                <span className="text-white text-2xl"><MdAccessTimeFilled/></span>
+                <span className="text-white text-2xl"><Image src='/assets/n3.svg' alt="icon" width={23} height={23}/></span>
             </div>
                 </div>
             <div>
@@ -163,7 +163,7 @@ function InventoryDetail() {
             <div className="flex items-center gap-[10px]">
                 <div>
             <div className="w-[50px] h-[50px] bg-green rounded-md flex items-center justify-center">
-                <span className="text-white text-2xl"><BsFuelPumpFill/></span>
+                <span className="text-white text-2xl"><Image src='/assets/n4.svg' alt="icon" width={23} height={23}/></span>
             </div>
                 </div>
             <div>
@@ -176,29 +176,27 @@ function InventoryDetail() {
             <div className="flex items-center gap-[10px]">
            <div> 
             <div className="w-[50px] h-[50px] bg-green rounded-md flex items-center justify-center">
-                <span className="text-white text-2xl"><CgNotes/></span>
+                <span className="text-white text-2xl"><Image src='/assets/n5.svg' alt="icon" width={23} height={23}/></span>
             </div>
             </div>
-            <div className="flex items-center gap-3">
-                <div className="flex items-center gap-[15px]">
-                <p className="text-text-gray mb-[6px] text-base leading-[16px] mont-text font-semibold">Condition </p>
-                <span className="bg-[#1DAF50] text-white text-sm px-2 py-[6px] rounded-md whitespace-nowrap">
+            <div>
+                <p className="text-gray mb-[6px] text-base leading-[16px] mont-text font-semibold">Condition </p>
+                <button className="bg-[#1DAF50] text-[12px] leading-[12px] text-white text-sm px-2 py-[6px] rounded-md whitespace-nowrap block">
                 Very Good
-                </span>
-                </div>
-
-                {/* Condition badge */}
-                
+                </button>
             </div>
             </div>
 
             {/* Serial Number */}
-            <div className="flex items-center gap-4 md:justify-end">
-            <div className="w-[50px] h-[50px]"></div>
+                <div className="flex items-center gap-[10px] justify-end pe-1">
+                <div>
+            <div className="w-[50px] h-[50px] bg-green rounded-md flex items-center justify-center">
+                <span className="text-white text-2xl"><Image src='/assets/n6.svg' alt="icon" width={23} height={23}/></span>
+            </div>
+                </div>
             <div>
-                <p className="bg-[#E9E9E9] text-gray text-sm px-[8px] py-[6px] rounded-md mont-text font-semibold">
-                #S/N HG-2745
-                </p>
+                <p className="text-text-gray mb-[6px] text-base leading-[16px]">Serial Number</p>
+                <p className="text-gray font-semibold text-xl leading-[20px] mont-text">#XXXXXXX</p>
             </div>
             </div>
 
@@ -328,7 +326,7 @@ function InventoryDetail() {
                     <div className="space-y-6">
                         <div className="flex items-start gap-3 mb-[5px]">
                         <div className="flex flex-col items-center">
-                          <FaLocationCrosshairs size={20}/>
+                          <Image src='/assets/location1.svg' alt="icon" width={22} height={22}/>
                             <div className="border-l border-dashed border-gray h-10 mt-1"></div>
                         </div>
                         <p className="font-semibold text-gray text-lg leading-[18px] mont-text">
@@ -337,7 +335,7 @@ function InventoryDetail() {
                         </div>
                         <div className="flex items-start gap-3">
                         <div className="flex flex-col items-center">
-                          <IoLocationSharp size={20}/>
+                         <Image src='/assets/location2.svg' alt="icon" width={22} height={22}/>
                         </div>
                          <p className="font-semibold text-gray text-lg leading-[18px] mont-text">
                           To your delivery location

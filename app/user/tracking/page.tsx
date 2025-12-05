@@ -48,16 +48,16 @@ function Tracking() {
             <div>
                 <h2 className="mb-[21px] text-xl text-[#373737] ">2017 Wheel Loaders John Deere 6125M</h2>
                 <div className="grid grid-cols-12">
-                    <div className="col-span-6 mb-[15px] me-[43px]">
+                    <div className="col-span-12 sm:col-span-6 mb-[15px] me-[43px]">
                         <h4 className="text-text-gray text-sm">Hours: 3,825 km</h4>
                     </div>
-                    <div className="col-span-6 mb-[15px]">
+                    <div className="col-span-12 sm:col-span-6 mb-[15px]">
                         <h4 className="text-text-gray text-sm">Total Distance: 350 km</h4>
                     </div>
-                    <div className="col-span-6 me-[43px]">
+                    <div className="col-span-12 sm:col-span-6 me-[43px]">
                         <h4 className="text-text-gray text-sm">Total Weight: 6,000 LBS</h4>
                     </div>
-                    <div className="col-span-6">
+                    <div className="col-span-12 sm:col-span-6">
                         <h4 className="text-text-gray text-sm">Year: 2017</h4>
                     </div>
                 </div>

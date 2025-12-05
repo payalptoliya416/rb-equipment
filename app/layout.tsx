@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 import ToastProvider from "@/components/common/ToastProvider";
+import Header from "@/components/common/Header";
+import Footer from "@/components/common/Footer";
 
 // ---------------- MONT FONT ----------------
 const mont = localFont({

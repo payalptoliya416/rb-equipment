@@ -11,7 +11,6 @@ export default function Home() {
 
   return (
     <>
-      <main>
        <Hero/>
        <AboutUs/>
        <Equipment/>
@@ -20,7 +19,6 @@ export default function Home() {
        <Testimonial/>
        <Partner/>
        <FAQ/>
-      </main>
     </>
   );
 }

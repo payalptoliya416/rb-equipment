@@ -48,7 +48,7 @@ export default function SignInForm(): JSX.Element {
 
   return (
     <>
-     <div className="container mx-auto bg-[#F9F9F9] rounded-[14px] p-[15px] grid grid-cols-12 gap-5 h-full my-[60px]">
+     <div className="container-custom mx-auto bg-[#F9F9F9] rounded-[14px] p-[15px] grid grid-cols-12 gap-5 h-full my-[60px]">
           <motion.div
             variants={cardVariant}
             initial="hidden"

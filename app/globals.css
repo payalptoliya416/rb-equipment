@@ -38,6 +38,10 @@ body {
 .bg-gradient {
   background: linear-gradient(180deg, #ff6f6100 0%, #37373714 8%);
 }
+.gradient-btn{
+   background: linear-gradient(-90deg, #049281 0%, #00796B 100%);
+}
+
 .container-custom {
   padding-left: 20px;
   padding-right: 20px;
@@ -63,6 +67,10 @@ select option:checked {
 .bg-position {
   background-size: cover;
   background-position: 100% 100%;
+}
+.webkit-box {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
 }
 
 @media (min-width: 1024px) {

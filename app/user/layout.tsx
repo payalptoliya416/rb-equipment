@@ -1,6 +1,6 @@
 
-import UserFooter from "@/components/common/UserFooter";
-import UserHeader from "@/components/common/UserHeader";
+import UserFooter from "@/components/user/UserFooter";
+import UserHeader from "@/components/user/UserHeader";
 
 export default function UserLayout({ children }: { children: React.ReactNode }) {
   return (

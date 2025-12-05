@@ -431,7 +431,7 @@ export default function CreateAccount(): JSX.Element {
           className="text-center text-[#333333] mt-[30px]  mont-text font-semibold"
         >
           Already have an account?{" "}
-          <Link href="/signin" className="text-green">
+          <Link href="/user/signin" className="text-green">
             Sign in
           </Link>
         </motion.p>

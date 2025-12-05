@@ -22,16 +22,15 @@ function UserHeader() {
         <Link href='/'>
           <Image src="/assets/logo.png" alt="Logo" height={52} width={130}  loading="eager"  priority />
         </Link>
-
         {
           isSigninPage  ? (
              <Link href="/signup" className='text-green bg-white py-[14px] px-[22px] rounded-lg text-base leading-[16px] cursor-pointer'>Register</Link>
           ) : (
           <div className="flex items-center gap-2 sm:gap-5">
-        <div className="bg-white w-[42px] h-[42px] justify-center items-center rounded-full flex">
+        <div className="bg-white w-[42px] h-[42px] justify-center items-center rounded-full flex cursor-pointer">
           <PiBellRinging size={20} />
         </div>
-        <div className="bg-white w-[42px] h-[42px] justify-center items-center rounded-full flex">
+        <div className="bg-white w-[42px] h-[42px] justify-center items-center rounded-full flex cursor-pointer">
           <GoQuestion size={20} />
         </div>
         <Menu as="div" className="relative">

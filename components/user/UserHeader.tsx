@@ -91,7 +91,8 @@ function UserHeader() {
         }
     </div>
     </div>
-    <UserDashboardNav/>
+    {!isSigninPage && <UserDashboardNav/>}
+    
     </>
   )
 }

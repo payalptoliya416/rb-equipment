@@ -1,3 +1,4 @@
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -62,7 +63,6 @@ function Footer() {
               </p>
              <div className="flex items-center gap-[15px]">
 
-  {/* Facebook */}
   <a
     href="https://facebook.com/"
     target="_blank"
@@ -72,7 +72,6 @@ function Footer() {
     <FaFacebookF className="text-light-gray transition-all duration-300 group-hover:text-green" />
   </a>
 
-  {/* Twitter / X */}
   <a
     href="https://twitter.com/"
     target="_blank"
@@ -82,7 +81,6 @@ function Footer() {
     <FaXTwitter className="text-light-gray transition-all duration-300 group-hover:text-green" />
   </a>
 
-  {/* Instagram */}
   <a
     href="https://instagram.com/"
     target="_blank"
@@ -92,7 +90,6 @@ function Footer() {
     <FaInstagram className="text-light-gray transition-all duration-300 group-hover:text-green" />
   </a>
 
-  {/* LinkedIn */}
   <a
     href="https://linkedin.com/"
     target="_blank"
@@ -178,7 +175,6 @@ function Footer() {
          <div className="col-span-12 sm:col-span-6 lg:col-span-4">
   <h3 className="text-orange mb-5 text-lg leading-[18px] mont-text">Contact Info</h3>
 
-  {/* Phone */}
   <a
     href="tel:+345209001307"
     className="group block mb-5 transition-all duration-300"
@@ -200,7 +196,6 @@ function Footer() {
     </div>
   </a>
 
-  {/* Location */}
   <a
     href="https://www.google.com/maps/search/?api=1&query=RB+Equipment+Sales+123+Industrial+Road+Montgomery+Village+USA"
     target="_blank"
@@ -223,7 +218,6 @@ function Footer() {
     </div>
   </a>
 
-  {/* Email */}
   <a
     href="mailto:rb@equipmentsales.com"
     className="group block mb-5 transition-all duration-300"
@@ -245,7 +239,6 @@ function Footer() {
     </div>
   </a>
 
-  {/* Time */}
   <div className="group transition-all duration-300">
     <div className="flex gap-3 items-center">
       <div>

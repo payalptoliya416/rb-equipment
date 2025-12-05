@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
-import Header from "@/components/common/Header";
-import Footer from "@/components/common/Footer";
 import ToastProvider from "@/components/common/ToastProvider";
 
 // ---------------- MONT FONT ----------------
@@ -45,10 +43,8 @@ export default function RootLayout({
       <body
         className={`${mont.variable} ${sfPro.variable} antialiased`}
       >
-        <Header/>
         {children}
         <ToastProvider/>
-        <Footer/>
       </body>
     </html>
   );

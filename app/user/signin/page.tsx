@@ -53,7 +53,7 @@ export default function SignInForm(): JSX.Element {
             variants={cardVariant}
             initial="hidden"
             animate="show"
-            className="border border-light-gray rounded-[15px] py-[55px] px-6 sm:px-[30px] col-span-12 lg:col-span-6 w-full"
+            className="border border-light-gray rounded-[15px] py-[55px] px-5 sm:px-[30px] col-span-12 lg:col-span-6 w-full"
           >
             {/* Title */}
             <motion.h2

@@ -6,7 +6,7 @@ import Link from "next/link";
 
 function Hero() {
   return (
-    <section className="relative">
+    <section className="relative overflow-x-hidden">
       <motion.div
         initial={{ opacity: 0, scale: 1.05 }}
         animate={{ opacity: 1, scale: 1 }}
